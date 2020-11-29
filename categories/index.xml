@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Example Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://7WayneLee.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://7WayneLee.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello</title>
+      <link>https://7WayneLee.github.io/categories/hello/</link>
+      <pubDate>Sun, 29 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://7WayneLee.github.io/categories/hello/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Test</title>
       <link>https://7WayneLee.github.io/categories/test/</link>
