@@ -5,7 +5,26 @@
     <link>https://7WayneLee.github.io/categories/</link>
     <description>Recent content in Categories on Daniel&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://7WayneLee.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Thu, 11 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://7WayneLee.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>syntax</title>
+      <link>https://7WayneLee.github.io/categories/syntax/</link>
+      <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://7WayneLee.github.io/categories/syntax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>themes</title>
+      <link>https://7WayneLee.github.io/categories/themes/</link>
+      <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://7WayneLee.github.io/categories/themes/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Test</title>
       <link>https://7WayneLee.github.io/categories/test/</link>
