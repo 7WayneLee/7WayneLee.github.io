@@ -26,11 +26,38 @@
     </item>
     
     <item>
-      <title>Test</title>
-      <link>https://7WayneLee.github.io/categories/test/</link>
+      <title>Coding and Technology</title>
+      <link>https://7WayneLee.github.io/categories/coding-or-technology/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://7WayneLee.github.io/categories/test/</guid>
+      <guid>https://7WayneLee.github.io/categories/coding-or-technology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Life and Faith</title>
+      <link>https://7WayneLee.github.io/categories/life-and-faith/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://7WayneLee.github.io/categories/life-and-faith/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Music</title>
+      <link>https://7WayneLee.github.io/categories/music/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://7WayneLee.github.io/categories/music/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sport</title>
+      <link>https://7WayneLee.github.io/categories/sport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://7WayneLee.github.io/categories/sport/</guid>
       <description></description>
     </item>
     

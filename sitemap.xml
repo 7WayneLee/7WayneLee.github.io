@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://7WayneLee.github.io/about-me.../</loc>
+    <lastmod>2021-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://7WayneLee.github.io/</loc>
+    <lastmod>2021-07-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://7WayneLee.github.io/page/</loc>
+    <lastmod>2021-07-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://7WayneLee.github.io/categories/</loc>
     <lastmod>2021-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://7WayneLee.github.io/tags/css/</loc>
-    <lastmod>2021-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://7WayneLee.github.io/</loc>
     <lastmod>2021-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://7WayneLee.github.io/tags/html/</loc>
@@ -38,14 +44,14 @@
     <loc>https://7WayneLee.github.io/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://7WayneLee.github.io/page/</loc>
-    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
+    <loc>https://7WayneLee.github.io/categories/coding-or-technology/</loc>
   </url><url>
-    <loc>https://7WayneLee.github.io/about/</loc>
-    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
+    <loc>https://7WayneLee.github.io/categories/life-and-faith/</loc>
+  </url><url>
+    <loc>https://7WayneLee.github.io/categories/music/</loc>
   </url><url>
     <loc>https://7WayneLee.github.io/search/</loc>
   </url><url>
-    <loc>https://7WayneLee.github.io/categories/test/</loc>
+    <loc>https://7WayneLee.github.io/categories/sport/</loc>
   </url>
 </urlset>
