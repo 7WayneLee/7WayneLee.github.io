@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='「Blog」教程系列文章'><title>Blog 文章編輯語言：Markdown --- 語言學習筆記</title>
+
+<link rel='canonical' href='https://7WayneLee.github.io/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/'>
+
+<link rel="stylesheet" href="/scss/style.min.450926226e724574a6b936335ea06111f8aeb253d932c86cb2cc807341cd2889.css"><meta property='og:title' content='Blog 文章編輯語言：Markdown --- 語言學習筆記'>
+<meta property='og:description' content='「Blog」教程系列文章'>
+<meta property='og:url' content='https://7WayneLee.github.io/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/'>
+<meta property='og:site_name' content='Daniel&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Technology' /><meta property='article:tag' content='Blog' /><meta property='article:published_time' content='2022-02-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-04-02T00:00:00&#43;00:00'/><meta property='og:image' content='https://7WayneLee.github.io/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/background.jpg' />
+<meta name="twitter:title" content="Blog 文章編輯語言：Markdown --- 語言學習筆記">
+<meta name="twitter:description" content="「Blog」教程系列文章"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://7WayneLee.github.io/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/background.jpg' />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3TN4TQ72KV"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-3TN4TQ72KV', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu065caa8f68a0b6e76b233ee18c5fef22_3844_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Daniel&#39;s Blog</a></h1>
+            <h2 class="site-description">Remember something in a good time.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://instagram.com/lee_wyane?r=nametag'
+                        target="_blank"
+                        title="Instagram"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="16" height="16" rx="4" />
+  <circle cx="12" cy="12" r="3" />
+  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://t.me/Daniel_474'
+                        target="_blank"
+                        title="Telegram"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">
+                <img src="/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/background_hu2630ebeac12478d27b8e33661d01cb38_43931_800x0_resize_q75_box.jpg"
+                        srcset="/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/background_hu2630ebeac12478d27b8e33661d01cb38_43931_800x0_resize_q75_box.jpg 800w, /p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/background_hu2630ebeac12478d27b8e33661d01cb38_43931_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="484" 
+                        loading="lazy"
+                        alt="Featured image of post Blog 文章編輯語言：Markdown --- 語言學習筆記" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/technology/" style="background-color: #2a9d8f; color: #fff;">
+                Technology
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">Blog 文章編輯語言：Markdown --- 語言學習筆記</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            「Blog」教程系列文章
+        </h3>
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Feb 10, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="前言">前言</h2>
+<p>Markdown 語言是我在擁有了自己的 Blog 之後才接觸到的。因爲在寫文章的時候經常會使用 Markdown 語言來進行排版和編輯，整體來說效果很好，而且簡單易學。</p>
+<p>這篇文章就來簡單的介紹一下 Markdown 語言的語法，也算是一篇文章的一個後續，來幫助更多剛剛接觸 Markdown 語言的人能夠快速上手。學語言的方法基本都類似，在學習了基礎語法後，多用，慢慢就會養成習慣，然後記住了。我也是通過寫文章的時候，一步步的學習，漸漸的熟悉上這門語言。所以並不太需要把全部的語法很強調的全部記錄下來，在過程中多加使用，不記得的時候再看看語法，漸漸的就會記住了。</p>
+<h2 id="markdown-編輯器">Markdown 編輯器</h2>
+<p>Markdown因爲是開源的語言，所以市面上也會有很多不同的編輯器。在寫文章之前，我們也要先找好一個自己舒服的編輯器才行。</p>
+<p>下面的是我推薦的幾款：</p>
+<h3 id="typora">Typora</h3>
+<p><em>Typora是我一直在使用的一款編輯器。強大的功能，簡潔乾淨的界面，還有能夠直接使用快捷鍵編輯界面，讓我使用的時候得心應手。你可以自由選擇預覽編輯和源碼編輯兩種編輯模式，我一般會使用預覽編輯，十分方便。</em></p>
+<p><em>但缺點在於，除了 Linux 平臺可以無限期免費試用，其他的平臺都已經需要付費了。因爲我長期使用 Arch 作爲我編輯 Blog 和 程式的系統，所以我還可以免費使用。但在其他平臺就沒這麼幸運了。</em></p>
+<p><strong>目前售價：$ 14.99</strong></p>
+<h3 id="visual-studio-code">Visual Studio Code</h3>
+<p><em>VSCode 也是我最早接觸的代碼編輯器。免費，開源，輕量，加上漂亮的外觀，最重要是有許多功能強大的延伸模組，可以把一個編輯器加入很多其他的功能，更加方便的單一個編輯器編輯不同語言的代碼。</em></p>
+<p><em>只要安裝了 <code>Markdown All in One</code> 和 <code>Markdown Preview Enhanced</code> 兩個延伸模組後，也可以很舒服的編輯文章。</em></p>
+<h3 id="macdown">MacDown</h3>
+<p><em>這是在 Mac OS 平臺上的一款開源免費的 Markdown 編輯器。它和 VSCode 的編輯界面差不多，主要編輯區在左側，右側是預覽畫面。你只需在左邊進行寫作，加上 Markdown 語法標籤，就能在右側預覽區看到即時預覽，方便你書寫或編輯文件。在完成之後，除了保存爲 .md 格式外，它也能匯出 PDF 或 HTML檔案。</em></p>
+<h2 id="基礎語法">基礎語法</h2>
+<h3 id="標題">標題</h3>
+<p><em>標題一般是分爲 6 個層級。分別是 h1 - h6，h1 最大，h6 最小。</em></p>
+<p>標題的寫法也有兩種，第一種是在標題文字的下一行中添加 <code>===</code> ，第二種是在標題前加上 <code>#</code> 。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">h1 標題
+</span></span><span class="line"><span class="cl">===
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="gh"># h1 標題       // 注意 # 和標題間需要空格
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span><span class="gu">## h2 標題
+</span></span></span><span class="line"><span class="cl"><span class="gu">### h3 標題
+</span></span></span><span class="line"><span class="cl"><span class="gu">#### h4 標題
+</span></span></span><span class="line"><span class="cl"><span class="gu">##### h5 標題
+</span></span></span><span class="line"><span class="cl"><span class="gu">###### h6 標題
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="引言">引言</h3>
+<p>Markdown 是通過 <code>&gt;</code> 添加引言。使用 <code>&gt;</code> 表示是一級引言，使用  <code>&gt;&gt;</code> 可在一級引言下添加二級引言。在引言內，也支持使用其他的 Markdown 語法。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">歡迎大家來到我的 Blog 
+</span></span><span class="line"><span class="cl">&gt;希望大家喜歡
+</span></span><span class="line"><span class="cl">&gt;&gt;如果它有幫助到你，也可以和身邊的人分享我的 Blog
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>顯示效果如下：</p>
+<p>歡迎大家來到我的 Blog</p>
+<blockquote>
+<p>希望大家喜歡</p>
+<blockquote>
+<p>如果它有幫助到你，也可以和身邊的人分享我的 Blog</p>
+</blockquote>
+</blockquote>
+<h3 id="清單">清單</h3>
+<p><strong>1. 無序清單</strong></p>
+<p>使用 <code>*</code>、<code>+</code>、<code>-</code> 都可以輸出無序清單。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="k">*</span> Hello,welcome to my blog.  // 符號與清單標題間也同樣需要空格
+</span></span><span class="line"><span class="cl">+ Hello,welcome to my blog.
+</span></span><span class="line"><span class="cl"><span class="k">-</span> Hello,welcome to my blog.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>顯示效果如下：</p>
+<ul>
+<li>Hello,welcome to my blog.</li>
+</ul>
+<ul>
+<li>Hello,welcome to my blog.</li>
+</ul>
+<ul>
+<li>Hello,welcome to my blog.</li>
+</ul>
+<p><strong>2. 有序清單</strong></p>
+<p>在數字後面加上一個 <code>.</code> ，Markdown 語言就會自動生成有序清單列表。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="k">1.</span> Hello,welcome to my blog.    // 數字. 之後依然需要空格
+</span></span><span class="line"><span class="cl"><span class="k">2.</span> Though my essay is not very good,
+</span></span><span class="line"><span class="cl"><span class="k">3.</span> I wish you will like it.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>顯示效果如下：</p>
+<ol>
+<li>Hello,welcome to my blog.</li>
+<li>Though my essay is not very good,</li>
+<li>I wish you will like it.</li>
+</ol>
+<blockquote>
+<p>清單有的時候可能會不小心就產生了，例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1984. What a great book.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>只要在句首出現了<strong>數字-句點-空白</strong>，它就會自動的生成清單列表。所以我們可以在句點前加上 <code>\</code> ，例如</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1984\. What a great book.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>這樣它就不會被視爲清單了</p>
+</blockquote>
+<h3 id="程式碼">程式碼</h3>
+<p><strong>程式碼區塊</strong>的寫法如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">```C //這裏的在的名稱可以是任何語言的名稱 C就是C語言 Python就是Python語言
+</span></span><span class="line"><span class="cl">printf(&#34;Hello! World!\n&#34;);
+</span></span><span class="line"><span class="cl">```
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>顯示效果如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="n">printf</span><span class="p">(</span><span class="s">&#34;Hello! World!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>一般程式碼</strong>（不需要區塊）的寫法如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">This is my code:`printf(&#34;Hello! World!\n&#34;);`
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>顯示效果如下：</p>
+<p>This is my code: <code>printf(&quot;Hello! World!\n&quot;);</code></p>
+<h3 id="分割線">分割線</h3>
+<p>可以在一行中用三個或以上的<code>*</code>、<code>-</code>、<code>_</code> 來建立一個分隔線，行內不能有其他東西。你也可以在符號中間插入空白。</p>
+<p>下面有幾種建立分隔線的寫法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">* * *
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">***
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">*****
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">- - -
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">---------------------------------------
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="強調">強調</h3>
+<p>Markdown 語言一般有兩種強調方式：<strong>粗體</strong>和<em>斜體</em></p>
+<p>粗體的寫法是在被強調的文字兩側加上 <code>**</code> ，斜體的寫法是在被強調的文字兩側加上 <code>*</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">**我被強調了**
+</span></span><span class="line"><span class="cl"><span class="ge">*我被強調了*</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>顯示效果如下：</p>
+<p><strong>我被強調了</strong></p>
+<p>我被強調了*</p>
+<h3 id="插入鏈接">插入鏈接</h3>
+<p>Markdown支援兩種形式的行內連結語法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">[<span class="nt">Markdown</span>](<span class="na">https://zh.wikipedia.org/wiki/Markdown</span>)到底是什麼語言？
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>顯示效果如下：</p>
+<p><a class="link" href="https://zh.wikipedia.org/wiki/Markdown"  target="_blank" rel="noopener"
+    >Markdown</a>到底是什麼語言？</p>
+<p><em>這樣我們點擊 Markdown，就可以跳轉到對應的鏈接了</em></p>
+<h3 id="插入圖片">插入圖片</h3>
+<p>插入圖片的基本格式是 一個 <code>！</code> ，加上 <code>[]</code>，在方框內給圖片相當於起個名字，再加上 <code>()</code>，括號內寫入圖片的鏈接。</p>
+<p>在寫 Blog 文章的時候，一般圖片需要和 .md 文章主題放入一個文件夾中，所以只需要在 <code>()</code> 寫入<strong>圖片文件名稱.圖片格式</strong>就好了。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">！[舉例](圖片.jpg) 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>這樣就可以顯示出圖片了</p>
+<blockquote>
+<p>不過 Markdown 語言的圖片是無法調整位置的，他會自動顯示在當前行列中</p>
+<p>特別注意：在書寫插入鏈接和插入圖片的兩個語法時，裏面所有的符號都是半型符號。也就是如果輸入法是漢語輸入法的時候，要將輸入法切換爲英文，再輸入符號。</p>
+</blockquote>
+<h3 id="表格">表格</h3>
+<p>Markdown 也同樣可以輸出表格。但要注意表格的對齊方式：</p>
+<ul>
+<li><code>---</code>：預設靠左</li>
+<li><code>:---</code>：向左靠齊</li>
+<li><code>---:</code>：向右靠齊</li>
+<li><code>:---:</code>：居中對齊</li>
+</ul>
+<p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">| 列表1 | 列表2 | 列表 3 | 列表4 |
+</span></span><span class="line"><span class="cl">| --- | :--- | ---: | :---: |
+</span></span><span class="line"><span class="cl">| ... | ... | ... | --- |
+</span></span><span class="line"><span class="cl">| ... | ... | ... | --- |
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>顯示效果如下：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>列表1</th>
+<th style="text-align:left">列表2</th>
+<th style="text-align:right">列表 3</th>
+<th style="text-align:center">列表4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&hellip;</td>
+<td style="text-align:left">&hellip;</td>
+<td style="text-align:right">&hellip;</td>
+<td style="text-align:center">&mdash;</td>
+</tr>
+<tr>
+<td>&hellip;</td>
+<td style="text-align:left">&hellip;</td>
+<td style="text-align:right">&hellip;</td>
+<td style="text-align:center">&mdash;</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="美觀">美觀</h2>
+<p>這一點作爲一個工科生，可能不太適合由我來說。我的 Blog 文章排版，也不算特別好，只能說看起來比較整齊。</p>
+<p>一般的，我也只會給自己規定整體的格式，那裏是用 <code>*</code> 列表，那裏是用有序列表。還有統一的排版，在同類的區塊下排版相同等等。</p>
+<p>下面這篇<a class="link" href="https://github.com/sparanoid/chinese-copywriting-guidelines/blob/master/README.md"  target="_blank" rel="noopener"
+    >中文文案排版指北</a>，是一篇還不錯的中文基本排版標準。學習別人的一些編輯技巧還是可以讓自己的文章看起來更加舒適的，但也不一定要完全遵照別人所定的標準，最主要還是自己首先覺得舒服好看，也就不太有問題。</p>
+<h2 id="結語">結語</h2>
+<p>上面的基本語法也是我個人的一部分總結，其實還有一些其他的語法，只不過是因爲我的主題無法顯示，我就沒有在這裏細說，你們也可以自行探索。</p>
+<p>在網路上也還有很多 Markdown 語法的文章，可以多看多學，邊上手邊結合，就可以慢慢的學會了。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/technology/">Technology</a>
+        
+            <a href="/tags/blog/">Blog</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Written by Daniel</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            Last updated on Apr 02, 2022 00:00 GMT&#43;8
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-contents--wrapper">
+    <h2 class="section-title">Related contents</h2>
+    <div class="related-contents">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/">
+        
+        
+            <div class="article-image">
+                <img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/background.33c1435ccccffacc91c81c69aef40d50_hued1092ee99fa311a297d02e827a150c5_15810_250x150_fill_q75_box_smart1.jpeg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Blog 後臺管理工具：Google Analytics"
+                        
+                        data-hash="md5-M8FDXMzP&#43;syRyBxprvQNUA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Blog 後臺管理工具：Google Analytics</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/">
+        
+        
+            <div class="article-image">
+                <img src="/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/background.437233540105c93a0f22058e7250b027_hu8129c1d6205b89ce5b286bc145ffeacf_27810_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Blog 的搭建：使用 Github Page &#43; Hugo 架設一個屬於自己的 Blog"
+                        
+                        data-hash="md5-Q3IzVAEFyToPIgWOclCwJw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Blog 的搭建：使用 Github Page &#43; Hugo 架設一個屬於自己的 Blog</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/background.76efc30845c01ded617b3bab7afb7258_hu00ae979a9c6767be83547fc781536d75_6030_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post  一些「翻牆」軟體的使用方法 "
+                        
+                        data-hash="md5-du/DCEXAHe1hezurevtyWA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title"> 一些「翻牆」軟體的使用方法 </h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">
+        
+        
+            <div class="article-image">
+                <img src="/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/background.4b387263f92dff200000820c5579f442_hu840b472379512eff7a98cead1b9d6f8c_31067_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Google Voice 虛擬號的一些使用方法"
+                        
+                        data-hash="md5-SzhyY/kt/yAAAIIMVXn0Qg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Google Voice 虛擬號的一些使用方法</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/background.c13764e4fccf777307c1b1cbf5b3468f_hu29a719be0e2276f22570238cd344c661_31094_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 配置青龍面板並實現京東JS腳本運行"
+                        
+                        data-hash="md5-wTdk5PzPd3MHwbHL9bNGjw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">配置青龍面板並實現京東JS腳本運行</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wyanelee" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2021 - 
+        
+        2022 Daniel&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.11.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#markdown-編輯器">Markdown 編輯器</a>
+      <ol>
+        <li><a href="#typora">Typora</a></li>
+        <li><a href="#visual-studio-code">Visual Studio Code</a></li>
+        <li><a href="#macdown">MacDown</a></li>
+      </ol>
+    </li>
+    <li><a href="#基礎語法">基礎語法</a>
+      <ol>
+        <li><a href="#標題">標題</a></li>
+        <li><a href="#引言">引言</a></li>
+        <li><a href="#清單">清單</a></li>
+        <li><a href="#程式碼">程式碼</a></li>
+        <li><a href="#分割線">分割線</a></li>
+        <li><a href="#強調">強調</a></li>
+        <li><a href="#插入鏈接">插入鏈接</a></li>
+        <li><a href="#插入圖片">插入圖片</a></li>
+        <li><a href="#表格">表格</a></li>
+      </ol>
+    </li>
+    <li><a href="#美觀">美觀</a></li>
+    <li><a href="#結語">結語</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

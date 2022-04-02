@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=' '><title>配置青龍面板並實現京東JS腳本運行</title>
+
+<link rel='canonical' href='https://7WayneLee.github.io/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/'>
+
+<link rel="stylesheet" href="/scss/style.min.450926226e724574a6b936335ea06111f8aeb253d932c86cb2cc807341cd2889.css"><meta property='og:title' content='配置青龍面板並實現京東JS腳本運行'>
+<meta property='og:description' content=' '>
+<meta property='og:url' content='https://7WayneLee.github.io/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/'>
+<meta property='og:site_name' content='Daniel&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Technology' /><meta property='article:published_time' content='2021-09-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-04-02T00:00:00&#43;00:00'/><meta property='og:image' content='https://7WayneLee.github.io/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/background.jpg' />
+<meta name="twitter:title" content="配置青龍面板並實現京東JS腳本運行">
+<meta name="twitter:description" content=" "><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://7WayneLee.github.io/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/background.jpg' />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3TN4TQ72KV"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-3TN4TQ72KV', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu065caa8f68a0b6e76b233ee18c5fef22_3844_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Daniel&#39;s Blog</a></h1>
+            <h2 class="site-description">Remember something in a good time.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://instagram.com/lee_wyane?r=nametag'
+                        target="_blank"
+                        title="Instagram"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="16" height="16" rx="4" />
+  <circle cx="12" cy="12" r="3" />
+  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://t.me/Daniel_474'
+                        target="_blank"
+                        title="Telegram"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/">
+                <img src="/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/background_hu29a719be0e2276f22570238cd344c661_31094_800x0_resize_q75_box.jpg"
+                        srcset="/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/background_hu29a719be0e2276f22570238cd344c661_31094_800x0_resize_q75_box.jpg 800w, /p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/background_hu29a719be0e2276f22570238cd344c661_31094_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="283" 
+                        loading="lazy"
+                        alt="Featured image of post 配置青龍面板並實現京東JS腳本運行" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/technology/" style="background-color: #2a9d8f; color: #fff;">
+                Technology
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/">配置青龍面板並實現京東JS腳本運行</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+             
+        </h3>
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 10, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="簡介">簡介</h2>
+<p><a class="link" href="https://github.com/whyour/qinglong"  target="_blank" rel="noopener"
+    >青龍面板</a>是運行在docker的一種容器 可以實現定時任務的管理 並且支持多種語言下的腳本 使用起來也十分方便 可以安裝在各種的 Linux 發行版上</p>
+<p>其實官方的文檔中就已經編寫的安裝說明 但可能對於小白來說並不容易理解</p>
+<p>所以我就打算寫一個小白版本的安裝過程 讓更多人順利安裝</p>
+<h2 id="安裝教程">安裝教程</h2>
+<h3 id="1安裝docker及docker-compose">1.安裝docker及docker-compose</h3>
+<p>在 Arch Linux 直接調用 pacman 就可以安裝了</p>
+<blockquote>
+<p>先安裝 docker</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo pacman -S docker //安裝 docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>再安裝 docker-compose</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo pacman -S docker-compose //安裝 docker-compose
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>安裝好了之後 我們就要運行 docker</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl start docker.service //運行 docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>當然 我們也可以把 docker 設置成開機自啓動 這樣就不用每次都運行指令了</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl enable docker.service //docker 開機自啓
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>到了這步 docker 及 docker-compose 就都已經安裝完成了</p>
+<h3 id="2安裝青龍面板">2.安裝青龍面板</h3>
+<blockquote>
+<p>新建一個文件夾（這裏文件夾名稱可以隨意）</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir qinglong //新建 qinglong 文件夾
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>開至文件夾目錄</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd qinglong //打開至 qinglong 文件夾目錄
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>本仓库中的 docker-compose.yml 本地</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget https://raw.githubusercontent.com/whyour/qinglong/develop/docker-compose.yml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<blockquote>
+<p>注意  在下載中可能會出現 ERROR
+<img src="/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/ERROR1.jpg"
+	width="828"
+	height="134"
+	srcset="/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/ERROR1_hu05bf2f59ea9d41c67493362ae36708ce_31146_480x0_resize_q75_box.jpg 480w, /p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/ERROR1_hu05bf2f59ea9d41c67493362ae36708ce_31146_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="錯誤1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="617"
+		data-flex-basis="1482px"
+	
+>
+出現的443錯誤是因爲端口無法訪問
+有科學上網能力的可以將proxy設爲全局就可以啦</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">export https_proxy=http://127.0.0.1:xxxx http_proxy=http://127.0.0.1:xxxx all_proxy=socks5://127.0.0.1:xxxx //把xxxx替換成自己的端口號就可以了
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果沒有科學上網能力 那就直接在本地創建一個 docker-compose.yml 文件 再到<a class="link" href="https://github.com/whyour/qinglong/blob/develop/docker-compose.yml"  target="_blank" rel="noopener"
+    >項目</a>中把內容復制進去也可以</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>啓動</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker-compose up -d //啓動青龍面板
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<blockquote>
+<p>注意 在啓動中可能會出現如下錯誤
+<img src="/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/ERROR2.jpg"
+	width="1094"
+	height="112"
+	srcset="/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/ERROR2_hu5d8bb581178de2a231f17dfefb096bb0_25338_480x0_resize_q75_box.jpg 480w, /p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/ERROR2_hu5d8bb581178de2a231f17dfefb096bb0_25338_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="錯誤2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="976"
+		data-flex-basis="2344px"
+	
+>
+我們需要將你的用戶添加到docker組中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo gpasswd -a $USER docker //添加到組中
+</span></span><span class="line"><span class="cl">wgrp docker
+</span></span><span class="line"><span class="cl">sudo systemctl start docker //重啓一次 docker
+</span></span><span class="line"><span class="cl">docker-compose up -d //啓動青龍面板
+</span></span></code></pre></td></tr></table>
+</div>
+</div></blockquote>
+</blockquote>
+<p>默认情况下qinglong将会在5700端口启动，并将端口映射至容器所在宿主机，启动之后打开浏览器访问宿主机的5700端口</p>
+<blockquote>
+<blockquote>
+<p>查找宿主機ip</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ip addr show docker0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/ip.jpg"
+	width="782"
+	height="108"
+	srcset="/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/ip_hub7f0bd0807d63ea8478a14d74cf2a7c7_17503_480x0_resize_q75_box.jpg 480w, /p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/ip_hub7f0bd0807d63ea8478a14d74cf2a7c7_17503_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="ip"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="724"
+		data-flex-basis="1737px"
+	
+>
+圖中 inet 後面的地址就是宿主機ip 172.17.0.1是我的ip地址</p>
+</blockquote>
+</blockquote>
+<p>打開瀏覽器 輸入ip：5700 就會顯示登錄頁面
+第一次账号密码均输入<code>admin</code>，会生成<code>auth.json</code> 頁面也會提示你輸入新的密碼
+運行下面的指令獲取新的密碼</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cat data/config/auth.json
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>返回的结果类似如下字段</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{&#34;username&#34;:&#34;admin&#34;,&#34;password&#34;:&#34;Xb-ZYP526wmg4_h6q1WqIO&#34;}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我們將新的密碼復制輸入後，即可成功登錄青龍面板</p>
+<h2 id="使用案例一運行京東腳本">使用案例一：運行京東腳本</h2>
+<p>在Github上 有許多關於京東JS腳本的項目 我們可以直接調用
+推薦：項目地址  <a class="link" href="https://github.com/zero205/JD_tencent_scf"  target="_blank" rel="noopener"
+    >https://github.com/zero205/JD_tencent_scf</a></p>
+<p>安裝步驟</p>
+<blockquote>
+<p>我們可以直接在 qinglong 文件夾目錄終端機中輸入</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker exec -it qinglong_web_1 ql repo https://ghproxy.com/https://github.com/zero205/JD_tencent_scf.git &#34;jd_|jx_|getJDCookie&#34; &#34;backUp|icon&#34; &#34;^jd[^_]|USER|sendNotify|sign_graphics_validate|JDJR&#34; &#34;main&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>腳本便會自動添加到面板中
+導入後我們便可以看到面板左邊側邊欄 配置文件 和 腳本管理 中新添了許多文件</p>
+</blockquote>
+<p>再獲取京東 cookie</p>
+<blockquote>
+<ol>
+<li>浏览器获取京东cookie教程 <a class="link" href="https://github.com/zero205/JD_tencent_scf/blob/main/backUp/GetJdCookie.md"  target="_blank" rel="noopener"
+    >https://github.com/zero205/JD_tencent_scf/blob/main/backUp/GetJdCookie.md</a></li>
+<li>插件获取京东cookie教程 <a class="link" href="https://github.com/zero205/JD_tencent_scf/blob/main/backUp/GetJdCookie2.md"  target="_blank" rel="noopener"
+    >https://github.com/zero205/JD_tencent_scf/blob/main/backUp/GetJdCookie2.md</a></li>
+</ol>
+</blockquote>
+<p>獲取到的 cookie 我們導入到面板的 環境變量中</p>
+<blockquote>
+<p>點擊左側側邊欄的 環境變量
+點擊右上角 添加變量
+名稱 可以設爲 JD_COOKIE 將獲取到的 cookie 復制到 值 當中</p>
+<blockquote>
+<p>這裏若是添加多個帳號 每個帳號之間的 cookie 要用 ; 隔開
+每個帳號的 cookies 過了一段時間就會失效 失效了就要再重新獲取了</p>
+</blockquote>
+</blockquote>
+<p>然後就可以試着運行 定時任務 中的任務了</p>
+<h2 id="最後">最後</h2>
+<p>青龍面板其實還有很多的使用方法 可以更多的探索</p>
+<p>感謝開發項目並無私分享的大佬們！</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/technology/">Technology</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Written by Daniel</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            Last updated on Apr 02, 2022 00:00 GMT&#43;8
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-contents--wrapper">
+    <h2 class="section-title">Related contents</h2>
+    <div class="related-contents">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/">
+        
+        
+            <div class="article-image">
+                <img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/background.33c1435ccccffacc91c81c69aef40d50_hued1092ee99fa311a297d02e827a150c5_15810_250x150_fill_q75_box_smart1.jpeg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Blog 後臺管理工具：Google Analytics"
+                        
+                        data-hash="md5-M8FDXMzP&#43;syRyBxprvQNUA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Blog 後臺管理工具：Google Analytics</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">
+        
+        
+            <div class="article-image">
+                <img src="/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/background.55fd424c910df6a3e7431119ec06eea6_hu2630ebeac12478d27b8e33661d01cb38_43931_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Blog 文章編輯語言：Markdown --- 語言學習筆記"
+                        
+                        data-hash="md5-Vf1CTJEN9qPnQxEZ7Abupg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Blog 文章編輯語言：Markdown --- 語言學習筆記</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/">
+        
+        
+            <div class="article-image">
+                <img src="/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/background.437233540105c93a0f22058e7250b027_hu8129c1d6205b89ce5b286bc145ffeacf_27810_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Blog 的搭建：使用 Github Page &#43; Hugo 架設一個屬於自己的 Blog"
+                        
+                        data-hash="md5-Q3IzVAEFyToPIgWOclCwJw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Blog 的搭建：使用 Github Page &#43; Hugo 架設一個屬於自己的 Blog</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/background.76efc30845c01ded617b3bab7afb7258_hu00ae979a9c6767be83547fc781536d75_6030_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post  一些「翻牆」軟體的使用方法 "
+                        
+                        data-hash="md5-du/DCEXAHe1hezurevtyWA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title"> 一些「翻牆」軟體的使用方法 </h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">
+        
+        
+            <div class="article-image">
+                <img src="/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/background.4b387263f92dff200000820c5579f442_hu840b472379512eff7a98cead1b9d6f8c_31067_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Google Voice 虛擬號的一些使用方法"
+                        
+                        data-hash="md5-SzhyY/kt/yAAAIIMVXn0Qg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Google Voice 虛擬號的一些使用方法</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wyanelee" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2021 - 
+        
+        2022 Daniel&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.11.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#簡介">簡介</a></li>
+    <li><a href="#安裝教程">安裝教程</a>
+      <ol>
+        <li><a href="#1安裝docker及docker-compose">1.安裝docker及docker-compose</a></li>
+        <li><a href="#2安裝青龍面板">2.安裝青龍面板</a></li>
+      </ol>
+    </li>
+    <li><a href="#使用案例一運行京東腳本">使用案例一：運行京東腳本</a></li>
+    <li><a href="#最後">最後</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

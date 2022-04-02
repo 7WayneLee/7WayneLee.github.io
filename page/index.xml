@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Pages on Daniel&#39;s Blog</title>
+        <link>https://7WayneLee.github.io/page/</link>
+        <description>Recent content in Pages on Daniel&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 12 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://7WayneLee.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>About</title>
+        <link>https://7WayneLee.github.io/about/</link>
+        <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://7WayneLee.github.io/about/</guid>
+        <description>&lt;h4 id=&#34;引言&#34;&gt;引言&lt;/h4&gt;
+&lt;p&gt;世上有些事情很難說明因由&lt;/p&gt;
+&lt;p&gt;就像一個和文字不太沾邊的人也會寫博客一樣&lt;/p&gt;
+&lt;p&gt;我不太會說話&lt;/p&gt;
+&lt;p&gt;也不太會寫字&lt;/p&gt;
+&lt;p&gt;更別說去評論一些人和事&lt;/p&gt;
+&lt;p&gt;可能只是單純想要有個地方&lt;/p&gt;
+&lt;p&gt;可以記下一些自己想說的 或想做的&amp;hellip; 吧&lt;/p&gt;
+&lt;p&gt;所以你們才會和「它們」相遇&lt;/p&gt;
+&lt;p&gt;希望你們喜歡&lt;/p&gt;
+&lt;h4 id=&#34;如果有需要可以通過下面的鏈接追蹤或聯繫到我&#34;&gt;如果有需要,可以通過下面的鏈接追蹤或聯繫到我:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Telegram: &lt;a class=&#34;link&#34; href=&#34;https://t.me/Daniel_474&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@Daniel_474&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Instagram:&lt;a class=&#34;link&#34; href=&#34;https://instagram.com/lee_wyane?r=nametag&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@lee_wyane&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Archives</title>
+        <link>https://7WayneLee.github.io/archives/</link>
+        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://7WayneLee.github.io/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Search</title>
+        <link>https://7WayneLee.github.io/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://7WayneLee.github.io/search/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

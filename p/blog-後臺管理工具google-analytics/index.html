@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='「Blog」教程系列文章'><title>Blog 後臺管理工具：Google Analytics</title>
+
+<link rel='canonical' href='https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/'>
+
+<link rel="stylesheet" href="/scss/style.min.450926226e724574a6b936335ea06111f8aeb253d932c86cb2cc807341cd2889.css"><meta property='og:title' content='Blog 後臺管理工具：Google Analytics'>
+<meta property='og:description' content='「Blog」教程系列文章'>
+<meta property='og:url' content='https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/'>
+<meta property='og:site_name' content='Daniel&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Technology' /><meta property='article:tag' content='Blog' /><meta property='article:published_time' content='2022-02-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-04-02T00:00:00&#43;00:00'/><meta property='og:image' content='https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/background.jpeg' />
+<meta name="twitter:title" content="Blog 後臺管理工具：Google Analytics">
+<meta name="twitter:description" content="「Blog」教程系列文章"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/background.jpeg' />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3TN4TQ72KV"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-3TN4TQ72KV', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu065caa8f68a0b6e76b233ee18c5fef22_3844_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Daniel&#39;s Blog</a></h1>
+            <h2 class="site-description">Remember something in a good time.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://instagram.com/lee_wyane?r=nametag'
+                        target="_blank"
+                        title="Instagram"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="16" height="16" rx="4" />
+  <circle cx="12" cy="12" r="3" />
+  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://t.me/Daniel_474'
+                        target="_blank"
+                        title="Telegram"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/">
+                <img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/background_hued1092ee99fa311a297d02e827a150c5_15810_800x0_resize_q75_box.jpeg"
+                        srcset="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/background_hued1092ee99fa311a297d02e827a150c5_15810_800x0_resize_q75_box.jpeg 800w, /p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/background_hued1092ee99fa311a297d02e827a150c5_15810_1600x0_resize_q75_box.jpeg 1600w"
+                        width="800" 
+                        height="451" 
+                        loading="lazy"
+                        alt="Featured image of post Blog 後臺管理工具：Google Analytics" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/technology/" style="background-color: #2a9d8f; color: #fff;">
+                Technology
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/">Blog 後臺管理工具：Google Analytics</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            「Blog」教程系列文章
+        </h3>
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Feb 12, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="引言">引言</h2>
+<p>在架設了網站後，可能我們希望能夠看到自己的網站有沒有人瀏覽，每天有多少人瀏覽，這些人都來自那裏這樣一系列的數據。這時我們就需要用到 Google 旗下的一個網站管理工具 &mdash; Google Analytics。Google Analytics 已經經過了很多年的升級，現在的使用可以說是十分的方便，也比較簡單，並且它可以將數據幫你按照你的需求進行整理，還能夠可視化的展示出你所要的數據。</p>
+<p>接下來就看看通過 Github Page + Hugo 所架設的 Blog 網站，該如何使用這個工具。</p>
+<h2 id="基本步驟">基本步驟</h2>
+<h3 id="設置-google-analytics--賬戶">設置 Google Analytics  賬戶</h3>
+<ol>
+<li>
+<p>打開 瀏覽器 進入 <a class="link" href="https://analytics.google.com/"  target="_blank" rel="noopener"
+    >https://analytics.google.com/</a> ，登陸 Google 賬戶</p>
+</li>
+<li>
+<p>點擊 <code>開始測量</code></p>
+</li>
+<li>
+<p>先給自己的賬戶取一個新的 <code>帳戶名稱</code>，帳戶資料共用設定我是勾選了前三項，你也可以根據自己的需求勾選，然後點 <code>下一步</code></p>
+</li>
+</ol>
+<p><img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/1.png"
+	width="1866"
+	height="732"
+	srcset="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/1_hud17ba7d0c474473909cf6496cc47a8ed_189094_480x0_resize_box_3.png 480w, /p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/1_hud17ba7d0c474473909cf6496cc47a8ed_189094_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="賬戶設定"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="254"
+		data-flex-basis="611px"
+	
+></p>
+<ol start="4">
+<li>
+<p>給自己獲取的數據資源取一個新的 <code>資源名稱</code>，因爲是針對於自己的 Blog 網站資源，所以我就填了我自己的「Blog名稱」，然後再點擊 <code>下一步</code></p>
+</li>
+<li>
+<p>在商家資訊中，這裏就根據自己的情況填寫就好。在填寫完成後，點擊 <code>建立</code></p>
+</li>
+<li>
+<p>然後只要 <code>接受</code> Google Analytics 服務條款合約就完成了</p>
+</li>
+</ol>
+<h3 id="設置-google-analytics-資源">設置 Google Analytics 資源</h3>
+<ol>
+<li>
+<p>進入主界面後，點擊左下角的 <code>齒輪圖標</code></p>
+</li>
+<li>
+<p>先在右側欄中點擊 <code>資料串流</code> ，再選擇 <code>網站</code></p>
+<p><img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/2.png"
+	width="1306"
+	height="608"
+	srcset="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/2_hu7bd7ccaf18ef82842c7c5ee8f4ea999c_46540_480x0_resize_box_3.png 480w, /p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/2_hu7bd7ccaf18ef82842c7c5ee8f4ea999c_46540_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="資料串流"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="214"
+		data-flex-basis="515px"
+	
+></p>
+</li>
+<li>
+<p>在網站網址中，輸入你的 Blog 域名，例如我輸入的是 <code>7waynelee.github.io</code> ，串流名稱可以填入你自己給你的 Blog 所取的名稱，都輸入完成後，點擊 <code>建立串流</code></p>
+<p><img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/3.png"
+	width="1430"
+	height="536"
+	srcset="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/3_hu2f7cd7ec25043e2b76d962aa99e3133d_63556_480x0_resize_box_3.png 480w, /p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/3_hu2f7cd7ec25043e2b76d962aa99e3133d_63556_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="設定網站網址"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="266"
+		data-flex-basis="640px"
+	
+></p>
+</li>
+<li>
+<p>接着就會跳出 <code>網頁串流詳情</code> ，在這當中可以獲得自己的 <code>評估ID</code> 和一串 <code>全域網站代碼</code> ，這在接下來會使用到</p>
+<p><img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/4.png"
+	width="1318"
+	height="799"
+	srcset="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/4_hu034c4ded489d94403a7fb7bd73196996_151145_480x0_resize_box_3.png 480w, /p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/4_hu034c4ded489d94403a7fb7bd73196996_151145_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="詳細訊息"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="164"
+		data-flex-basis="395px"
+	
+></p>
+</li>
+</ol>
+<h3 id="hugo-設置-configtoml">Hugo 設置 config.toml</h3>
+<p>接下來就需要將你的本地 Blog 文件進行一些修改</p>
+<ol>
+<li>
+<p>先到你的電腦中找到你的本地 Blog 目錄文件夾，也就是之前所創立的 <code>username-Hugo</code> 這個文件夾</p>
+</li>
+<li>
+<p>進入 <code>username-Hugo</code>文件夾中</p>
+</li>
+<li>
+<p>打開 config.toml / config.yml 進行編輯</p>
+</li>
+<li>
+<p>在 google Analytics 後面，貼上 <code>評估 ID</code>，格式爲 <code>&quot;G-XXXXX...&quot;</code>                                                                                                                                                   如果你的 config 檔案中沒有這個變量，就需要自己創建一個新的變臉，格式爲 <code>googleAnalytics=&quot;G-XXXXX...&quot;</code></p>
+<p><img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/5.png"
+	width="581"
+	height="160"
+	srcset="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/5_hucf8a0da7b224a8b0c6f65183882b23b6_20887_480x0_resize_box_3.png 480w, /p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/5_hucf8a0da7b224a8b0c6f65183882b23b6_20887_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="評估ID"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="363"
+		data-flex-basis="871px"
+	
+></p>
+</li>
+</ol>
+<h3 id="hugo-設置-google-analytics-html-調用模板">Hugo 設置 google analytics html 調用模板</h3>
+<ol>
+<li>
+<p>進入 username-Hugo/themes/hugo-theme-stack/layouts 目錄下</p>
+</li>
+<li>
+<p>創建一個名爲 <code>_internal</code> 的文件夾</p>
+</li>
+<li>
+<p>打開 <code>_internal</code> 文件夾，創建一個名爲 <code>google_analytics_async.html</code> 的檔案</p>
+</li>
+<li>
+<p>使用 <em>文字編輯器</em> 打開 <code>google_analytics_async.html</code> 檔案</p>
+<blockquote>
+<p>這裏直接 <code>左鍵</code> 雙擊打開，容易通過瀏覽器直接開啓。可能需要 <code>右鍵</code> ，選擇記事本類的軟體打開，才能編輯。</p>
+</blockquote>
+</li>
+<li>
+<p>在 Google Analytics 網站上，將剛剛在網站中得到的全域網站代碼複製，再粘貼到 <code>google_analytics_async.html </code> 這個檔案中</p>
+<p><img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/6.png"
+	width="1292"
+	height="433"
+	srcset="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/6_hu3a018ca8a3f06db42bb806b49278fb6a_88260_480x0_resize_box_3.png 480w, /p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/6_hu3a018ca8a3f06db42bb806b49278fb6a_88260_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="全域網站代碼"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="298"
+		data-flex-basis="716px"
+	
+></p>
+</li>
+<li>
+<p>再打開 <code>username-Hugo/themes/hugo-theme-stack/layouts\_default\</code> 到這個目錄下</p>
+</li>
+<li>
+<p>找到裏面的一個名爲 <code>baseof.html</code> 的檔案，使用<em>文字編輯器</em> 打開 <code>baseof.html</code>，在 ＜head＞…＜/head＞之間粘貼上以下代碼：</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{{ if not .Site.IsServer }}
+</span></span><span class="line"><span class="cl">  {{ template &#34;_internal/google_analytics_async.html&#34; . }}
+</span></span><span class="line"><span class="cl">{{ end }}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/7.png"
+	width="659"
+	height="197"
+	srcset="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/7_hu362301742b5a2b05f930c854525fd5bf_32332_480x0_resize_box_3.png 480w, /p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/7_hu362301742b5a2b05f930c854525fd5bf_32332_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="code"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="334"
+		data-flex-basis="802px"
+	
+></p>
+<ul>
+<li>回到 Blog 文件夾根目錄，重新通過 <code>hugo</code> 編譯並上傳到 Github</li>
+</ul>
+<h2 id="結語">結語</h2>
+<p>這樣以後，在 Google Analytics 中，就可以看到每天網站的訪問量，訪問地址，停留時間等等的數據。Google Analytics 大部分的數據都是以模塊的方式呈現，也是十分的方便，可以讓你自由的選擇需要看到的數據，可視化做的也不錯。</p>
+<p>在你剛剛設置好的時候，Google Analytics 是還沒有數據的。在經過一段時間的收集後，慢慢的就會展示出來了。當然剛架設的網站訪問量不高也很正常，只要後續的網站更新頻繁或者瀏覽的人數越來越多，Google 對你的網站的評級也就會慢慢升高，慢慢的訪問量就會上升了。</p>
+<p>關於 Blog 的系列文章，到這裏也就基本完成了，也差不該告一段落了。希望可以幫助到你們，擁有一個比較舒適的環境，存放自己的文字，擁有一個屬於自己的 Blog 網站。如果過程中需要幫助話，可以通過 <code>About</code> 界面下的 <em>Telegram</em> 鏈接和我取得聯繫，我也會儘量的幫助你。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/technology/">Technology</a>
+        
+            <a href="/tags/blog/">Blog</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Written by Daniel</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            Last updated on Apr 02, 2022 00:00 GMT&#43;8
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-contents--wrapper">
+    <h2 class="section-title">Related contents</h2>
+    <div class="related-contents">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">
+        
+        
+            <div class="article-image">
+                <img src="/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/background.55fd424c910df6a3e7431119ec06eea6_hu2630ebeac12478d27b8e33661d01cb38_43931_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Blog 文章編輯語言：Markdown --- 語言學習筆記"
+                        
+                        data-hash="md5-Vf1CTJEN9qPnQxEZ7Abupg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Blog 文章編輯語言：Markdown --- 語言學習筆記</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/">
+        
+        
+            <div class="article-image">
+                <img src="/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/background.437233540105c93a0f22058e7250b027_hu8129c1d6205b89ce5b286bc145ffeacf_27810_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Blog 的搭建：使用 Github Page &#43; Hugo 架設一個屬於自己的 Blog"
+                        
+                        data-hash="md5-Q3IzVAEFyToPIgWOclCwJw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Blog 的搭建：使用 Github Page &#43; Hugo 架設一個屬於自己的 Blog</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/background.76efc30845c01ded617b3bab7afb7258_hu00ae979a9c6767be83547fc781536d75_6030_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post  一些「翻牆」軟體的使用方法 "
+                        
+                        data-hash="md5-du/DCEXAHe1hezurevtyWA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title"> 一些「翻牆」軟體的使用方法 </h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">
+        
+        
+            <div class="article-image">
+                <img src="/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/background.4b387263f92dff200000820c5579f442_hu840b472379512eff7a98cead1b9d6f8c_31067_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Google Voice 虛擬號的一些使用方法"
+                        
+                        data-hash="md5-SzhyY/kt/yAAAIIMVXn0Qg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Google Voice 虛擬號的一些使用方法</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/background.c13764e4fccf777307c1b1cbf5b3468f_hu29a719be0e2276f22570238cd344c661_31094_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 配置青龍面板並實現京東JS腳本運行"
+                        
+                        data-hash="md5-wTdk5PzPd3MHwbHL9bNGjw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">配置青龍面板並實現京東JS腳本運行</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wyanelee" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2021 - 
+        
+        2022 Daniel&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.11.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#引言">引言</a></li>
+    <li><a href="#基本步驟">基本步驟</a>
+      <ol>
+        <li><a href="#設置-google-analytics--賬戶">設置 Google Analytics  賬戶</a></li>
+        <li><a href="#設置-google-analytics-資源">設置 Google Analytics 資源</a></li>
+        <li><a href="#hugo-設置-configtoml">Hugo 設置 config.toml</a></li>
+        <li><a href="#hugo-設置-google-analytics-html-調用模板">Hugo 設置 google analytics html 調用模板</a></li>
+      </ol>
+    </li>
+    <li><a href="#結語">結語</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

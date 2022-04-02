@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='此文章最後修改於 2021 / 12 / 20
+ 索引 寫這篇文章，源至於我在寫《臺灣學生在長沙生活指北》時的一個想法，也算對讀者的一個承諾。
+「翻牆」這個話題，在大陸來說，還是一個比較敏感的話題。這個行爲其實觸犯了大陸的法律，相關的內容可以了解查詢中華人民共和國網路審查，這其中就包括了對「翻牆」這個行爲的定義。
+但以我個人生活在大陸這些年，對大陸的了解，其實有六成以上的人會使用簡單的工具進行翻牆。所以如果你有這個習慣或者需求，其實你並不是少數人。
+如今，我覺得「翻牆」是一種很重要的生存手段。如果你在大陸長期生活，避免不了會有這種需求。當你需要查詢資料，收看新聞時，「牆內」的訊息也很難滿足你的需求。所以這篇文章，可能可以幫助到你。
+再來說說這篇文章。這篇文章我主要會分爲理論和實踐兩方面來寫。理論方面會在這裏介紹一些歷史，名詞，工具等等一類;而實踐方面，我則會着墨於如何使用一些主流的工具。會想講到理論，其實是希望每個人都能對你用到的東西能有一些了解，就算是淺顯的部分也可以。我覺得這能幫助你如何使用或者在出現問題時，你能夠有基本的動手能力。古人雲：「授人以魚不如授人以漁」，這才是比較重要的部分，而後面的實例，只是給你一個簡單的示範。當你有這方面的知識之後，你也可以寫出自己的教程。
+如果在閱讀文章的過程中你有任何的問題或者你覺得我的文章有錯誤，都可以來Telegram上找我， 我會很高興收到你們的建議。
+理論內容 什麼是「牆」 牆，其實是中華人民共和國國家防火牆，也稱「長城防火牆」，常用簡稱是GFW（取自 Great Fire Wall）。其實對官方來說並沒有GFW這個稱謂，只是後來民間興起和演變，這個綽號也被越來越多人熟知，於是也就變成了一種習慣名稱。
+爲什麼會有「牆」，其實起因有很多。因爲涉及衆多政治因素，這裏不做過多說明。
+GFW主要作用於分析和過濾中華人民共和國境內外網路間的相互訪問。這句話其實說明了GFW的工作其實是雙向性的，一是限制大陸網民訪問某些境外站點，二是限制國外的用戶訪問國內的站點。
+GFW的主要工作方式 在談到這個之前，我想先簡單的介紹一下一般情況下，在無GFW幹擾下訪問網站的過程。
+  一般情況下，在無GFW幹擾下訪問網站的基本過程
+在瀏覽器輸入你所要訪問的網站域名，你的電腦會生成一個數據包，通過你的本地網路接入骨幹網，再通過DNS域名解析，解析出你輸入的域名所要訪問的服務器ip地址，再傳入服務器中，服務器經過處理，會返回一個數據包到你的電腦。
+可能會有點難理解，但這個過程可以類比成「寫信-寄出-收信-回信」。當你寫信時，信封上需要有收信人的地址，這個地址就類似於上面的網站域名，寄出後，信回先到一個大的中轉站，然後會分發給信差，這步就類是於傳入服務器前的動作。然後收信人收到信後再回信，就類似於服務器接受請求返回數據包。其中發往服務器的過程中需要經過很多的地方，這些名詞你可以自行檢索，了解他們各自的工作。
+  再來介紹在有GFW工作下訪問網站的過程
+在前面的部分幾乎一樣，都是把數據包由本地網路接入骨幹網，再通過DNS解析，再來到GFW。接下來就會由GFW展開工作了。一般來說，GFW有三種基本工作原理：
+1.ip黑名單
+在GFW內，可能有一張巨大的ip黑名單，上面都是被屏蔽的ip地址。當域名經過DNS解析後，ip地址可能就會和黑名單中的ip地址進行檢索比較。如果你所訪問的網站的ip地址在這張名單上，就會被屏蔽。
+不過，這個方法的缺點也很明顯。如果單純採用這個方法進行工作，許多網站並不止有一個ip地址。如果另一個ip地址不在黑名單內，則可以正常訪問。
+2.關鍵字過濾
+當你傳輸過來的數據包含一些敏感詞的時候，就會馬上被中斷連接
+3.DNS劫持
+因爲一般網路數據包都是明文流量，GFW可以直接看到你所要訪問的地址。當知道你要訪問一些不能訪問的網站時，DNS會自動解析出一個錯誤的ip地址，或者直接不解析地址，讓服務器無法和你的電腦建立連接。
+上面講到的三種方法，其實是最簡單或者說基礎的方法，如今GFW逐漸完善，也多了其他很多的攔截方法。
+突破 GFW 的幾種方法   早期 Http 代理
+後來人們逐漸發現，只要 GFW 無法偵查到我的流量意圖，也就是我發送一個帶有加密請求的數據包到 GFW ，那麼 GFW 就無法進行攔截。於是早期的很多 http 代理都是依賴這些模式進行突破。
+簡單的講解一下過程。當你發送一個請求時，你的本地計算機會發送一個帶有加密請求的數據包，再接入本地網路，再到骨幹網，再由 DNS 解析，發現是去一臺沒有被「牆」的服務器（我們稱它爲中轉服務器）上，GFW 便會放行，然後到達這臺所謂「中轉」服務器上後便會解密數據包到真實你所要訪問的 ip 地址，再去往真實的服務器地址。之後服務器會返回數據給「中轉」服務器，再傳回你的本地計算機。
+這套邏輯很簡單，但也有很大的弊端。這個弊端就是帶有明顯的「特徵」。你的每一次請求所發送的數據包，都是帶有加密請求，並且會去往一臺中轉的服務器上。久而久之， GFW 的維護人員就嗅到了這個特徵。所以 GFW 也具有了攔截這些代理的功能。也因爲太多人採用這種方式突破，使得這種特徵實在他太過於明顯。所以現在單純 http 代理的 VPN 幾乎斷絕了。'><title> 一些「翻牆」軟體的使用方法 </title>
+
+<link rel='canonical' href='https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/'>
+
+<link rel="stylesheet" href="/scss/style.min.450926226e724574a6b936335ea06111f8aeb253d932c86cb2cc807341cd2889.css"><meta property='og:title' content=' 一些「翻牆」軟體的使用方法 '>
+<meta property='og:description' content='此文章最後修改於 2021 / 12 / 20
+ 索引 寫這篇文章，源至於我在寫《臺灣學生在長沙生活指北》時的一個想法，也算對讀者的一個承諾。
+「翻牆」這個話題，在大陸來說，還是一個比較敏感的話題。這個行爲其實觸犯了大陸的法律，相關的內容可以了解查詢中華人民共和國網路審查，這其中就包括了對「翻牆」這個行爲的定義。
+但以我個人生活在大陸這些年，對大陸的了解，其實有六成以上的人會使用簡單的工具進行翻牆。所以如果你有這個習慣或者需求，其實你並不是少數人。
+如今，我覺得「翻牆」是一種很重要的生存手段。如果你在大陸長期生活，避免不了會有這種需求。當你需要查詢資料，收看新聞時，「牆內」的訊息也很難滿足你的需求。所以這篇文章，可能可以幫助到你。
+再來說說這篇文章。這篇文章我主要會分爲理論和實踐兩方面來寫。理論方面會在這裏介紹一些歷史，名詞，工具等等一類;而實踐方面，我則會着墨於如何使用一些主流的工具。會想講到理論，其實是希望每個人都能對你用到的東西能有一些了解，就算是淺顯的部分也可以。我覺得這能幫助你如何使用或者在出現問題時，你能夠有基本的動手能力。古人雲：「授人以魚不如授人以漁」，這才是比較重要的部分，而後面的實例，只是給你一個簡單的示範。當你有這方面的知識之後，你也可以寫出自己的教程。
+如果在閱讀文章的過程中你有任何的問題或者你覺得我的文章有錯誤，都可以來Telegram上找我， 我會很高興收到你們的建議。
+理論內容 什麼是「牆」 牆，其實是中華人民共和國國家防火牆，也稱「長城防火牆」，常用簡稱是GFW（取自 Great Fire Wall）。其實對官方來說並沒有GFW這個稱謂，只是後來民間興起和演變，這個綽號也被越來越多人熟知，於是也就變成了一種習慣名稱。
+爲什麼會有「牆」，其實起因有很多。因爲涉及衆多政治因素，這裏不做過多說明。
+GFW主要作用於分析和過濾中華人民共和國境內外網路間的相互訪問。這句話其實說明了GFW的工作其實是雙向性的，一是限制大陸網民訪問某些境外站點，二是限制國外的用戶訪問國內的站點。
+GFW的主要工作方式 在談到這個之前，我想先簡單的介紹一下一般情況下，在無GFW幹擾下訪問網站的過程。
+  一般情況下，在無GFW幹擾下訪問網站的基本過程
+在瀏覽器輸入你所要訪問的網站域名，你的電腦會生成一個數據包，通過你的本地網路接入骨幹網，再通過DNS域名解析，解析出你輸入的域名所要訪問的服務器ip地址，再傳入服務器中，服務器經過處理，會返回一個數據包到你的電腦。
+可能會有點難理解，但這個過程可以類比成「寫信-寄出-收信-回信」。當你寫信時，信封上需要有收信人的地址，這個地址就類似於上面的網站域名，寄出後，信回先到一個大的中轉站，然後會分發給信差，這步就類是於傳入服務器前的動作。然後收信人收到信後再回信，就類似於服務器接受請求返回數據包。其中發往服務器的過程中需要經過很多的地方，這些名詞你可以自行檢索，了解他們各自的工作。
+  再來介紹在有GFW工作下訪問網站的過程
+在前面的部分幾乎一樣，都是把數據包由本地網路接入骨幹網，再通過DNS解析，再來到GFW。接下來就會由GFW展開工作了。一般來說，GFW有三種基本工作原理：
+1.ip黑名單
+在GFW內，可能有一張巨大的ip黑名單，上面都是被屏蔽的ip地址。當域名經過DNS解析後，ip地址可能就會和黑名單中的ip地址進行檢索比較。如果你所訪問的網站的ip地址在這張名單上，就會被屏蔽。
+不過，這個方法的缺點也很明顯。如果單純採用這個方法進行工作，許多網站並不止有一個ip地址。如果另一個ip地址不在黑名單內，則可以正常訪問。
+2.關鍵字過濾
+當你傳輸過來的數據包含一些敏感詞的時候，就會馬上被中斷連接
+3.DNS劫持
+因爲一般網路數據包都是明文流量，GFW可以直接看到你所要訪問的地址。當知道你要訪問一些不能訪問的網站時，DNS會自動解析出一個錯誤的ip地址，或者直接不解析地址，讓服務器無法和你的電腦建立連接。
+上面講到的三種方法，其實是最簡單或者說基礎的方法，如今GFW逐漸完善，也多了其他很多的攔截方法。
+突破 GFW 的幾種方法   早期 Http 代理
+後來人們逐漸發現，只要 GFW 無法偵查到我的流量意圖，也就是我發送一個帶有加密請求的數據包到 GFW ，那麼 GFW 就無法進行攔截。於是早期的很多 http 代理都是依賴這些模式進行突破。
+簡單的講解一下過程。當你發送一個請求時，你的本地計算機會發送一個帶有加密請求的數據包，再接入本地網路，再到骨幹網，再由 DNS 解析，發現是去一臺沒有被「牆」的服務器（我們稱它爲中轉服務器）上，GFW 便會放行，然後到達這臺所謂「中轉」服務器上後便會解密數據包到真實你所要訪問的 ip 地址，再去往真實的服務器地址。之後服務器會返回數據給「中轉」服務器，再傳回你的本地計算機。
+這套邏輯很簡單，但也有很大的弊端。這個弊端就是帶有明顯的「特徵」。你的每一次請求所發送的數據包，都是帶有加密請求，並且會去往一臺中轉的服務器上。久而久之， GFW 的維護人員就嗅到了這個特徵。所以 GFW 也具有了攔截這些代理的功能。也因爲太多人採用這種方式突破，使得這種特徵實在他太過於明顯。所以現在單純 http 代理的 VPN 幾乎斷絕了。'>
+<meta property='og:url' content='https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/'>
+<meta property='og:site_name' content='Daniel&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Technology' /><meta property='article:tag' content='GFW' /><meta property='article:published_time' content='2021-11-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-12-20T00:00:00&#43;00:00'/><meta property='og:image' content='https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/background.png' />
+<meta name="twitter:title" content=" 一些「翻牆」軟體的使用方法 ">
+<meta name="twitter:description" content="此文章最後修改於 2021 / 12 / 20
+ 索引 寫這篇文章，源至於我在寫《臺灣學生在長沙生活指北》時的一個想法，也算對讀者的一個承諾。
+「翻牆」這個話題，在大陸來說，還是一個比較敏感的話題。這個行爲其實觸犯了大陸的法律，相關的內容可以了解查詢中華人民共和國網路審查，這其中就包括了對「翻牆」這個行爲的定義。
+但以我個人生活在大陸這些年，對大陸的了解，其實有六成以上的人會使用簡單的工具進行翻牆。所以如果你有這個習慣或者需求，其實你並不是少數人。
+如今，我覺得「翻牆」是一種很重要的生存手段。如果你在大陸長期生活，避免不了會有這種需求。當你需要查詢資料，收看新聞時，「牆內」的訊息也很難滿足你的需求。所以這篇文章，可能可以幫助到你。
+再來說說這篇文章。這篇文章我主要會分爲理論和實踐兩方面來寫。理論方面會在這裏介紹一些歷史，名詞，工具等等一類;而實踐方面，我則會着墨於如何使用一些主流的工具。會想講到理論，其實是希望每個人都能對你用到的東西能有一些了解，就算是淺顯的部分也可以。我覺得這能幫助你如何使用或者在出現問題時，你能夠有基本的動手能力。古人雲：「授人以魚不如授人以漁」，這才是比較重要的部分，而後面的實例，只是給你一個簡單的示範。當你有這方面的知識之後，你也可以寫出自己的教程。
+如果在閱讀文章的過程中你有任何的問題或者你覺得我的文章有錯誤，都可以來Telegram上找我， 我會很高興收到你們的建議。
+理論內容 什麼是「牆」 牆，其實是中華人民共和國國家防火牆，也稱「長城防火牆」，常用簡稱是GFW（取自 Great Fire Wall）。其實對官方來說並沒有GFW這個稱謂，只是後來民間興起和演變，這個綽號也被越來越多人熟知，於是也就變成了一種習慣名稱。
+爲什麼會有「牆」，其實起因有很多。因爲涉及衆多政治因素，這裏不做過多說明。
+GFW主要作用於分析和過濾中華人民共和國境內外網路間的相互訪問。這句話其實說明了GFW的工作其實是雙向性的，一是限制大陸網民訪問某些境外站點，二是限制國外的用戶訪問國內的站點。
+GFW的主要工作方式 在談到這個之前，我想先簡單的介紹一下一般情況下，在無GFW幹擾下訪問網站的過程。
+  一般情況下，在無GFW幹擾下訪問網站的基本過程
+在瀏覽器輸入你所要訪問的網站域名，你的電腦會生成一個數據包，通過你的本地網路接入骨幹網，再通過DNS域名解析，解析出你輸入的域名所要訪問的服務器ip地址，再傳入服務器中，服務器經過處理，會返回一個數據包到你的電腦。
+可能會有點難理解，但這個過程可以類比成「寫信-寄出-收信-回信」。當你寫信時，信封上需要有收信人的地址，這個地址就類似於上面的網站域名，寄出後，信回先到一個大的中轉站，然後會分發給信差，這步就類是於傳入服務器前的動作。然後收信人收到信後再回信，就類似於服務器接受請求返回數據包。其中發往服務器的過程中需要經過很多的地方，這些名詞你可以自行檢索，了解他們各自的工作。
+  再來介紹在有GFW工作下訪問網站的過程
+在前面的部分幾乎一樣，都是把數據包由本地網路接入骨幹網，再通過DNS解析，再來到GFW。接下來就會由GFW展開工作了。一般來說，GFW有三種基本工作原理：
+1.ip黑名單
+在GFW內，可能有一張巨大的ip黑名單，上面都是被屏蔽的ip地址。當域名經過DNS解析後，ip地址可能就會和黑名單中的ip地址進行檢索比較。如果你所訪問的網站的ip地址在這張名單上，就會被屏蔽。
+不過，這個方法的缺點也很明顯。如果單純採用這個方法進行工作，許多網站並不止有一個ip地址。如果另一個ip地址不在黑名單內，則可以正常訪問。
+2.關鍵字過濾
+當你傳輸過來的數據包含一些敏感詞的時候，就會馬上被中斷連接
+3.DNS劫持
+因爲一般網路數據包都是明文流量，GFW可以直接看到你所要訪問的地址。當知道你要訪問一些不能訪問的網站時，DNS會自動解析出一個錯誤的ip地址，或者直接不解析地址，讓服務器無法和你的電腦建立連接。
+上面講到的三種方法，其實是最簡單或者說基礎的方法，如今GFW逐漸完善，也多了其他很多的攔截方法。
+突破 GFW 的幾種方法   早期 Http 代理
+後來人們逐漸發現，只要 GFW 無法偵查到我的流量意圖，也就是我發送一個帶有加密請求的數據包到 GFW ，那麼 GFW 就無法進行攔截。於是早期的很多 http 代理都是依賴這些模式進行突破。
+簡單的講解一下過程。當你發送一個請求時，你的本地計算機會發送一個帶有加密請求的數據包，再接入本地網路，再到骨幹網，再由 DNS 解析，發現是去一臺沒有被「牆」的服務器（我們稱它爲中轉服務器）上，GFW 便會放行，然後到達這臺所謂「中轉」服務器上後便會解密數據包到真實你所要訪問的 ip 地址，再去往真實的服務器地址。之後服務器會返回數據給「中轉」服務器，再傳回你的本地計算機。
+這套邏輯很簡單，但也有很大的弊端。這個弊端就是帶有明顯的「特徵」。你的每一次請求所發送的數據包，都是帶有加密請求，並且會去往一臺中轉的服務器上。久而久之， GFW 的維護人員就嗅到了這個特徵。所以 GFW 也具有了攔截這些代理的功能。也因爲太多人採用這種方式突破，使得這種特徵實在他太過於明顯。所以現在單純 http 代理的 VPN 幾乎斷絕了。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/background.png' />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3TN4TQ72KV"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-3TN4TQ72KV', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu065caa8f68a0b6e76b233ee18c5fef22_3844_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Daniel&#39;s Blog</a></h1>
+            <h2 class="site-description">Remember something in a good time.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://instagram.com/lee_wyane?r=nametag'
+                        target="_blank"
+                        title="Instagram"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="16" height="16" rx="4" />
+  <circle cx="12" cy="12" r="3" />
+  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://t.me/Daniel_474'
+                        target="_blank"
+                        title="Telegram"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">
+                <img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/background_hu00ae979a9c6767be83547fc781536d75_6030_800x0_resize_box_3.png"
+                        srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/background_hu00ae979a9c6767be83547fc781536d75_6030_800x0_resize_box_3.png 800w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/background_hu00ae979a9c6767be83547fc781536d75_6030_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="337" 
+                        loading="lazy"
+                        alt="Featured image of post  一些「翻牆」軟體的使用方法 " />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/technology/" style="background-color: #2a9d8f; color: #fff;">
+                Technology
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"> 一些「翻牆」軟體的使用方法 </a>
+        </h2>
+    
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 16, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    4 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <blockquote>
+<p>此文章最後修改於 2021 / 12 / 20</p>
+</blockquote>
+<h1 id="索引">索引</h1>
+<p>寫這篇文章，源至於我在寫<a class="link" href="https://7waynelee.github.io/p/%E8%87%BA%E7%81%A3%E5%AD%B8%E7%94%9F%E5%9C%A8%E9%95%B7%E6%B2%99%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8C%97/"  target="_blank" rel="noopener"
+    >《臺灣學生在長沙生活指北》</a>時的一個想法，也算對讀者的一個承諾。</p>
+<p>「翻牆」這個話題，在大陸來說，還是一個比較敏感的話題。這個行爲其實觸犯了大陸的法律，相關的內容可以了解查詢<a class="link" href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E7%BD%91%E7%BB%9C%E5%AE%A1%E6%9F%A5"  target="_blank" rel="noopener"
+    >中華人民共和國網路審查</a>，這其中就包括了對「翻牆」這個行爲的定義。</p>
+<p>但以我個人生活在大陸這些年，對大陸的了解，其實有六成以上的人會使用簡單的工具進行翻牆。所以如果你有這個習慣或者需求，其實你並不是少數人。</p>
+<p>如今，我覺得「翻牆」是一種很重要的生存手段。如果你在大陸長期生活，避免不了會有這種需求。當你需要查詢資料，收看新聞時，「牆內」的訊息也很難滿足你的需求。所以這篇文章，可能可以幫助到你。</p>
+<p>再來說說這篇文章。這篇文章我主要會分爲理論和實踐兩方面來寫。理論方面會在這裏介紹一些歷史，名詞，工具等等一類;而實踐方面，我則會着墨於如何使用一些主流的工具。會想講到理論，其實是希望每個人都能對你用到的東西能有一些了解，就算是淺顯的部分也可以。我覺得這能幫助你如何使用或者在出現問題時，你能夠有基本的動手能力。古人雲：「授人以魚不如授人以漁」，這才是比較重要的部分，而後面的實例，只是給你一個簡單的示範。當你有這方面的知識之後，你也可以寫出自己的教程。</p>
+<p>如果在閱讀文章的過程中你有任何的問題或者你覺得我的文章有錯誤，都可以來Telegram上找我，
+我會很高興收到你們的建議。</p>
+<h2 id="理論內容">理論內容</h2>
+<h3 id="什麼是牆">什麼是「牆」</h3>
+<p>牆，其實是中華人民共和國國家防火牆，也稱「<a class="link" href="https://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E"  target="_blank" rel="noopener"
+    >長城防火牆</a>」，常用簡稱是GFW（取自 <strong>G</strong>reat <strong>F</strong>ire <strong>W</strong>all）。其實對官方來說並沒有GFW這個稱謂，只是後來民間興起和演變，這個綽號也被越來越多人熟知，於是也就變成了一種習慣名稱。</p>
+<p>爲什麼會有「牆」，其實起因有很多。因爲涉及衆多政治因素，這裏不做過多說明。</p>
+<p>GFW主要作用於分析和過濾中華人民共和國境內外網路間的相互訪問。這句話其實說明了GFW的工作其實是雙向性的，一是限制大陸網民訪問某些境外站點，二是限制國外的用戶訪問國內的站點。</p>
+<h3 id="gfw的主要工作方式">GFW的主要工作方式</h3>
+<p>在談到這個之前，我想先簡單的介紹一下一般情況下，在無GFW幹擾下訪問網站的過程。</p>
+<ul>
+<li>
+<p>一般情況下，在無GFW幹擾下訪問網站的基本過程</p>
+<p>在瀏覽器輸入你所要訪問的<a class="link" href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D"  target="_blank" rel="noopener"
+    >網站域名</a>，你的電腦會生成一個數據包，通過你的本地網路接入<a class="link" href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E4%BA%92%E8%81%94%E7%BD%91%E9%AA%A8%E5%B9%B2%E7%BD%91"  target="_blank" rel="noopener"
+    >骨幹網</a>，再通過<a class="link" href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F"  target="_blank" rel="noopener"
+    >DNS</a>域名解析，解析出你輸入的域名所要訪問的服務器ip地址，再傳入服務器中，服務器經過處理，會返回一個數據包到你的電腦。</p>
+<p>可能會有點難理解，但這個過程可以類比成「寫信-寄出-收信-回信」。當你寫信時，信封上需要有收信人的地址，這個地址就類似於上面的網站域名，寄出後，信回先到一個大的中轉站，然後會分發給信差，這步就類是於傳入服務器前的動作。然後收信人收到信後再回信，就類似於服務器接受請求返回數據包。其中發往服務器的過程中需要經過很多的地方，這些名詞你可以自行檢索，了解他們各自的工作。</p>
+</li>
+</ul>
+<p>再來介紹在有GFW工作下訪問網站的過程</p>
+<p>在前面的部分幾乎一樣，都是把數據包由本地網路接入骨幹網，再通過DNS解析，再來到GFW。接下來就會由GFW展開工作了。一般來說，GFW有三種基本工作原理：</p>
+<p>1.ip黑名單</p>
+<p>在GFW內，可能有一張巨大的ip黑名單，上面都是被屏蔽的ip地址。當域名經過DNS解析後，ip地址可能就會和黑名單中的ip地址進行檢索比較。如果你所訪問的網站的ip地址在這張名單上，就會被屏蔽。</p>
+<p>不過，這個方法的缺點也很明顯。如果單純採用這個方法進行工作，許多網站並不止有一個ip地址。如果另一個ip地址不在黑名單內，則可以正常訪問。</p>
+<p>2.關鍵字過濾</p>
+<p>當你傳輸過來的數據包含一些敏感詞的時候，就會馬上被中斷連接</p>
+<p>3.DNS劫持</p>
+<p>因爲一般網路數據包都是明文流量，GFW可以直接看到你所要訪問的地址。當知道你要訪問一些不能訪問的網站時，DNS會自動解析出一個錯誤的ip地址，或者直接不解析地址，讓服務器無法和你的電腦建立連接。</p>
+<p>上面講到的三種方法，其實是最簡單或者說基礎的方法，如今GFW逐漸完善，也多了其他很多的攔截方法。</p>
+<h3 id="突破-gfw-的幾種方法">突破 GFW 的幾種方法</h3>
+<ul>
+<li>
+<p>早期 Http 代理</p>
+<p>後來人們逐漸發現，只要 GFW 無法偵查到我的流量意圖，也就是我發送一個帶有<strong>加密請求</strong>的數據包到 GFW ，那麼 GFW 就無法進行攔截。於是早期的很多 http 代理都是依賴這些模式進行突破。</p>
+<p>簡單的講解一下過程。當你發送一個請求時，你的本地計算機會發送一個帶有加密請求的數據包，再接入本地網路，再到骨幹網，再由 DNS 解析，發現是去一臺沒有被「牆」的服務器（我們稱它爲中轉服務器）上，GFW 便會放行，然後到達這臺所謂「中轉」服務器上後便會解密數據包到真實你所要訪問的 ip 地址，再去往真實的服務器地址。之後服務器會返回數據給「中轉」服務器，再傳回你的本地計算機。</p>
+<p>這套邏輯很簡單，但也有很大的弊端。這個弊端就是帶有明顯的「特徵」。你的每一次請求所發送的數據包，都是帶有加密請求，並且會去往一臺中轉的服務器上。久而久之， GFW 的維護人員就嗅到了這個特徵。所以 GFW 也具有了攔截這些代理的功能。也因爲太多人採用這種方式突破，使得這種特徵實在他太過於明顯。所以現在單純 http 代理的 VPN 幾乎斷絕了。</p>
+</li>
+<li>
+<p>Shadowsocks 的出現及衍生工具</p>
+<p>可以說 Shadowsocks 的出現是這段歷史中最精彩的一個節點。<a class="link" href="https://github.com/shadowsocks/"  target="_blank" rel="noopener"
+    >Shadowsocks</a> 的作者是 <a class="link" href="https://github.com/Clowwindy"  target="_blank" rel="noopener"
+    >Clowwindy</a> ，其原理也是通過一個加密的數據包來欺騙 GFW ，但與上面說的不同點再於， Shadowsocks 是基於<strong>本地端</strong>-<strong>服務器端</strong>這樣一個架構，在本地端運行時，數據包就已經完成了加密，使得 GFW 並不清楚你的意圖，也不帶有明顯的特徵，到達遠端 Shadowsocks 服務器後，再進行解密，去往你要去的地址。</p>
+<p>當然革命性的技術的出現，讓 GFW 的維護人員十分頭疼。因爲流量加密（雖然只是簡單的 sock 加密），但也足夠騙過 GFW 去訪問他們不想讓你訪問的網站，並且也不能禁止所有的加密流量通過，因爲加密流量中還會有很多的正常的流量需要通行。所以讓 GFW 很難攔截此類流量。</p>
+<p>之後 Shadowsocks 就因爲政府介入，原來的 Shadowsocks 專案也被迫刪庫。但因爲有很多人 fork 了此專案，使得副本還有很多的使用者維護。後來 Clowwindy 也恢復了此專案。</p>
+<p>但因爲有了 Shadowsocks 的這套理論邏輯，也演變出了其他的工具。例如 V2ray ，Clash ，SSR 等一系列的工具軟件。這些軟件在某些細節上可能有不同，但都是基於 Shadowsocks 的基本原理。</p>
+</li>
+</ul>
+<blockquote>
+<p>這段內容可能會導致一些人誤解 Shadowsocks 只是爲了用來突破GFW，其實這只是其中的一個功能。 Shadowsocks 其實是一個流量安全加密框架，其實是用來進行流量加密，可以更安全的進行傳輸。 Shadowsocks 也不算是一個「單獨的」軟體，它需要有伺服器端和用戶端才能正常使用。伺服器可以是任何的 vps，亦或者是你所購買的節點。而用戶端則是通過你所使用的裝置上的軟體。只有兩端進行連接後，才能正常使用。</p>
+</blockquote>
+<h3 id="一些詞語或名詞">一些詞語或名詞</h3>
+<ul>
+<li>
+<p>「飛機」和「機場」</p>
+<p>這個詞的來源挺有意思。早期有節點供應商的時候，爲了「避諱」，就在想一個比較好的詞來表示他們。因爲 Shadowsocks 的圖標是一個灰色的紙飛機，所以就會用「飛機」來代替這些節點。而飛機就需要一個停機坪，一般的飛機都停在機場內，所以就把提供節點的供應商稱作「機場」，機場老板一般叫「機場主」。</p>
+<p>這個稱呼沿用至今，不管是任何類型（即使不是 Shadowsocks sock5協議的節點）的節點供應商都被稱爲「機場」。</p>
+<p>這個稱謂也是爲了和<strong>加速器</strong>進行區分。</p>
+</li>
+<li>
+<p>關於「線路」的名詞</p>
+<p>這裏會簡略的提到一些機場常用的線路，幫助大家在選購「機場」時有一個初步了解。</p>
+<blockquote>
+<p>這裏所介紹的線路，還是比較淺顯的。在自己選購的時候，一定要基於自己的情況來選擇。</p>
+<p>而且機場水深，還是不要單純看他標榜的線路，自己實測一下還是最好的。</p>
+</blockquote>
+<p><strong>IPCL</strong></p>
+<p>全稱是 International Private Leased Circuit ，翻譯成中文爲“國際私用出租線路”。</p>
+<p>這條線路 is awesome ，因爲實際上這是一條專線，傳輸不經過公網，只會經過內網，這就說明這條線路本不過牆，也就是你發送的請求是不會經過 GFW 。</p>
+<p>要說缺點，可能真的就只有「貴」吧，一般來說帶寬小流量低。當然並不是說好的線路就不會卡。再好的線路多人一起用，都會出現卡噸的情況。</p>
+<p><strong><a class="link" href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E7%94%B5%E4%BF%A1%E4%B8%8B%E4%B8%80%E4%BB%A3%E6%89%BF%E8%BD%BD%E7%BD%91"  target="_blank" rel="noopener"
+    >CN2</a></strong></p>
+<p>全稱是 ChinaNet Next Carrying Network ，縮寫爲 CNCN ，也就是 CN2 ，翻譯過來就是“中國電信下一代承載網”。</p>
+<p>特點就是採用了 QoS 技術，這是163骨幹網路所沒有的技術。QoS 簡單理解就是能夠識別你網路中的流量的需求，從而調整帶寬速率。比如你在玩遊戲時可能不需要這麼高的速率但需要低延遲，QoS 就能自動偵測進行調整。</p>
+<p><strong>BGP</strong></p>
+<p>這個一般稱爲「多線機房」，他會根據你的網路服務商來自動連接到最適合你的連接服務。</p>
+<p><strong>IEPL</strong></p>
+<p>全稱是 International Ethernet Private Line ，翻譯成中文爲“國際以太網專線”。</p>
+<p>這條線路算是真正的端到端的<strong>以太網</strong>線路，一般的大型跨國企業可能會選擇這條路線。因爲是以太網線路，則只需要 MAC地址 就可以直接配置線路，並且更加穩定，也有更快的速率。</p>
+</li>
+<li>
+<p>VPS</p>
+<p>全稱是 Virtual private server ，翻譯成中文就是虛擬專用伺服器。其實就是一臺<strong>實體</strong>伺服器，再通過一些技術分割成一個個獨立的虛擬伺服器。因爲他們分割之後並沒有各自的實體，本質上還是共用一臺伺服器，所以就叫做<strong>虛擬</strong>伺服器。</p>
+<p>每個VPS都可分配獨立公網IP位址、獨立作業系統、實現不同 VPS 間磁碟空間、記憶體、 CPU 資源、行程和系統組態的隔離，為使用者和應用程式類比出「獨占」使用計算資源的體驗。 VPS 可以像獨立伺服器一樣，重新安裝作業系統，安裝程式，單獨重新啟動伺服器。</p>
+<p>一般的服務中，也不會使用到一整臺伺服器。爲了節省資源，也就會分成一個個 VPS 分別使用。所以一般我們把這個<strong>實體</strong>伺服器稱謂「母雞」，下面的 VPS 就稱謂「小雞」。一般的節點服務，都是用 VPS 搭建的。</p>
+</li>
+<li>
+<p>流媒體解鎖</p>
+<p>爲什麼想談這個問題呢，因爲其實這不僅是在大陸才有需要。如果你想要訂閱流媒體服務並且收看其他國家區域的流媒體，也會有「翻牆」的需求。比如說，我在香港購買了 Netflix 港區的流媒體服務，但我還想看一些只有新加坡區獨家的節目，那麼我就可以選擇「翻」到新加坡，然後觀看新加坡的節目。</p>
+<p>但這些流媒體供應商是會審查你是否使用了  proxy(代理) 。一般來說，一些大的 VPS 的提供商的 IP 是直接被流媒體商家屏蔽掉的，就是這些 IP 是無法訪問流媒體網站的。 像是 Netflix 和 Hulu ，還會對你的IP注冊地址和所在國家是否一致。如果你的節點的 VPS 所在的國家和節點 IP 的注冊地址不一致的話，也是無法使用這些流媒體服務的。</p>
+<p>從21年來，流媒體大範圍的開始屏蔽一些網絡服務商的 IP。因爲一些機場使用 cookie 共享流媒體帳號，來讓用戶使用。就導致了一個帳號會有上百個人使用，這就讓商家不願意了，於是開始屏蔽掉一些網路服務商的 IP。不過就目前來說，還是可以正常使用流媒體。</p>
+<p>如果你需要流媒體服務的話，就要選擇帶有流媒體解鎖的機場。</p>
+</li>
+</ul>
+<h2 id="應用操作部分">應用操作部分</h2>
+<h3 id="關於機場的選購">關於「機場」的選購</h3>
+<p>我並不會給別人推薦什麼「機場」，因爲這其實因人而異。地理位置，網路服務商其實都會對你的實際體驗有影響。所以我還是會建議你先從一些有一定使用人數和年份的「老機場」，再去購買來體驗實測，你覺得好用再長期購買。</p>
+<h3 id="使用工具方法">使用工具方法</h3>
+<h4 id="mac-os"><strong>Mac OS</strong></h4>
+<h5 id="clashx">ClashX</h5>
+<p>先到 ClashX 的 <a class="link" href="" >releases</a> 下載 <strong>ClashX.dmg 檔案</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX1.jpg"
+	width="1914"
+	height="873"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX1_hu7afe993a9b02ef5b242a790388e871fd_101151_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX1_hu7afe993a9b02ef5b242a790388e871fd_101151_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="releases"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="219"
+		data-flex-basis="526px"
+	
+></p>
+<p>下載完成後，雙擊<strong>打開檔案</strong>，雙擊 <strong>ClashX 圖標</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX2.jpg"
+	width="1322"
+	height="824"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX2_hub30ad0e20c2467c54f7f489b7232b233_47209_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX2_hub30ad0e20c2467c54f7f489b7232b233_47209_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="雙擊"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="160"
+		data-flex-basis="385px"
+	
+></p>
+<p>點擊 <strong>打開</strong> 按鈕
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX3.jpg"
+	width="619"
+	height="770"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX3_hu5b6d4dd96ced69503f6d6ad1192f26fb_44952_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX3_hu5b6d4dd96ced69503f6d6ad1192f26fb_44952_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="確定按鈕"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="80"
+		data-flex-basis="192px"
+	
+></p>
+<p>安裝完成後，可以到<strong>應用選單</strong>上找到 ClashX，單擊打開
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX4.jpg"
+	width="1547"
+	height="950"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX4_hue8c0a5aaa7d00c64659c9e635b26bc29_49054_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX4_hue8c0a5aaa7d00c64659c9e635b26bc29_49054_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="應用選單"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="162"
+		data-flex-basis="390px"
+	
+></p>
+<p>打開之後，可以在任務欄上看到 ClashX 的<strong>圖標</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX5.jpg"
+	width="1349"
+	height="885"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX5_hubdb70792057dc6888d4c08d95ca3f0e9_94415_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX5_hubdb70792057dc6888d4c08d95ca3f0e9_94415_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="狀態欄圖標"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="152"
+		data-flex-basis="365px"
+	
+></p>
+<p>右鍵<strong>狀態欄圖標</strong>，可以看到展開的選項列表
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX6.jpg"
+	width="927"
+	height="945"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX6_hub9d4009a9ca54da0faf53b599633630c_68800_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX6_hub9d4009a9ca54da0faf53b599633630c_68800_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="選項列表"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="98"
+		data-flex-basis="235px"
+	
+></p>
+<p>選擇並單擊 配置-託管配置-管理
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX7.jpg"
+	width="1033"
+	height="946"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX7_hu47e8e5cff7c653481635349eaa1348b5_92077_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX7_hu47e8e5cff7c653481635349eaa1348b5_92077_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="管理"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="109"
+		data-flex-basis="262px"
+	
+></p>
+<p>點擊 <strong>添加</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX8.jpg"
+	width="804"
+	height="556"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX8_hu4ba53418dbca4ba3a73a270a260a018e_24703_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX8_hu4ba53418dbca4ba3a73a270a260a018e_24703_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="添加"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="144"
+		data-flex-basis="347px"
+	
+></p>
+<p>將機場的訂閱地址，復制到 <strong>Url</strong> 欄內; <strong>Config Name</strong> 欄可以隨便取一個名字。然後點擊<strong>確定</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX9.jpg"
+	width="741"
+	height="500"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX9_hu65bdbac4ca90a725383c68fc85dbf578_29446_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX9_hu65bdbac4ca90a725383c68fc85dbf578_29446_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="訂閱地址"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="148"
+		data-flex-basis="355px"
+	
+></p>
+<p>然後回到上一個界面，先<strong>單擊選定配置文件</strong>，再點擊<strong>更新</strong>，最後點擊<strong>確定</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX10.jpg"
+	width="810"
+	height="563"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX10_hue3604895e9334de9b76cddd1132f0f83_28201_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX10_hue3604895e9334de9b76cddd1132f0f83_28201_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="更新配置文件"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="143"
+		data-flex-basis="345px"
+	
+></p>
+<p>再右鍵<strong>狀態欄圖標</strong>，點擊<strong>設置爲系統代理</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX13.jpg"
+	width="927"
+	height="943"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX13_hub1ec00382278b0b05d5712ce1a8f8a31_71473_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX13_hub1ec00382278b0b05d5712ce1a8f8a31_71473_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="系統代理"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="98"
+		data-flex-basis="235px"
+	
+></p>
+<p>再回到桌面，右鍵<strong>狀態欄圖標</strong>，選擇<strong>配置</strong>，在上面的控制文件中，選擇你的<strong>配置文件</strong>。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX11.jpg"
+	width="914"
+	height="943"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX11_hu20bcf4ce878ef3499e6e8f7c1a766e1b_73825_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX11_hu20bcf4ce878ef3499e6e8f7c1a766e1b_73825_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="選擇配置文件"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="96"
+		data-flex-basis="232px"
+	
+></p>
+<p>再右鍵<strong>狀態欄圖標</strong>，選擇<strong>出站模式</strong>，可以選擇<strong>全局模式</strong>，也可以選擇<strong>規則模式</strong>。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX12.jpg"
+	width="634"
+	height="673"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX12_hu19d60536ab1c68a9c6796fad375731fc_47676_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX12_hu19d60536ab1c68a9c6796fad375731fc_47676_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="選擇代理模式"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="94"
+		data-flex-basis="226px"
+	
+></p>
+<ul>
+<li>
+<p>關於使用 ClashX 會遇到的問題</p>
+<p><strong>一.無法安裝</strong></p>
+<p>這可能需要系統通過一個權限，允許通過其他渠道安裝軟體。</p>
+<p><strong>二.某些軟體無法代理</strong></p>
+<p>可能會需要自己開啓代理。</p>
+<p>可以在 <strong>設置&ndash;網路&ndash;Wi-Fi&ndash;高級&ndash;代理</strong></p>
+<p>勾選 網頁代理（HTTP）</p>
+<p>一般來說 Clash 的 HTTP 代理端口爲 127.0.0.1：7890，自己添加輸入一下就好。</p>
+<p>如果個別軟體可以自己啓用 proxy ，也可以單獨的使用 HTTP 或 Socks5 proxy。</p>
+</li>
+</ul>
+<h4 id="ios"><strong>ios</strong></h4>
+<ul>
+<li>
+<p>Shadowrocket</p>
+<p><strong>一.簡介</strong></p>
+<p>Shadowrocket 相信是很多 ios 用戶所接觸到的第一款「翻牆」工具。性能高，穩定，流暢並且輕巧和易上手等特性，使得很多人使用。</p>
+<p>在教程中，簡單的添加<strong>節點</strong>或<strong>訂閱</strong>部分我會省略。重點着墨於其他的功能配置。</p>
+<p><strong>二.購買方式</strong></p>
+<p>Shadowrocket 在除中國大陸區以外的 App Store 都有上架。目前港區價格是 23 HKD。</p>
+<p><strong>三.進階功能配置</strong></p>
+<p>我們在<strong>首頁</strong>，可以看到<strong>全域路由</strong>的選項， Shadowrocket 的路由配置有四種：</p>
+<p>1.配置</p>
+<p>選用配置規則的方法來進行鏈接。在底欄的第二個選項<strong>配置</strong>的中，點擊，在<strong>本地檔案</strong>欄就可以看到你現在選中的配置。一般 Shadowrocket 會有一個自帶的配置。你也可以添加自己的配置，使網路連接在自己定製的「規則」範圍內進行。例如分流（例如國內IP直連，國外網站自動走代理），去除廣告等功能的實現。</p>
+<p>2.代理</p>
+<p>全局代理</p>
+<p>3.直連</p>
+<p>不通過代理，直接訪問網路。 簡單來說就不使用節點訪問網路。</p>
+<p>4.場景</p>
+<p>Shadowrocket 的場景功能是可以通過你當前所連接的Wi-Fi或移動網路來切換節點或關閉代理。</p>
+<p>就先來講講<strong>配置</strong>這個方式，實現一些其他的功能。</p>
+<p>對於一般使用者來說，要自己寫配置文件有點困難。我們可以使用 Github 上別人開源的一些項目，導入別人寫好的配置。</p>
+<p>例如我在 Github 上找到了一個項目：https://github.com/0x7E/rules-conf</p>
+<p>他在 readme 裏寫了詳細的簡介，也寫了使用方法和問題解答，我們就用他白名單過濾+廣告做例子，嘗試使用他的配置文件。這個配置文件的規則是直連國內網站+代理境外網站+廣告過濾。</p>
+<p>我們先復制他的規則地址。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket1.jpg"
+	width="898"
+	height="527"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket1_hu4a0b0e99306718ec6d27ff9a75ce311f_58169_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket1_hu4a0b0e99306718ec6d27ff9a75ce311f_58169_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="規則地址"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="170"
+		data-flex-basis="408px"
+	
+></p>
+<p>再回到 Shadowrocket ，點擊底欄中的<strong>配置</strong>，在點擊<strong>右上角+加號</strong>，將復制下來的地址<strong>粘貼</strong>進去，點擊<strong>下載</strong>。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket2.jpg"
+	width="549"
+	height="924"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket2_hudd47cd2d54b68bc6b7006f366c1dbead_33079_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket2_hudd47cd2d54b68bc6b7006f366c1dbead_33079_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="添加配置"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="59"
+		data-flex-basis="142px"
+	
+></p>
+<p>然後就能看到<strong>遠端配置</strong>中多了一個以鏈接命名的配置文件，點擊它，再點擊<strong>使用配置</strong>。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket3.jpg"
+	width="531"
+	height="340"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket3_hu7b17ad900c6a7f3fdb893344f0f921d6_13667_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket3_hu7b17ad900c6a7f3fdb893344f0f921d6_13667_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="使用配置"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="156"
+		data-flex-basis="374px"
+	
+></p>
+<p>成功後，就能在<strong>本地檔案</strong>中看到新的配置文件，並且前面會有<strong>橘色的黃點</strong>，後面會<strong>打勾</strong>。你也可以自行預覽配置和更改配置。也可以更新配置。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket4.jpg"
+	width="535"
+	height="205"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket4_huf8c0a2a920b7360232d79430fe736681_14470_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket4_huf8c0a2a920b7360232d79430fe736681_14470_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="應用配置"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="260"
+		data-flex-basis="626px"
+	
+></p>
+<p><strong>開啓HTTP解密</strong></p>
+<p>在主界面，點擊<strong>配置</strong>，輕觸本地文件欄中正在使用的配置文件，在彈出菜單點擊編輯配置。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket10.jpg"
+	width="516"
+	height="918"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket10_hu9ae6d971c6b11708c6b7aa12541e5cc5_32511_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket10_hu9ae6d971c6b11708c6b7aa12541e5cc5_32511_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="編輯配置"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="56"
+		data-flex-basis="134px"
+	
+></p>
+<p>點擊 <strong>HTTP 解密</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket11.jpg"
+	width="527"
+	height="764"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket11_huc3a7e70edec78ab94f8e0bd7ecce3179_26701_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket11_huc3a7e70edec78ab94f8e0bd7ecce3179_26701_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="HTTP解密"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="68"
+		data-flex-basis="165px"
+	
+></p>
+<p>打開<strong>右上角的開關</strong>，會彈出證書的安裝，先點擊安裝憑證，會跳轉到 Safari 下載證書文件。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket12.jpg"
+	width="532"
+	height="389"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket12_hu8667e82bfa259ca6b285cab26f282e37_22106_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket12_hu8667e82bfa259ca6b285cab26f282e37_22106_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="安裝憑證"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="136"
+		data-flex-basis="328px"
+	
+></p>
+<p>進入手機系統<strong>設置</strong>，點擊<strong>一般</strong>，找到 <strong>VPN 與裝置管理</strong>，在設定描述欄中，安裝 Shadowrocket 的文件。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket13.jpg"
+	width="533"
+	height="662"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket13_hu5eceefda06faf1321b13d76508a07b28_22615_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket13_hu5eceefda06faf1321b13d76508a07b28_22615_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="安裝文件"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="80"
+		data-flex-basis="193px"
+	
+></p>
+<p>安裝完成後，再在<strong>一般</strong>中，點擊關於本機，點擊<strong>證書信任列表設定</strong>，開啓 Quantumult X 證書的完整信任。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket14.jpg"
+	width="533"
+	height="532"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket14_huce1fb4dbe895688db8658d20ff8b25a8_21690_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket14_huce1fb4dbe895688db8658d20ff8b25a8_21690_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="完整信任"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="100"
+		data-flex-basis="240px"
+	
+></p>
+<p>再回到 Shadowrocket ，點擊剛剛界面 <strong>右上角的「勾」</strong>。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket15.jpg"
+	width="534"
+	height="527"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket15_huf9e67ddde429d04f935aaff95ee21437_23486_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket15_huf9e67ddde429d04f935aaff95ee21437_23486_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="打勾"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="101"
+		data-flex-basis="243px"
+	
+></p>
+<p>這樣 HTTP解密 就開啓完成了。</p>
+<p>應用了這個配置之後，你的 Shadowrocket 就可以實現簡單的分流了(是否需要使用代理)和去廣告的功能了。</p>
+<p>再來實現<strong>場景</strong>的功能。</p>
+<p>這個功能上面有簡單介紹，根據設置不同的場景，可以自動切換節點或配置。例如你想外出時不使用代理，只在家中Wi-Fi下使用代理，就可以設定在使用移動網路時將路由配置設置爲<strong>直連</strong>。</p>
+<p>下面就簡單介紹下使用的方法。</p>
+<p>點擊<strong>首頁&ndash;全域路由&ndash;設定-場景</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket5.jpg"
+	width="532"
+	height="205"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket5_hua7d4623a67618cc0c3f61b62e062c24c_7667_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket5_hua7d4623a67618cc0c3f61b62e062c24c_7667_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="點擊場景"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="259"
+		data-flex-basis="622px"
+	
+></p>
+<p>點擊<strong>新增場景</strong>或<strong>右上角+加號</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket6.jpg"
+	width="528"
+	height="255"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket6_huabfdc9977353f8cf6a79499d5869cd1e_8753_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket6_huabfdc9977353f8cf6a79499d5869cd1e_8753_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="新增場景"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="207"
+		data-flex-basis="496px"
+	
+>
+這裏就可以自行設置，介紹一下每一欄對應的功能。</p>
+<p><strong>場景</strong>：觸發模式的具體場景，可以選擇<strong>無線局域網</strong>或者<strong>移動網路</strong>。</p>
+<p><strong>SSID</strong>：無線局域網的名稱</p>
+<p><strong>路由</strong>：使用該場景時候的全局路由方式。</p>
+<p><strong>類型</strong>：在使用場景時使用的類型，這個類型可以是單個節點，也可以是一個<strong>分組</strong>。</p>
+<p><strong>配置</strong>：改場景下的配置文件。</p>
+<p><strong>備注</strong>：該場景的一個名稱。</p>
+<p>完成後點擊儲存就可以了。然後在<strong>全域路由</strong>內選擇<strong>場景</strong>模式。</p>
+<p>最後來說說<strong>分組</strong>。這是 Shadowrocket 的一個功能，可以用來自動測試分組內節點的延遲，並會選擇延遲最低的來使用。使用分組功能可以替我們省去手動選擇延遲最低節點的時間。</p>
+<p>添加分組的方法也很簡單。</p>
+<p>點擊<strong>首頁&ndash;全域路由&ndash;設定&ndash;分組</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket7.jpg"
+	width="533"
+	height="197"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket7_hu4108ebb2918521f0c4f83c7316d131f2_7113_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket7_hu4108ebb2918521f0c4f83c7316d131f2_7113_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="分組"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="270"
+		data-flex-basis="649px"
+	
+></p>
+<p>點擊<strong>新增分組</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket8.jpg"
+	width="532"
+	height="400"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket8_hu8ffc084db5165f5eb68b9dc377eb1385_14843_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket8_hu8ffc084db5165f5eb68b9dc377eb1385_14843_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="新增分組"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="133"
+		data-flex-basis="319px"
+	
+></p>
+<p>爲分組取一個名字，然後將選擇所要加入分組的節點，點擊完成就可以了。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket9.jpg"
+	width="545"
+	height="536"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket9_huf91b079772490e700d8b2bd8e2ca137e_18693_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket9_huf91b079772490e700d8b2bd8e2ca137e_18693_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="完成分組"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="101"
+		data-flex-basis="244px"
+	
+></p>
+<p>最後要在<strong>首頁</strong>選擇<strong>分組中的節點</strong>，就可以正常使用了。</p>
+<p>也可以在<strong>URL測試設定</strong>，對測試延遲的內容進行自定義</p>
+</li>
+<li>
+<p>Quantumult X</p>
+<p><strong>一.簡介</strong></p>
+<p>一般的添加節點教程我就不再展示了，我下面的教程主要用來發揮一些 Shadowrocket 所沒有的功能。</p>
+<p>Quantumult X 是一款網路工具，似乎用來「翻牆」只是他衆多的功能之一。而且它支持運行 JavaScript 腳本和Mitm重写，所以可以進行應用分流，自動測試延遲和選擇節點，廣告攔截等功能。</p>
+<p><strong>二.購買</strong>
+Quantumult X 在除中國大陸區以外的 App Store 都有上架。目前港區價格是 58 HKD。</p>
+<p><strong>三.進行基本功能配置</strong>
+同上的 Shadowrocket 一樣，我也找到了 Github 上的一個關於 Quantumult X 配置的一個項目</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">項目地址：https://github.com/limbopro/Profiles4limbo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>導入預配置文件</li>
+</ol>
+<p>打開 Quantumult X ，<strong>輕觸</strong>界面右下角的<strong>風車圖標</strong>。
+<img src="/Quantu![%e7%ac%ac%e5%9b%9b%e6%ad%a5]%28QuantumultX10.jpg%29multX1.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="第一步"
+	
+	
+></p>
+<p>在<strong>配置文件</strong>欄中，點擊下載。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX2.jpg"
+	width="527"
+	height="713"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX2_hu71f1a2da28bedae3a15fab8a96562ed8_32040_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX2_hu71f1a2da28bedae3a15fab8a96562ed8_32040_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="第二步"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="73"
+		data-flex-basis="177px"
+	
+></p>
+<p>在<strong>輸入配置鏈接</strong>中，輸入下面的鏈接，點擊右上角**「存儲」圖標**。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">鏈接url：https://raw.githubusercontent.com/limbopro/Profiles4limbo/main/full.conf 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX3.jpg"
+	width="528"
+	height="326"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX3_hu16e407b3495b7e30b4e598e3e8b47709_13410_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX3_hu16e407b3495b7e30b4e598e3e8b47709_13410_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="第三步"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="161"
+		data-flex-basis="388px"
+	
+></p>
+<p>回到主頁面，輕觸風車圖標，在<strong>節點</strong>欄中，點擊引用(訂閱)
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX4.jpg"
+	width="528"
+	height="399"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX4_hu38d77e7fa09e02f7cdc6af29ee760755_20349_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX4_hu38d77e7fa09e02f7cdc6af29ee760755_20349_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="第四步"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="132"
+		data-flex-basis="317px"
+	
+></p>
+<p>將機場訂閱鏈接復制到<strong>資源鏈接</strong>中，並點擊右上角<strong>保存圖標</strong>。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX5.jpg"
+	width="532"
+	height="620"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX5_hufbe7f161dbd1e780ef92e497c16ba0e8_17392_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX5_hufbe7f161dbd1e780ef92e497c16ba0e8_17392_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="第五步"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="85"
+		data-flex-basis="205px"
+	
+></p>
+<p>回到主頁面，<strong>長按</strong>右下角風車圖標，先切換爲全局代理(藍色風車圖標)，然後在 proxy 選擇節點，打開右上角<strong>開關</strong>，輕觸主界面<strong>左上角紅點</strong>點擊<strong>全部更新</strong>，等待下載完成。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX6.jpg"
+	width="529"
+	height="738"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX6_huc3a7e70edec78ab94f8e0bd7ecce3179_17630_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX6_huc3a7e70edec78ab94f8e0bd7ecce3179_17630_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="第六步"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="71"
+		data-flex-basis="172px"
+	
+></p>
+<p>更新完成後，再<strong>長按</strong>右下角風車圖標，切換回規則分流。</p>
+<ol start="2">
+<li>安裝並信任證書</li>
+</ol>
+<p>輕觸 Quantumult X 界面右下角風車圖標，找到 MitM ，點擊生成證書。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX7.jpg"
+	width="525"
+	height="432"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX7_huf345d947e3b44913883e895eacc37cc2_25796_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX7_huf345d947e3b44913883e895eacc37cc2_25796_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="第一步"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="121"
+		data-flex-basis="291px"
+	
+></p>
+<p>再回到 MitM ，點擊配置證書，再點擊下載證書，這時會跳轉到 Safari ，點擊下載證書。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX8.jpg"
+	width="524"
+	height="430"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX8_hu5d0b35a271c92eeaef0da58d544da8aa_25156_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX8_hu5d0b35a271c92eeaef0da58d544da8aa_25156_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="第二步"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="121"
+		data-flex-basis="292px"
+	
+></p>
+<p>進入手機系統<strong>設置</strong>，點擊<strong>一般</strong>，找到 <strong>VPN 與裝置管理</strong>，安裝 Quantumult X的文件。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX9.jpg"
+	width="543"
+	height="578"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX9_hu00b4ef77cf8e1a3468d209196f3afdb2_22070_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX9_hu00b4ef77cf8e1a3468d209196f3afdb2_22070_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="第三步"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="93"
+		data-flex-basis="225px"
+	
+></p>
+<p>安裝完成後，再在<strong>一般</strong>中，點擊關於本機，點擊<strong>證書信任列表設定</strong>，開啓 Quantumult X 證書的完整信任。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX10.jpg"
+	width="535"
+	height="500"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX10_hu2ccb8e7b876725e5c9baff2d20f775e9_25611_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX10_hu2ccb8e7b876725e5c9baff2d20f775e9_25611_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="第四步"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="107"
+		data-flex-basis="256px"
+	
+></p>
+<p>再回到 Quantumult X，輕觸右下角風車，打開<strong>重寫</strong>和<strong>MitM</strong>的開關。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX14.jpg"
+	width="531"
+	height="833"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX14_hu83957c7f3ff6a368e897a71b4f41a7f8_42464_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX14_hu83957c7f3ff6a368e897a71b4f41a7f8_42464_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="第四步"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="63"
+		data-flex-basis="152px"
+	
+></p>
+<ol start="3">
+<li>設置 GeoLite</li>
+</ol>
+<p>GeoLite 主要用來判斷你的網路活動是否爲國內 IP，從而選擇正確的分流方式。
+輕觸風車圖標，下拉到最下方，點擊<strong>其他設置</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX11.jpg"
+	width="529"
+	height="278"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX11_hu719b66f75ffd1e28052e18a009f03b7c_23461_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX11_hu719b66f75ffd1e28052e18a009f03b7c_23461_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="第一步"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="190"
+		data-flex-basis="456px"
+	
+>
+下拉找到 GeoLite2，點擊來源，復制下方鏈接並打開自動更新。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">鏈接url:https://raw.githubusercontent.com/Hackl0us/GeoIP2-CN/release/Country.mmdb
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>基本使用簡介</li>
+</ol>
+<p>因爲我們引用了別人已經寫好的預配置文件了。這裏來介紹一下選擇節點和應用分流的問題。</p>
+<p>在主界面 PROXY 欄下，是你自己添加的機場的節點。這裏使用的節點你可以自己選擇。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX15.jpg"
+	width="527"
+	height="544"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX15_hu04b9af7a4103ee82c2a0e310cb721b11_12771_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX15_hu04b9af7a4103ee82c2a0e310cb721b11_12771_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="PROXY"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="96"
+		data-flex-basis="232px"
+	
+>
+在下方的自定義策略裏面，我們滑動仔細看看，其實是一些應用的名字，網站，功能，和國家。</p>
+<p><strong>應用</strong>:這裏一般是用於應用分流。在這裏你可以自定義應用的代理。例如在使用 Netflix 時，如果你想觀看其他地區的節目，你可以直接爲 Netflix 選擇其他地區的代理，而不用更改全局代理的節點。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX12.jpg"
+	width="520"
+	height="594"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX12_hu5e20d4dda2c93d9b93f78f74918548ca_18184_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX12_hu5e20d4dda2c93d9b93f78f74918548ca_18184_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="Netflix"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="87"
+		data-flex-basis="210px"
+	
+>
+<strong>網站</strong>:基本同上，實現對單獨網站的分流。</p>
+<p><strong>功能</strong>:可以看到廣告攔截這一欄。DIRECT 則爲直連不開啓，REJECT 則爲全局代理，開啓
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX13.jpg"
+	width="498"
+	height="227"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX13_hu752b4ef0ea6af40955fc8fd6e09c025e_8145_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX13_hu752b4ef0ea6af40955fc8fd6e09c025e_8145_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="廣告攔截"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="219"
+		data-flex-basis="526px"
+	
+>
+<strong>國家</strong>:一般是根據你的節點連接到的國家，進行了<strong>分組</strong>。例如，若都是臺灣的節點，則會自動歸類到臺灣這一組的下面。這些分組的節點一般不能手動選擇，一般是根據延遲自動選擇。</p>
+</li>
+</ul>
+<h4 id="linux"><strong>Linux</strong></h4>
+<p>因爲我本身是 Arch 的使用者，所以這裏只演示 Arch 的安裝方法</p>
+<ul>
+<li>Clash</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo pacman -S clash-premium-bin // 安裝 Clash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然後我們需要添加自己的 Clash 配置文件 config.yml 一般來說機場裏面會有訂閱地址，可以直接下載</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd ~/.config/clash // 打開到 Clash 的路徑下
+</span></span><span class="line"><span class="cl">sudo pacman -S wget // 安裝 wget
+</span></span><span class="line"><span class="cl">wget -O config.yml &#34;xxxxxxxxxxxxxxx&#34; // 下載 config.yml 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>在把 XXXXXXXXXXXX 更改爲你的訂閱地址</p>
+</blockquote>
+<p>然後再下載 Country.mmdb 這份文件，點擊[這裏]進行下載</p>
+<p>接下來就可以執行 Clsah 了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">clash -f .config/clash/config.yaml // 執行 Clash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以在 <a class="link" href="http://clash.razord.top/#/settings"  target="_blank" rel="noopener"
+    >Clash Dashboard</a> 進行更換節點和延遲測試</p>
+<h4 id="windows"><strong>Windows</strong></h4>
+<ul>
+<li>
+<p>V2rayN</p>
+<p>先到 V2rayN 的 <a class="link" href="https://github.com/2dust/v2rayN/releases"  target="_blank" rel="noopener"
+    >releases</a> 下載  <strong>V2rayN-Core.zip</strong><br>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN1.jpg"
+	width="1893"
+	height="797"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN1_hu69e73561287f9ec04c9a6b051fbe9299_81482_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN1_hu69e73561287f9ec04c9a6b051fbe9299_81482_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="releases"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="237"
+		data-flex-basis="570px"
+	
+></p>
+<p>下載完成後，解壓縮數據包，再點擊 <strong>V2rayN.exe</strong>,看到右下角任務欄的<strong>藍色</strong>圖標
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN6.jpg"
+	width="287"
+	height="225"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN6_hu92e07ff38535976fb3cf31f2e9a1beba_4095_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN6_hu92e07ff38535976fb3cf31f2e9a1beba_4095_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="圖標"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="127"
+		data-flex-basis="306px"
+	
+></p>
+<p>雙擊 圖標，打開圖形界面
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN2.jpg"
+	width="1266"
+	height="773"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN2_hu39e07274e92dd0cfa079caac67d0ccca_51408_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN2_hu39e07274e92dd0cfa079caac67d0ccca_51408_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="GUI"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="163"
+		data-flex-basis="393px"
+	
+></p>
+<p>接下來就要添加節點。一般我們會選擇添加訂閱的方式添加節點。
+點擊 訂閱-訂閱設置
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN3.jpg"
+	width="1266"
+	height="769"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN3_huce970d622e8975305bf7b86aea53693b_59883_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN3_huce970d622e8975305bf7b86aea53693b_59883_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="訂閱設置"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="164"
+		data-flex-basis="395px"
+	
+></p>
+<p>點擊 添加 按鈕，在<strong>地址</strong>欄輸入你的訂閱地址 勾選 啓用 再點擊 確定
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN4.jpg"
+	width="818"
+	height="547"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN4_hub5e7b5e6f52374114046c991b0c30784_29676_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN4_hub5e7b5e6f52374114046c991b0c30784_29676_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="添加訂閱"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="149"
+		data-flex-basis="358px"
+	
+></p>
+<p>點擊 訂閱-更新訂閱 這樣節點就添加完成了
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN5.jpg"
+	width="1267"
+	height="769"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN5_hu9a6659150bdf7d6c653d02877ac3b149_51166_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN5_hu9a6659150bdf7d6c653d02877ac3b149_51166_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="節點添加完成"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="164"
+		data-flex-basis="395px"
+	
+></p>
+<p>然後 在任務欄中 右鍵-系統代理-自動配置系統代理
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN7.jpg"
+	width="494"
+	height="370"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN7_hu053c09658ed5037601db1fabbc0875d2_24524_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN7_hu053c09658ed5037601db1fabbc0875d2_24524_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="配置系統代理"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="133"
+		data-flex-basis="320px"
+	
+></p>
+<p>完成後圖標就變 <strong>紅色</strong> 了，就可以正常使用了。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN8.jpg"
+	width="298"
+	height="234"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN8_hubbeb220fad9ea62e8242ac2e44456a87_5513_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN8_hubbeb220fad9ea62e8242ac2e44456a87_5513_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="紅色圖標"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="127"
+		data-flex-basis="305px"
+	
+>
+在界面中，先選中節點，再回車就可以選中節點了。</p>
+<p>在 服務器-測試服務器真延遲 就能測試節點延遲了。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN9.jpg"
+	width="1252"
+	height="766"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN9_hud1a212cfa9265c7bc4fecae84448dba8_109914_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN9_hud1a212cfa9265c7bc4fecae84448dba8_109914_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="延遲測試"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="163"
+		data-flex-basis="392px"
+	
+></p>
+<p><strong>Android</strong></p>
+<ul>
+<li>V2rayNG</li>
+</ul>
+<p>先到 V2rayNG 的 <a class="link" href="https://github.com/2dust/v2rayNG/releases"  target="_blank" rel="noopener"
+    >releases</a> 下載<strong>v2rayNG.apk</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG1.jpg"
+	width="1897"
+	height="895"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG1_hu48c1dca2099d70a8563c454896d9c335_90632_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG1_hu48c1dca2099d70a8563c454896d9c335_90632_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="下載"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="211"
+		data-flex-basis="508px"
+	
+></p>
+<p>打開軟體
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG2.jpg"
+	width="471"
+	height="849"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG2_hu489bb3696688a68f36f4fe744e422239_15936_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG2_hu489bb3696688a68f36f4fe744e422239_15936_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="打開"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="55"
+		data-flex-basis="133px"
+	
+></p>
+<p>點擊<strong>左上角三條橫槓</strong>，展開側邊欄
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG3.jpg"
+	width="480"
+	height="845"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG3_hu34eb1bc1a44fdaf19d9c5f8c39febfb4_17597_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG3_hu34eb1bc1a44fdaf19d9c5f8c39febfb4_17597_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="側邊欄"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="56"
+		data-flex-basis="136px"
+	
+></p>
+<p>點擊<strong>訂閱設定</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG4.jpg"
+	width="487"
+	height="891"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG4_hu38cce71172e0183bf8f4ce5897740712_23066_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG4_hu38cce71172e0183bf8f4ce5897740712_23066_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="點擊訂閱設定"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="54"
+		data-flex-basis="131px"
+	
+></p>
+<p>點擊<strong>右上角+</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG5.jpg"
+	width="470"
+	height="901"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG5_hudf8d36b594c1e8b1150f4578b7ff3744_11920_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG5_hudf8d36b594c1e8b1150f4578b7ff3744_11920_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="右上角加號"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="52"
+		data-flex-basis="125px"
+	
+></p>
+<p>將機場訂閱鏈接輸入至** url 欄**，備注欄可以隨意填寫，再點擊<strong>右上角的「勾」</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG6.jpg"
+	width="482"
+	height="900"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG6_hu63137e1b360db8248c9dc96a6c40cd5a_24612_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG6_hu63137e1b360db8248c9dc96a6c40cd5a_24612_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="添加訂閱"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="53"
+		data-flex-basis="128px"
+	
+></p>
+<p>回到初始界面，點擊<strong>右上角三點</strong>，選擇<strong>更新訂閱</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG7.jpg"
+	width="477"
+	height="850"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG7_hu0f86a3fe0e6178c3b826438968fa8b75_29700_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG7_hu0f86a3fe0e6178c3b826438968fa8b75_29700_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="更新訂閱"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="56"
+		data-flex-basis="134px"
+	
+></p>
+<p>這樣就能看到節點了，在列表中選擇節點，再點擊<strong>右下角圓形圖標</strong>，就已經可以使用了。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG8.jpg"
+	width="476"
+	height="915"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG8_hub26914c8c76a612d79e309206f7b85a4_19722_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG8_hub26914c8c76a612d79e309206f7b85a4_19722_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="啓動"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="52"
+		data-flex-basis="124px"
+	
+></p>
+<p>點擊側邊欄，在<strong>設定</strong>當中，可以開啓<strong>數綠顯示</strong>
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG9.jpg"
+	width="477"
+	height="915"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG9_huf29c04bf1c0ad80c6007e50c32dc12d9_35801_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG9_huf29c04bf1c0ad80c6007e50c32dc12d9_35801_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="設定"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="52"
+		data-flex-basis="125px"
+	
+></p>
+<p>也可以使用 <strong>proxy 個別應用程式</strong>，這樣就可以只讓需要被 proxy 的應用使用代理。
+<img src="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG10.jpg"
+	width="475"
+	height="915"
+	srcset="/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG10_hu9bec2a3cf23091a833ee7aa05f01273d_34418_480x0_resize_q75_box.jpg 480w, /p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG10_hu9bec2a3cf23091a833ee7aa05f01273d_34418_1024x0_resize_q75_box.jpg 1024w"
+	loading="lazy"
+	
+		alt="proxy甄別"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="51"
+		data-flex-basis="124px"
+	
+></p>
+</li>
+</ul>
+<h2 id="一些問題">一些「問題」</h2>
+<p><strong>關於不同「協議」的節點</strong></p>
+<p>這裏說的是 SS，SSR，V2ray 等等節點的區別。其實他們的原理差不多一樣，只是有些加密協議或代理模式不同。</p>
+<p>在用戶使用時，節點需要與客戶端對應起來才能正常使用。比如 Shadowsocks 客戶端無法運行 V2ray 的節點。 但也有一些客戶端是可以支持多種協議的節點的。例如 ios 中的 Shadowrocket 和 Quantumult X。還有各種系統上的 Clash 客戶端也是。</p>
+<p><strong>爲什麼我推薦使用應用分流</strong></p>
+<p>從實用角度來說，有些軟體或網站，不需要代理就可以訪問。有時開啓代理還可能會影響使用效果。從經濟角度上說，也可以爲你節省流量，把鐵用在了鋼刃上。
+當然如果是 ios 用戶，Quantumult X 絕對是一個很好的選擇，不僅僅可以應用單獨切換代理，而且還可以運行 JavaScript 腳本，十分方便。</p>
+<p><strong>關於代理端口的簡單理解</strong></p>
+<p>我用相對口語化的方式陳述。想象你的電腦的流量像是一根有着很多個「接口」的線路，而這一整根線就相當於你的宿主機地址 一般是 127.0.0.1 。在這個地址之下，就會分成很多個接口，也就是「端口」了。一般的 Proxy 在不開啓全局代理時，默認只會代理其中的一個端口，也就是只有這個端口的流量可以正常被代理。像是 Clash 的 HTTP 代理端口通常是 7890。有的時候我們明明開啓的代理，卻無法使用，很有可能就是你的軟體或者瀏覽器的流量端口沒有接上代理端口。</p>
+<p><strong>推展推薦：</strong></p>
+<p><a class="link" href="https://youtube.com/playlist?list=PLkjxal9L9K2YiL8o4P4pCWm-mHSfa2-kI"  target="_blank" rel="noopener"
+    >AK硬核翻牆系列</a></p>
+<p><a class="link" href="https://yattazen.com/tutorial/quantumultx-config-guide.html"  target="_blank" rel="noopener"
+    >Quantumult X 綜合教程</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/technology/">Technology</a>
+        
+            <a href="/tags/gfw/">GFW</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Written by Daniel</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            Last updated on Dec 20, 2021 00:00 GMT&#43;8
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-contents--wrapper">
+    <h2 class="section-title">Related contents</h2>
+    <div class="related-contents">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/">
+        
+        
+            <div class="article-image">
+                <img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/background.33c1435ccccffacc91c81c69aef40d50_hued1092ee99fa311a297d02e827a150c5_15810_250x150_fill_q75_box_smart1.jpeg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Blog 後臺管理工具：Google Analytics"
+                        
+                        data-hash="md5-M8FDXMzP&#43;syRyBxprvQNUA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Blog 後臺管理工具：Google Analytics</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">
+        
+        
+            <div class="article-image">
+                <img src="/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/background.55fd424c910df6a3e7431119ec06eea6_hu2630ebeac12478d27b8e33661d01cb38_43931_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Blog 文章編輯語言：Markdown --- 語言學習筆記"
+                        
+                        data-hash="md5-Vf1CTJEN9qPnQxEZ7Abupg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Blog 文章編輯語言：Markdown --- 語言學習筆記</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/">
+        
+        
+            <div class="article-image">
+                <img src="/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/background.437233540105c93a0f22058e7250b027_hu8129c1d6205b89ce5b286bc145ffeacf_27810_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Blog 的搭建：使用 Github Page &#43; Hugo 架設一個屬於自己的 Blog"
+                        
+                        data-hash="md5-Q3IzVAEFyToPIgWOclCwJw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Blog 的搭建：使用 Github Page &#43; Hugo 架設一個屬於自己的 Blog</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">
+        
+        
+            <div class="article-image">
+                <img src="/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/background.4b387263f92dff200000820c5579f442_hu840b472379512eff7a98cead1b9d6f8c_31067_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Google Voice 虛擬號的一些使用方法"
+                        
+                        data-hash="md5-SzhyY/kt/yAAAIIMVXn0Qg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Google Voice 虛擬號的一些使用方法</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/background.c13764e4fccf777307c1b1cbf5b3468f_hu29a719be0e2276f22570238cd344c661_31094_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 配置青龍面板並實現京東JS腳本運行"
+                        
+                        data-hash="md5-wTdk5PzPd3MHwbHL9bNGjw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">配置青龍面板並實現京東JS腳本運行</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wyanelee" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2021 - 
+        
+        2022 Daniel&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.11.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#理論內容">理論內容</a>
+      <ol>
+        <li><a href="#什麼是牆">什麼是「牆」</a></li>
+        <li><a href="#gfw的主要工作方式">GFW的主要工作方式</a></li>
+        <li><a href="#突破-gfw-的幾種方法">突破 GFW 的幾種方法</a></li>
+        <li><a href="#一些詞語或名詞">一些詞語或名詞</a></li>
+      </ol>
+    </li>
+    <li><a href="#應用操作部分">應用操作部分</a>
+      <ol>
+        <li><a href="#關於機場的選購">關於「機場」的選購</a></li>
+        <li><a href="#使用工具方法">使用工具方法</a>
+          <ol>
+            <li><a href="#mac-os"><strong>Mac OS</strong></a></li>
+            <li><a href="#ios"><strong>ios</strong></a></li>
+            <li><a href="#linux"><strong>Linux</strong></a></li>
+            <li><a href="#windows"><strong>Windows</strong></a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#一些問題">一些「問題」</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Blog on Daniel&#39;s Blog</title>
+        <link>https://7WayneLee.github.io/tags/blog/</link>
+        <description>Recent content in Blog on Daniel&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sat, 12 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://7WayneLee.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Blog 後臺管理工具：Google Analytics</title>
+        <link>https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/</link>
+        <pubDate>Sat, 12 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/</guid>
+        <description>&lt;img src="https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/background.jpeg" alt="Featured image of post Blog 後臺管理工具：Google Analytics" /&gt;&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
+&lt;p&gt;在架設了網站後，可能我們希望能夠看到自己的網站有沒有人瀏覽，每天有多少人瀏覽，這些人都來自那裏這樣一系列的數據。這時我們就需要用到 Google 旗下的一個網站管理工具 &amp;mdash; Google Analytics。Google Analytics 已經經過了很多年的升級，現在的使用可以說是十分的方便，也比較簡單，並且它可以將數據幫你按照你的需求進行整理，還能夠可視化的展示出你所要的數據。&lt;/p&gt;
+&lt;p&gt;接下來就看看通過 Github Page + Hugo 所架設的 Blog 網站，該如何使用這個工具。&lt;/p&gt;
+&lt;h2 id=&#34;基本步驟&#34;&gt;基本步驟&lt;/h2&gt;
+&lt;h3 id=&#34;設置-google-analytics--賬戶&#34;&gt;設置 Google Analytics  賬戶&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;打開 瀏覽器 進入 &lt;a class=&#34;link&#34; href=&#34;https://analytics.google.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://analytics.google.com/&lt;/a&gt; ，登陸 Google 賬戶&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;點擊 &lt;code&gt;開始測量&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;先給自己的賬戶取一個新的 &lt;code&gt;帳戶名稱&lt;/code&gt;，帳戶資料共用設定我是勾選了前三項，你也可以根據自己的需求勾選，然後點 &lt;code&gt;下一步&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/1.png&#34;
+	width=&#34;1866&#34;
+	height=&#34;732&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/1_hud17ba7d0c474473909cf6496cc47a8ed_189094_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/1_hud17ba7d0c474473909cf6496cc47a8ed_189094_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;賬戶設定&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;254&#34;
+		data-flex-basis=&#34;611px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;給自己獲取的數據資源取一個新的 &lt;code&gt;資源名稱&lt;/code&gt;，因爲是針對於自己的 Blog 網站資源，所以我就填了我自己的「Blog名稱」，然後再點擊 &lt;code&gt;下一步&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在商家資訊中，這裏就根據自己的情況填寫就好。在填寫完成後，點擊 &lt;code&gt;建立&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然後只要 &lt;code&gt;接受&lt;/code&gt; Google Analytics 服務條款合約就完成了&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;設置-google-analytics-資源&#34;&gt;設置 Google Analytics 資源&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;進入主界面後，點擊左下角的 &lt;code&gt;齒輪圖標&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;先在右側欄中點擊 &lt;code&gt;資料串流&lt;/code&gt; ，再選擇 &lt;code&gt;網站&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/2.png&#34;
+	width=&#34;1306&#34;
+	height=&#34;608&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/2_hu7bd7ccaf18ef82842c7c5ee8f4ea999c_46540_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/2_hu7bd7ccaf18ef82842c7c5ee8f4ea999c_46540_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;資料串流&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;214&#34;
+		data-flex-basis=&#34;515px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在網站網址中，輸入你的 Blog 域名，例如我輸入的是 &lt;code&gt;7waynelee.github.io&lt;/code&gt; ，串流名稱可以填入你自己給你的 Blog 所取的名稱，都輸入完成後，點擊 &lt;code&gt;建立串流&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/3.png&#34;
+	width=&#34;1430&#34;
+	height=&#34;536&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/3_hu2f7cd7ec25043e2b76d962aa99e3133d_63556_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/3_hu2f7cd7ec25043e2b76d962aa99e3133d_63556_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;設定網站網址&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;266&#34;
+		data-flex-basis=&#34;640px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;接着就會跳出 &lt;code&gt;網頁串流詳情&lt;/code&gt; ，在這當中可以獲得自己的 &lt;code&gt;評估ID&lt;/code&gt; 和一串 &lt;code&gt;全域網站代碼&lt;/code&gt; ，這在接下來會使用到&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/4.png&#34;
+	width=&#34;1318&#34;
+	height=&#34;799&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/4_hu034c4ded489d94403a7fb7bd73196996_151145_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/4_hu034c4ded489d94403a7fb7bd73196996_151145_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;詳細訊息&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;164&#34;
+		data-flex-basis=&#34;395px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;hugo-設置-configtoml&#34;&gt;Hugo 設置 config.toml&lt;/h3&gt;
+&lt;p&gt;接下來就需要將你的本地 Blog 文件進行一些修改&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;先到你的電腦中找到你的本地 Blog 目錄文件夾，也就是之前所創立的 &lt;code&gt;username-Hugo&lt;/code&gt; 這個文件夾&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;進入 &lt;code&gt;username-Hugo&lt;/code&gt;文件夾中&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打開 config.toml / config.yml 進行編輯&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 google Analytics 後面，貼上 &lt;code&gt;評估 ID&lt;/code&gt;，格式爲 &lt;code&gt;&amp;quot;G-XXXXX...&amp;quot;&lt;/code&gt;                                                                                                                                                   如果你的 config 檔案中沒有這個變量，就需要自己創建一個新的變臉，格式爲 &lt;code&gt;googleAnalytics=&amp;quot;G-XXXXX...&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/5.png&#34;
+	width=&#34;581&#34;
+	height=&#34;160&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/5_hucf8a0da7b224a8b0c6f65183882b23b6_20887_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/5_hucf8a0da7b224a8b0c6f65183882b23b6_20887_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;評估ID&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;363&#34;
+		data-flex-basis=&#34;871px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;hugo-設置-google-analytics-html-調用模板&#34;&gt;Hugo 設置 google analytics html 調用模板&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;進入 username-Hugo/themes/hugo-theme-stack/layouts 目錄下&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;創建一個名爲 &lt;code&gt;_internal&lt;/code&gt; 的文件夾&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打開 &lt;code&gt;_internal&lt;/code&gt; 文件夾，創建一個名爲 &lt;code&gt;google_analytics_async.html&lt;/code&gt; 的檔案&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 &lt;em&gt;文字編輯器&lt;/em&gt; 打開 &lt;code&gt;google_analytics_async.html&lt;/code&gt; 檔案&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這裏直接 &lt;code&gt;左鍵&lt;/code&gt; 雙擊打開，容易通過瀏覽器直接開啓。可能需要 &lt;code&gt;右鍵&lt;/code&gt; ，選擇記事本類的軟體打開，才能編輯。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 Google Analytics 網站上，將剛剛在網站中得到的全域網站代碼複製，再粘貼到 &lt;code&gt;google_analytics_async.html &lt;/code&gt; 這個檔案中&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/6.png&#34;
+	width=&#34;1292&#34;
+	height=&#34;433&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/6_hu3a018ca8a3f06db42bb806b49278fb6a_88260_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/6_hu3a018ca8a3f06db42bb806b49278fb6a_88260_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;全域網站代碼&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;298&#34;
+		data-flex-basis=&#34;716px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;再打開 &lt;code&gt;username-Hugo/themes/hugo-theme-stack/layouts\_default\&lt;/code&gt; 到這個目錄下&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;找到裏面的一個名爲 &lt;code&gt;baseof.html&lt;/code&gt; 的檔案，使用&lt;em&gt;文字編輯器&lt;/em&gt; 打開 &lt;code&gt;baseof.html&lt;/code&gt;，在 ＜head＞…＜/head＞之間粘貼上以下代碼：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{ if not .Site.IsServer }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  {{ template &amp;#34;_internal/google_analytics_async.html&amp;#34; . }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{ end }}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/7.png&#34;
+	width=&#34;659&#34;
+	height=&#34;197&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/7_hu362301742b5a2b05f930c854525fd5bf_32332_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/7_hu362301742b5a2b05f930c854525fd5bf_32332_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;code&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;334&#34;
+		data-flex-basis=&#34;802px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;回到 Blog 文件夾根目錄，重新通過 &lt;code&gt;hugo&lt;/code&gt; 編譯並上傳到 Github&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
+&lt;p&gt;這樣以後，在 Google Analytics 中，就可以看到每天網站的訪問量，訪問地址，停留時間等等的數據。Google Analytics 大部分的數據都是以模塊的方式呈現，也是十分的方便，可以讓你自由的選擇需要看到的數據，可視化做的也不錯。&lt;/p&gt;
+&lt;p&gt;在你剛剛設置好的時候，Google Analytics 是還沒有數據的。在經過一段時間的收集後，慢慢的就會展示出來了。當然剛架設的網站訪問量不高也很正常，只要後續的網站更新頻繁或者瀏覽的人數越來越多，Google 對你的網站的評級也就會慢慢升高，慢慢的訪問量就會上升了。&lt;/p&gt;
+&lt;p&gt;關於 Blog 的系列文章，到這裏也就基本完成了，也差不該告一段落了。希望可以幫助到你們，擁有一個比較舒適的環境，存放自己的文字，擁有一個屬於自己的 Blog 網站。如果過程中需要幫助話，可以通過 &lt;code&gt;About&lt;/code&gt; 界面下的 &lt;em&gt;Telegram&lt;/em&gt; 鏈接和我取得聯繫，我也會儘量的幫助你。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Blog 文章編輯語言：Markdown --- 語言學習筆記</title>
+        <link>https://7WayneLee.github.io/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/</link>
+        <pubDate>Thu, 10 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://7WayneLee.github.io/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/</guid>
+        <description>&lt;img src="https://7WayneLee.github.io/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/background.jpg" alt="Featured image of post Blog 文章編輯語言：Markdown --- 語言學習筆記" /&gt;&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;Markdown 語言是我在擁有了自己的 Blog 之後才接觸到的。因爲在寫文章的時候經常會使用 Markdown 語言來進行排版和編輯，整體來說效果很好，而且簡單易學。&lt;/p&gt;
+&lt;p&gt;這篇文章就來簡單的介紹一下 Markdown 語言的語法，也算是一篇文章的一個後續，來幫助更多剛剛接觸 Markdown 語言的人能夠快速上手。學語言的方法基本都類似，在學習了基礎語法後，多用，慢慢就會養成習慣，然後記住了。我也是通過寫文章的時候，一步步的學習，漸漸的熟悉上這門語言。所以並不太需要把全部的語法很強調的全部記錄下來，在過程中多加使用，不記得的時候再看看語法，漸漸的就會記住了。&lt;/p&gt;
+&lt;h2 id=&#34;markdown-編輯器&#34;&gt;Markdown 編輯器&lt;/h2&gt;
+&lt;p&gt;Markdown因爲是開源的語言，所以市面上也會有很多不同的編輯器。在寫文章之前，我們也要先找好一個自己舒服的編輯器才行。&lt;/p&gt;
+&lt;p&gt;下面的是我推薦的幾款：&lt;/p&gt;
+&lt;h3 id=&#34;typora&#34;&gt;Typora&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Typora是我一直在使用的一款編輯器。強大的功能，簡潔乾淨的界面，還有能夠直接使用快捷鍵編輯界面，讓我使用的時候得心應手。你可以自由選擇預覽編輯和源碼編輯兩種編輯模式，我一般會使用預覽編輯，十分方便。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;但缺點在於，除了 Linux 平臺可以無限期免費試用，其他的平臺都已經需要付費了。因爲我長期使用 Arch 作爲我編輯 Blog 和 程式的系統，所以我還可以免費使用。但在其他平臺就沒這麼幸運了。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;目前售價：$ 14.99&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;visual-studio-code&#34;&gt;Visual Studio Code&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;VSCode 也是我最早接觸的代碼編輯器。免費，開源，輕量，加上漂亮的外觀，最重要是有許多功能強大的延伸模組，可以把一個編輯器加入很多其他的功能，更加方便的單一個編輯器編輯不同語言的代碼。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;只要安裝了 &lt;code&gt;Markdown All in One&lt;/code&gt; 和 &lt;code&gt;Markdown Preview Enhanced&lt;/code&gt; 兩個延伸模組後，也可以很舒服的編輯文章。&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;macdown&#34;&gt;MacDown&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;這是在 Mac OS 平臺上的一款開源免費的 Markdown 編輯器。它和 VSCode 的編輯界面差不多，主要編輯區在左側，右側是預覽畫面。你只需在左邊進行寫作，加上 Markdown 語法標籤，就能在右側預覽區看到即時預覽，方便你書寫或編輯文件。在完成之後，除了保存爲 .md 格式外，它也能匯出 PDF 或 HTML檔案。&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;基礎語法&#34;&gt;基礎語法&lt;/h2&gt;
+&lt;h3 id=&#34;標題&#34;&gt;標題&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;標題一般是分爲 6 個層級。分別是 h1 - h6，h1 最大，h6 最小。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;標題的寫法也有兩種，第一種是在標題文字的下一行中添加 &lt;code&gt;===&lt;/code&gt; ，第二種是在標題前加上 &lt;code&gt;#&lt;/code&gt; 。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;h1 標題
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;===
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;# h1 標題       // 注意 # 和標題間需要空格
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;&lt;/span&gt;&lt;span class=&#34;gu&#34;&gt;## h2 標題
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;### h3 標題
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;#### h4 標題
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;##### h5 標題
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;###### h6 標題
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;引言&#34;&gt;引言&lt;/h3&gt;
+&lt;p&gt;Markdown 是通過 &lt;code&gt;&amp;gt;&lt;/code&gt; 添加引言。使用 &lt;code&gt;&amp;gt;&lt;/code&gt; 表示是一級引言，使用  &lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt; 可在一級引言下添加二級引言。在引言內，也支持使用其他的 Markdown 語法。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;歡迎大家來到我的 Blog 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;希望大家喜歡
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;如果它有幫助到你，也可以和身邊的人分享我的 Blog
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;顯示效果如下：&lt;/p&gt;
+&lt;p&gt;歡迎大家來到我的 Blog&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;希望大家喜歡&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果它有幫助到你，也可以和身邊的人分享我的 Blog&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;清單&#34;&gt;清單&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;1. 無序清單&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;*&lt;/code&gt;、&lt;code&gt;+&lt;/code&gt;、&lt;code&gt;-&lt;/code&gt; 都可以輸出無序清單。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;*&lt;/span&gt; Hello,welcome to my blog.  // 符號與清單標題間也同樣需要空格
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;+ Hello,welcome to my blog.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; Hello,welcome to my blog.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;顯示效果如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hello,welcome to my blog.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;Hello,welcome to my blog.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;Hello,welcome to my blog.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2. 有序清單&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在數字後面加上一個 &lt;code&gt;.&lt;/code&gt; ，Markdown 語言就會自動生成有序清單列表。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;1.&lt;/span&gt; Hello,welcome to my blog.    // 數字. 之後依然需要空格
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;2.&lt;/span&gt; Though my essay is not very good,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;3.&lt;/span&gt; I wish you will like it.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;顯示效果如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Hello,welcome to my blog.&lt;/li&gt;
+&lt;li&gt;Though my essay is not very good,&lt;/li&gt;
+&lt;li&gt;I wish you will like it.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;清單有的時候可能會不小心就產生了，例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1984. What a great book.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;只要在句首出現了&lt;strong&gt;數字-句點-空白&lt;/strong&gt;，它就會自動的生成清單列表。所以我們可以在句點前加上 &lt;code&gt;\&lt;/code&gt; ，例如&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1984\. What a great book.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;這樣它就不會被視爲清單了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;程式碼&#34;&gt;程式碼&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;程式碼區塊&lt;/strong&gt;的寫法如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;```C //這裏的在的名稱可以是任何語言的名稱 C就是C語言 Python就是Python語言
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;printf(&amp;#34;Hello! World!\n&amp;#34;);
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;```
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;顯示效果如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C&#34; data-lang=&#34;C&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Hello! World!&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;一般程式碼&lt;/strong&gt;（不需要區塊）的寫法如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;This is my code:`printf(&amp;#34;Hello! World!\n&amp;#34;);`
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;顯示效果如下：&lt;/p&gt;
+&lt;p&gt;This is my code: &lt;code&gt;printf(&amp;quot;Hello! World!\n&amp;quot;);&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;分割線&#34;&gt;分割線&lt;/h3&gt;
+&lt;p&gt;可以在一行中用三個或以上的&lt;code&gt;*&lt;/code&gt;、&lt;code&gt;-&lt;/code&gt;、&lt;code&gt;_&lt;/code&gt; 來建立一個分隔線，行內不能有其他東西。你也可以在符號中間插入空白。&lt;/p&gt;
+&lt;p&gt;下面有幾種建立分隔線的寫法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;* * *
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;***
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*****
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- - -
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;---------------------------------------
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;強調&#34;&gt;強調&lt;/h3&gt;
+&lt;p&gt;Markdown 語言一般有兩種強調方式：&lt;strong&gt;粗體&lt;/strong&gt;和&lt;em&gt;斜體&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;粗體的寫法是在被強調的文字兩側加上 &lt;code&gt;**&lt;/code&gt; ，斜體的寫法是在被強調的文字兩側加上 &lt;code&gt;*&lt;/code&gt;。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;**我被強調了**
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;ge&#34;&gt;*我被強調了*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;顯示效果如下：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我被強調了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我被強調了*&lt;/p&gt;
+&lt;h3 id=&#34;插入鏈接&#34;&gt;插入鏈接&lt;/h3&gt;
+&lt;p&gt;Markdown支援兩種形式的行內連結語法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[&lt;span class=&#34;nt&#34;&gt;Markdown&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;https://zh.wikipedia.org/wiki/Markdown&lt;/span&gt;)到底是什麼語言？
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;顯示效果如下：&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/Markdown&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Markdown&lt;/a&gt;到底是什麼語言？&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;這樣我們點擊 Markdown，就可以跳轉到對應的鏈接了&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;插入圖片&#34;&gt;插入圖片&lt;/h3&gt;
+&lt;p&gt;插入圖片的基本格式是 一個 &lt;code&gt;！&lt;/code&gt; ，加上 &lt;code&gt;[]&lt;/code&gt;，在方框內給圖片相當於起個名字，再加上 &lt;code&gt;()&lt;/code&gt;，括號內寫入圖片的鏈接。&lt;/p&gt;
+&lt;p&gt;在寫 Blog 文章的時候，一般圖片需要和 .md 文章主題放入一個文件夾中，所以只需要在 &lt;code&gt;()&lt;/code&gt; 寫入&lt;strong&gt;圖片文件名稱.圖片格式&lt;/strong&gt;就好了。例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;！[舉例](圖片.jpg) 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;這樣就可以顯示出圖片了&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不過 Markdown 語言的圖片是無法調整位置的，他會自動顯示在當前行列中&lt;/p&gt;
+&lt;p&gt;特別注意：在書寫插入鏈接和插入圖片的兩個語法時，裏面所有的符號都是半型符號。也就是如果輸入法是漢語輸入法的時候，要將輸入法切換爲英文，再輸入符號。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;表格&#34;&gt;表格&lt;/h3&gt;
+&lt;p&gt;Markdown 也同樣可以輸出表格。但要注意表格的對齊方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;---&lt;/code&gt;：預設靠左&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:---&lt;/code&gt;：向左靠齊&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;---:&lt;/code&gt;：向右靠齊&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:---:&lt;/code&gt;：居中對齊&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| 列表1 | 列表2 | 列表 3 | 列表4 |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| --- | :--- | ---: | :---: |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| ... | ... | ... | --- |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| ... | ... | ... | --- |
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;顯示效果如下：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;列表1&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;列表2&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;列表 3&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;列表4&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&amp;hellip;&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;&amp;hellip;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&amp;mdash;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&amp;hellip;&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;&amp;hellip;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&amp;mdash;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;美觀&#34;&gt;美觀&lt;/h2&gt;
+&lt;p&gt;這一點作爲一個工科生，可能不太適合由我來說。我的 Blog 文章排版，也不算特別好，只能說看起來比較整齊。&lt;/p&gt;
+&lt;p&gt;一般的，我也只會給自己規定整體的格式，那裏是用 &lt;code&gt;*&lt;/code&gt; 列表，那裏是用有序列表。還有統一的排版，在同類的區塊下排版相同等等。&lt;/p&gt;
+&lt;p&gt;下面這篇&lt;a class=&#34;link&#34; href=&#34;https://github.com/sparanoid/chinese-copywriting-guidelines/blob/master/README.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;中文文案排版指北&lt;/a&gt;，是一篇還不錯的中文基本排版標準。學習別人的一些編輯技巧還是可以讓自己的文章看起來更加舒適的，但也不一定要完全遵照別人所定的標準，最主要還是自己首先覺得舒服好看，也就不太有問題。&lt;/p&gt;
+&lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
+&lt;p&gt;上面的基本語法也是我個人的一部分總結，其實還有一些其他的語法，只不過是因爲我的主題無法顯示，我就沒有在這裏細說，你們也可以自行探索。&lt;/p&gt;
+&lt;p&gt;在網路上也還有很多 Markdown 語法的文章，可以多看多學，邊上手邊結合，就可以慢慢的學會了。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Blog 的搭建：使用 Github Page &#43; Hugo 架設一個屬於自己的 Blog</title>
+        <link>https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/</link>
+        <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/</guid>
+        <description>&lt;img src="https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/background.png" alt="Featured image of post Blog 的搭建：使用 Github Page &#43; Hugo 架設一個屬於自己的 Blog" /&gt;&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
+&lt;p&gt;此教程是使用 Github Page + Hugo theme 建立一個個人的 Blog。 文章教程的主要環境是基於 &lt;code&gt;Mac OS&lt;/code&gt;，如果你的電腦系統是 &lt;code&gt;Windows&lt;/code&gt; 或其他的操作系統，那在實際的操作上，可能會和我文章中所寫的有出入，但基本的思路還是一樣的。&lt;/p&gt;
+&lt;p&gt;在這個喜歡速食快餐的時代，或許 Blog 的意義也幾乎化等爲零了，因爲大部分的人並不再會過多的瀏覽長篇文字。但對於喜歡文字記錄的人來說，能將自己的想法與情感記錄下來，也是一種特別的情懷。類似於一份「電子日記」，能將你的現在，帶到若幹年後的未來。&lt;/p&gt;
+&lt;p&gt;也希望能幫助到你，擁有一個屬於你自己的「文筆庫」。&lt;/p&gt;
+&lt;h2 id=&#34;基本教程&#34;&gt;基本教程&lt;/h2&gt;
+&lt;h3 id=&#34;使用-github-建立一個新的專案&#34;&gt;&lt;strong&gt;使用 Github 建立一個新的專案&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;開始，可能很多人要問了， &lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/GitHub&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Github&lt;/a&gt; 到底是個什麼東西？ 就拿 ig 舉例，衆所周知，ig 是一個社交媒體，可以將自己的生活日常和想po的po到上面，給自己的朋友們看到。所以，其實也可以把 Github 當作成一個程序員的社交媒體，只不過po在上面的，都是你自己寫的代碼專案(code)，你可以將自己寫的代碼傳到上面，建立成一個專案，你可以將這個專案設置成公開專案，別人就可以看到你上傳的代碼內容了。如果別人喜歡你的專案，他也可以點贊、追蹤，甚至可以讓別人和你一起修改你的代碼內容。&lt;/p&gt;
+&lt;p&gt;所以，我們可以把 Github 當作是你 Blog 的服務器端，你需要將自己的專案po在上面，這樣所有人都可以看到了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. 注冊一個 Github 帳號&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. 在 Github 上建立一個新的專案 / Create a new repository&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;點擊主界面的 new&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 Repository name 欄中 填寫 「&lt;code&gt;username&lt;/code&gt;.github.io」  這裏的 &lt;code&gt;username&lt;/code&gt; 指的是你自己 Github 帳號名稱&lt;/p&gt;
+&lt;p&gt;因爲我的名稱是&lt;code&gt;7WayneLee&lt;/code&gt;，所以我填的是「&lt;code&gt;7WayneLee&lt;/code&gt;.github.io」&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/1.png&#34;
+	width=&#34;1227&#34;
+	height=&#34;785&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/1_hu2fc7549021be381eb4f5fad46be74c69_80100_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/1_hu2fc7549021be381eb4f5fad46be74c69_80100_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Repository name&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;156&#34;
+		data-flex-basis=&#34;375px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在下方選擇 Public&lt;/li&gt;
+&lt;li&gt;在 Add a README file 前劃勾&lt;/li&gt;
+&lt;li&gt;點擊 Create repository&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3.依照上面的流程，再創建一個新的專案&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 Repository name 欄中 填寫 「&lt;code&gt;username&lt;/code&gt;-Hugo」&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;這兩個 repository 的作用是不同的，在後面我會提到&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;在你的電腦上安裝-git-並配置&#34;&gt;在你的電腦上安裝 git 並配置&lt;/h3&gt;
+&lt;p&gt;因爲使用 Github 所建立的 Blog 是只能通過 git 來傳輸文件的，所以我們需要在我們的個人電腦上安裝 git ，才能管理我們的 Blog。&lt;/p&gt;
+&lt;h4 id=&#34;安裝-git&#34;&gt;&lt;strong&gt;安裝 git&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;點擊進入 &lt;a class=&#34;link&#34; href=&#34;https://brew.sh/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Homebrew&lt;/a&gt; 的網站&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;復制網站中間的那段 &lt;code&gt;code&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/2.png&#34;
+	width=&#34;1065&#34;
+	height=&#34;637&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/2_hu481710782bab63bada90517fef28e989_74214_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/2_hu481710782bab63bada90517fef28e989_74214_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;code&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;167&#34;
+		data-flex-basis=&#34;401px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;敲擊  &lt;code&gt;Command&lt;/code&gt;＋空白鍵 在 搜索欄中查找 &lt;code&gt;terminal&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打開 &lt;code&gt;terminal&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 &lt;code&gt;terminal&lt;/code&gt; 內輸入剛剛復制的 &lt;code&gt;code&lt;/code&gt;  敲擊 &lt;code&gt;Enter&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這裏可能會需要輸入 &lt;code&gt;password&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 &lt;code&gt;terminal&lt;/code&gt; 內輸入 &lt;code&gt;password&lt;/code&gt; 是不會顯示出字符的，但實際上在你敲擊鍵盤時是會讀取到你輸入的內容的。&lt;/li&gt;
+&lt;li&gt;這裏的 &lt;code&gt;password&lt;/code&gt; 一般是你的 電腦密碼 ，需要和你電腦所綁定的 Apple ID 密碼有所區分&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;等待 Homebrew 安裝完成後 再在終端機內輸入 &lt;code&gt;brew install git&lt;/code&gt; 敲擊 &lt;code&gt;Enter&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;等待 git 安裝完成後 我們輸入 &lt;code&gt;git --version&lt;/code&gt; 敲擊 &lt;code&gt;Enter&lt;/code&gt; 查看 git 是否安裝完成&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;如果已經安裝完成，則會返回你當前安裝的 git 的版本號&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;綁定你的帳號並配置-ssh&#34;&gt;&lt;strong&gt;綁定你的帳號並配置 ssh&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;繼續在 &lt;code&gt;terminal&lt;/code&gt; 內進行配置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;設置 git name 和 email&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git config --global user.name &amp;#34;XXX&amp;#34; //將 XXX 替換成你的 Github 用戶名
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git config --global user.email &amp;#34;XXX&amp;#34; //將 XXX 替換成你的 Github 郵箱
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git config --global  --list //可以看到你剛剛配置好的 username 和 email 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;在 輸入 &lt;code&gt;git config --global  --list&lt;/code&gt; 後，會進入 &lt;code&gt;vim&lt;/code&gt; 編輯界面，查看完成後退出這個模式需要用到 &lt;code&gt;vim&lt;/code&gt; 指令&lt;/p&gt;
+&lt;p&gt;不保存退出：先敲擊 &lt;code&gt;Esc&lt;/code&gt; 再輸入 &lt;code&gt;q！&lt;/code&gt; ，最後敲擊 &lt;code&gt;Enter&lt;/code&gt; 即可不保存推出編輯模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;生成 ssh 密鑰&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ ssh-keygen -t rsa -C &amp;#34;XXX&amp;#34; //將 XXX 替換成你的 Github 郵箱
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;在需要你輸入時，敲擊 &lt;code&gt;Enter&lt;/code&gt;就好了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;之後會在指定的路徑下生成兩個文件，分別是 id_rsa 和 id_rsa.pub&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;注意 當生成了兩個檔案後 是可以看到它們所保存在的路徑&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;將生成的公鑰復制到添加到你的 Github 帳號內&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;1.照着剛剛生成檔案所存放的路徑，找到所生成的 id_rsa.pub 檔案 ，開復制裏面的內容&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2.進入 Github 網站 點擊 右上角頭像-點擊 Settings&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;3.在左側的欄中 點擊 &lt;code&gt;SSH and GPG keys&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;4.點擊 &lt;code&gt;New SSH key&lt;/code&gt;  title 中是輸入你的設備名 可以是 ‘ XXX’s Macbook ‘   將你剛剛復制的公鑰內容粘貼到 &lt;code&gt;key&lt;/code&gt;  中 點擊 &lt;code&gt;Add SSH key&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;測試&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ ssh -T git@github.com 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;在出現信息後 在 「 Are you sure you want to continue connecting (yes/no)?」 後輸入 &lt;code&gt;yes&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;看到  Hi 後面是你的用戶名後 就說明大功告成了&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;本地建立檔案&#34;&gt;&lt;strong&gt;本地建立檔案&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;打開 &lt;code&gt;terminal&lt;/code&gt; 在裏面輸入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ brew install hugo //安裝 Hugo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;等待安裝完成後 接着輸入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ hugo new site username-hugo //建立一個新的網站
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ cd username-hugo //使 terminal 打開路徑到 username-hugo 文件夾下
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;username-hugo&lt;/code&gt; 是可以替換成任意名稱。只要是你方便記憶就好。像我的名稱就取成 &lt;code&gt;7WayneLee-Hugo&lt;/code&gt; ,和 Github 上 的 repository 名稱一樣，這樣就不會混了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新增主題&lt;/p&gt;
+&lt;p&gt;在 Hugo 中，有許多的主題可以供你選擇。你可以在 &lt;a class=&#34;link&#34; href=&#34;https://themes.gohugo.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hugo Themes&lt;/a&gt; 上找到一個自己喜歡的主題，然後安裝。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/4.png&#34;
+	width=&#34;1903&#34;
+	height=&#34;933&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/4_huf46e3c65758201ab19035bc7f53593a5_328258_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/4_huf46e3c65758201ab19035bc7f53593a5_328258_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Hugo theme&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;203&#34;
+		data-flex-basis=&#34;489px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;這裏我會以我目前正在使用的主題 &lt;a class=&#34;link&#34; href=&#34;https://themes.gohugo.io/themes/hugo-theme-stack/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Stack&lt;/a&gt; 爲例。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;1.新增 主題 theme&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git clone https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-theme-stack
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;如果你想使用其他的主題，可以 git clone 其他的主題使用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;2.打開 &lt;code&gt;username-hugo&lt;/code&gt; 文件夾，將路徑下 &lt;code&gt;themes/hugo-theme-stack &lt;/code&gt;的文件 &lt;code&gt;config.yaml&lt;/code&gt; 復制到 &lt;code&gt;username-hugo&lt;/code&gt; 文件夾中。然後刪除原本有的 &lt;code&gt;config.toml&lt;/code&gt; 文件&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;3.將 &lt;code&gt;themes/hugo-theme-stack/exampleSite&lt;/code&gt; 路徑下的 &lt;code&gt;content&lt;/code&gt; 文件夾復制到 &lt;code&gt;username-hugo&lt;/code&gt; 文件夾中&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;4.測試&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;在 &lt;code&gt;terminal&lt;/code&gt; 中輸入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ hugo //編譯文檔
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ hugo server -D //架設到本地進行測試
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;執行指令完成後，可以打開瀏覽器輸入 http://localhost:1313，就可以看到大致網站的樣子了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;部署-blog-到-github&#34;&gt;&lt;strong&gt;部署 Blog 到 Github&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;還記得我們一開始建立的兩個 Repository 嗎？ 接下來就要用到它們了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;更改 &lt;code&gt;config.yaml &lt;/code&gt; 文件&lt;/p&gt;
+&lt;p&gt;打開 &lt;code&gt;config.yaml&lt;/code&gt;  對應進行簡單的修改&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;baseurl: https://example.com -&amp;gt; 更改爲baseurl: https://username.github.io/  //將這裏的username替換爲你的 Github 用戶名
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;languageCode: en-us //可以不做修改
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;theme: hugo-theme-stack //不做修改
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paginate: 5 //不做修改
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;title: Example Site -&amp;gt; 更改爲 title： 你喜歡的 Blog 名稱 例如 Wayne&amp;#39;s blog 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;編譯&lt;/p&gt;
+&lt;p&gt;在 &lt;code&gt;terminal&lt;/code&gt; 中輸入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ hugo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;em&gt;等待編譯完成後，進行下一步&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;將 &lt;code&gt;username-hugo&lt;/code&gt; 文件夾連接到 Github 的 &lt;code&gt;username-Hugo&lt;/code&gt; repository 上&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;1.先登錄 &lt;a class=&#34;link&#34; href=&#34;https://github.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Github&lt;/a&gt; 。登錄完成後，在左側 Repositorys 中 找到 &lt;code&gt;username/username-Hugo&lt;/code&gt; 這個 repository ，點擊進入。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2.點擊綠色 &lt;code&gt;code&lt;/code&gt; 按鈕，選擇到SSH，並復制鏈接&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/5.png&#34;
+	width=&#34;399&#34;
+	height=&#34;276&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/5_huf13a52528c3cacc79bf4b5a28c975388_26422_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/5_huf13a52528c3cacc79bf4b5a28c975388_26422_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Github&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;144&#34;
+		data-flex-basis=&#34;346px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;3.連接&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;terminal&lt;/code&gt; 中輸入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git init
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git remote add origin git@github.com:username/username-Hugo.git //將你剛剛復制的鏈接 替換掉 git@github.com這一長串鏈接
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git add .
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git commit -m &amp;#34;Initial commit&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git push -u origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;將 &lt;code&gt;public&lt;/code&gt; 文件夾連接到 Github 的 &lt;code&gt;username.github.io&lt;/code&gt; repository 上&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;1.再回到  Github 在左側 Repositorys 中 找到 &lt;code&gt;username/username.github.io&lt;/code&gt; 這個 repository ，點擊進入。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2.點擊綠色 &lt;code&gt;code&lt;/code&gt; 按鈕，選擇到SSH，並復制鏈接&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;3.連接&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;terminal&lt;/code&gt; 中輸入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ cd public/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git init
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git remote add origin git@github.com:username/username-Hugo.git //將你剛剛復制的鏈接 替換掉 git@github.com這一長串鏈接
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git add .
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git commit -m &amp;#34;Initial commit&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git push -u origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;等待上傳完成後，在瀏覽器中輸入 &lt;code&gt;username&lt;/code&gt;.github.io 就可以看到你的 Blog 了！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;因爲網路和 Github 的願意，第一次部署完成的更新等待時間會比較長，需要耐心等待一下。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;編輯你的-blog&#34;&gt;&lt;strong&gt;編輯你的 Blog&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;修改你的 &lt;code&gt;config&lt;/code&gt; 文件&lt;/p&gt;
+&lt;p&gt;一般的 Hugo 主題，都會有一個 &lt;code&gt;config&lt;/code&gt; 文件讓你自行修改配置。&lt;/p&gt;
+&lt;p&gt;因爲每個主題作者習慣或者編寫語言的不同，每一個 Hugo 主題的 &lt;code&gt;config&lt;/code&gt; 文件內容也不同。&lt;/p&gt;
+&lt;p&gt;所以一般來說我們需要作者的主題文檔來搭配使用，看看什麼參數是可以自定義的，什麼是不可以的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;關於編輯文字的方法&lt;/p&gt;
+&lt;p&gt;一般來說，都會使用 Markdown 語言來編寫 Blog 文章的內容和格式。&lt;/p&gt;
+&lt;p&gt;可能你沒聽說過 Markdown 語言？ 沒關係 這只單純是一類標記語言。 你只要把它當作和 word 文檔 之類的辦公軟件理解就好了。&lt;/p&gt;
+&lt;p&gt;當然作爲一類語言，它也是有專門的語法的。而大部分語法的作用，都是爲了編輯 blog文章的格式。像是 標題，字體，斜體，都是可以通過專門的語法進行編寫的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;從編譯到上傳的基本流程&lt;/p&gt;
+&lt;p&gt;在我們寫好了一篇文章後，如何讓別人在訪問網站的時候能夠看見呢？&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;1.將寫好的文章 .md文件 放在 &lt;code&gt;content/post&lt;/code&gt; 路徑下&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果你要在文章中添加圖片的話，就需要在 &lt;code&gt;content/post&lt;/code&gt; 路徑下建立一個文件夾，然後將這篇文章和所有的圖片，都放在這個文件夾中。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;2.編譯並上傳&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以我的主題爲例&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在 &lt;code&gt;terminal&lt;/code&gt; 中輸入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ cd username-hugo //打開到 Blog 根目錄路徑下
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ hugo //編譯
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ cd public/ //將路徑更改到 public 中
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git add --all
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git commit -m &amp;#34;XX&amp;#34; //XX可自行修改，這個是你自己用來記錄這次修改的內容是什麼，類似於給這次更新取一個小標題，不要太長就好
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git push -u origin master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ cd ../
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git add --all
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git commit -m &amp;#34;XX&amp;#34; //XX可自行修改，這個是你自己用來記錄這次修改的內容是什麼，類似於給這次更新取一個小標題，不要太長就好
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git push -u origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;解釋一下 兩個 Repository 他們分別的作用。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;username-Hugo&lt;/p&gt;
+&lt;p&gt;這是爲了做 Blog 的&lt;strong&gt;源碼&lt;/strong&gt;備份而建立的。&lt;/p&gt;
+&lt;p&gt;相當於這個庫中的內容是你還未用 hugo 編譯前的內容。防止你的 Blog 源碼部分丟失。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;username.github.io&lt;/p&gt;
+&lt;p&gt;這個庫存放的是目錄中文件夾 public 的內容。&lt;/p&gt;
+&lt;p&gt;而 public 的內容，是通過 hugo 編譯生成的，也就是你的網站的內容。&lt;/p&gt;
+&lt;p&gt;這是用來部署你的網站的庫。&lt;/p&gt;
+&lt;p&gt;通過這兩個庫進行保存，也是一種保護，防止你本地的文件因爲電腦丟失或者損壞而全部丟失。如果提前建庫備份，就不害怕本地的內容丟失了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
+&lt;p&gt;以上就是架設 Blog 的完整操作了。如果你順利看到這裏，並且同時也在一起動手的情況下，相信你也已經將你的 Blog 基本框架架設好了，也對這些框架和 git 有了一個簡單的認知。&lt;/p&gt;
+&lt;p&gt;下一步就是需要編輯我們的 Blog 文章了。在第五點中，我有大概提到將 &lt;code&gt;.md&lt;/code&gt;	檔案通過 Hugo 編譯並上傳到 Github 的基本操作了。但在這之前，我們還要先學習的是如何將你的文字通過 Markdown 語言進行編輯和排版。在下一篇文章中，我會介紹 Markdowm 語言是什麼，以及幫助你瞭解一些基本 Markdown 語言的編寫問題。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2.10 更新：&lt;a class=&#34;link&#34; href=&#34;https://7waynelee.github.io/p/markdown-%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Blog 文章編輯語言：Markdown &amp;mdash; 語言學習筆記&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;希望這篇文章能幫助到你！&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

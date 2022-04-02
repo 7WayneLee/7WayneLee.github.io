@@ -1,0 +1,2667 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Technology on Daniel&#39;s Blog</title>
+        <link>https://7WayneLee.github.io/categories/technology/</link>
+        <description>Recent content in Technology on Daniel&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sat, 12 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://7WayneLee.github.io/categories/technology/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Blog 後臺管理工具：Google Analytics</title>
+        <link>https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/</link>
+        <pubDate>Sat, 12 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/</guid>
+        <description>&lt;img src="https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/background.jpeg" alt="Featured image of post Blog 後臺管理工具：Google Analytics" /&gt;&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
+&lt;p&gt;在架設了網站後，可能我們希望能夠看到自己的網站有沒有人瀏覽，每天有多少人瀏覽，這些人都來自那裏這樣一系列的數據。這時我們就需要用到 Google 旗下的一個網站管理工具 &amp;mdash; Google Analytics。Google Analytics 已經經過了很多年的升級，現在的使用可以說是十分的方便，也比較簡單，並且它可以將數據幫你按照你的需求進行整理，還能夠可視化的展示出你所要的數據。&lt;/p&gt;
+&lt;p&gt;接下來就看看通過 Github Page + Hugo 所架設的 Blog 網站，該如何使用這個工具。&lt;/p&gt;
+&lt;h2 id=&#34;基本步驟&#34;&gt;基本步驟&lt;/h2&gt;
+&lt;h3 id=&#34;設置-google-analytics--賬戶&#34;&gt;設置 Google Analytics  賬戶&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;打開 瀏覽器 進入 &lt;a class=&#34;link&#34; href=&#34;https://analytics.google.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://analytics.google.com/&lt;/a&gt; ，登陸 Google 賬戶&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;點擊 &lt;code&gt;開始測量&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;先給自己的賬戶取一個新的 &lt;code&gt;帳戶名稱&lt;/code&gt;，帳戶資料共用設定我是勾選了前三項，你也可以根據自己的需求勾選，然後點 &lt;code&gt;下一步&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/1.png&#34;
+	width=&#34;1866&#34;
+	height=&#34;732&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/1_hud17ba7d0c474473909cf6496cc47a8ed_189094_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/1_hud17ba7d0c474473909cf6496cc47a8ed_189094_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;賬戶設定&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;254&#34;
+		data-flex-basis=&#34;611px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;給自己獲取的數據資源取一個新的 &lt;code&gt;資源名稱&lt;/code&gt;，因爲是針對於自己的 Blog 網站資源，所以我就填了我自己的「Blog名稱」，然後再點擊 &lt;code&gt;下一步&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在商家資訊中，這裏就根據自己的情況填寫就好。在填寫完成後，點擊 &lt;code&gt;建立&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然後只要 &lt;code&gt;接受&lt;/code&gt; Google Analytics 服務條款合約就完成了&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;設置-google-analytics-資源&#34;&gt;設置 Google Analytics 資源&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;進入主界面後，點擊左下角的 &lt;code&gt;齒輪圖標&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;先在右側欄中點擊 &lt;code&gt;資料串流&lt;/code&gt; ，再選擇 &lt;code&gt;網站&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/2.png&#34;
+	width=&#34;1306&#34;
+	height=&#34;608&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/2_hu7bd7ccaf18ef82842c7c5ee8f4ea999c_46540_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/2_hu7bd7ccaf18ef82842c7c5ee8f4ea999c_46540_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;資料串流&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;214&#34;
+		data-flex-basis=&#34;515px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在網站網址中，輸入你的 Blog 域名，例如我輸入的是 &lt;code&gt;7waynelee.github.io&lt;/code&gt; ，串流名稱可以填入你自己給你的 Blog 所取的名稱，都輸入完成後，點擊 &lt;code&gt;建立串流&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/3.png&#34;
+	width=&#34;1430&#34;
+	height=&#34;536&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/3_hu2f7cd7ec25043e2b76d962aa99e3133d_63556_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/3_hu2f7cd7ec25043e2b76d962aa99e3133d_63556_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;設定網站網址&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;266&#34;
+		data-flex-basis=&#34;640px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;接着就會跳出 &lt;code&gt;網頁串流詳情&lt;/code&gt; ，在這當中可以獲得自己的 &lt;code&gt;評估ID&lt;/code&gt; 和一串 &lt;code&gt;全域網站代碼&lt;/code&gt; ，這在接下來會使用到&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/4.png&#34;
+	width=&#34;1318&#34;
+	height=&#34;799&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/4_hu034c4ded489d94403a7fb7bd73196996_151145_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/4_hu034c4ded489d94403a7fb7bd73196996_151145_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;詳細訊息&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;164&#34;
+		data-flex-basis=&#34;395px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;hugo-設置-configtoml&#34;&gt;Hugo 設置 config.toml&lt;/h3&gt;
+&lt;p&gt;接下來就需要將你的本地 Blog 文件進行一些修改&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;先到你的電腦中找到你的本地 Blog 目錄文件夾，也就是之前所創立的 &lt;code&gt;username-Hugo&lt;/code&gt; 這個文件夾&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;進入 &lt;code&gt;username-Hugo&lt;/code&gt;文件夾中&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打開 config.toml / config.yml 進行編輯&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 google Analytics 後面，貼上 &lt;code&gt;評估 ID&lt;/code&gt;，格式爲 &lt;code&gt;&amp;quot;G-XXXXX...&amp;quot;&lt;/code&gt;                                                                                                                                                   如果你的 config 檔案中沒有這個變量，就需要自己創建一個新的變臉，格式爲 &lt;code&gt;googleAnalytics=&amp;quot;G-XXXXX...&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/5.png&#34;
+	width=&#34;581&#34;
+	height=&#34;160&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/5_hucf8a0da7b224a8b0c6f65183882b23b6_20887_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/5_hucf8a0da7b224a8b0c6f65183882b23b6_20887_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;評估ID&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;363&#34;
+		data-flex-basis=&#34;871px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;hugo-設置-google-analytics-html-調用模板&#34;&gt;Hugo 設置 google analytics html 調用模板&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;進入 username-Hugo/themes/hugo-theme-stack/layouts 目錄下&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;創建一個名爲 &lt;code&gt;_internal&lt;/code&gt; 的文件夾&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打開 &lt;code&gt;_internal&lt;/code&gt; 文件夾，創建一個名爲 &lt;code&gt;google_analytics_async.html&lt;/code&gt; 的檔案&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 &lt;em&gt;文字編輯器&lt;/em&gt; 打開 &lt;code&gt;google_analytics_async.html&lt;/code&gt; 檔案&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這裏直接 &lt;code&gt;左鍵&lt;/code&gt; 雙擊打開，容易通過瀏覽器直接開啓。可能需要 &lt;code&gt;右鍵&lt;/code&gt; ，選擇記事本類的軟體打開，才能編輯。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 Google Analytics 網站上，將剛剛在網站中得到的全域網站代碼複製，再粘貼到 &lt;code&gt;google_analytics_async.html &lt;/code&gt; 這個檔案中&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/6.png&#34;
+	width=&#34;1292&#34;
+	height=&#34;433&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/6_hu3a018ca8a3f06db42bb806b49278fb6a_88260_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/6_hu3a018ca8a3f06db42bb806b49278fb6a_88260_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;全域網站代碼&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;298&#34;
+		data-flex-basis=&#34;716px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;再打開 &lt;code&gt;username-Hugo/themes/hugo-theme-stack/layouts\_default\&lt;/code&gt; 到這個目錄下&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;找到裏面的一個名爲 &lt;code&gt;baseof.html&lt;/code&gt; 的檔案，使用&lt;em&gt;文字編輯器&lt;/em&gt; 打開 &lt;code&gt;baseof.html&lt;/code&gt;，在 ＜head＞…＜/head＞之間粘貼上以下代碼：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{ if not .Site.IsServer }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  {{ template &amp;#34;_internal/google_analytics_async.html&amp;#34; . }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{ end }}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/7.png&#34;
+	width=&#34;659&#34;
+	height=&#34;197&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/7_hu362301742b5a2b05f930c854525fd5bf_32332_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/7_hu362301742b5a2b05f930c854525fd5bf_32332_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;code&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;334&#34;
+		data-flex-basis=&#34;802px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;回到 Blog 文件夾根目錄，重新通過 &lt;code&gt;hugo&lt;/code&gt; 編譯並上傳到 Github&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
+&lt;p&gt;這樣以後，在 Google Analytics 中，就可以看到每天網站的訪問量，訪問地址，停留時間等等的數據。Google Analytics 大部分的數據都是以模塊的方式呈現，也是十分的方便，可以讓你自由的選擇需要看到的數據，可視化做的也不錯。&lt;/p&gt;
+&lt;p&gt;在你剛剛設置好的時候，Google Analytics 是還沒有數據的。在經過一段時間的收集後，慢慢的就會展示出來了。當然剛架設的網站訪問量不高也很正常，只要後續的網站更新頻繁或者瀏覽的人數越來越多，Google 對你的網站的評級也就會慢慢升高，慢慢的訪問量就會上升了。&lt;/p&gt;
+&lt;p&gt;關於 Blog 的系列文章，到這裏也就基本完成了，也差不該告一段落了。希望可以幫助到你們，擁有一個比較舒適的環境，存放自己的文字，擁有一個屬於自己的 Blog 網站。如果過程中需要幫助話，可以通過 &lt;code&gt;About&lt;/code&gt; 界面下的 &lt;em&gt;Telegram&lt;/em&gt; 鏈接和我取得聯繫，我也會儘量的幫助你。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Blog 文章編輯語言：Markdown --- 語言學習筆記</title>
+        <link>https://7WayneLee.github.io/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/</link>
+        <pubDate>Thu, 10 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://7WayneLee.github.io/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/</guid>
+        <description>&lt;img src="https://7WayneLee.github.io/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/background.jpg" alt="Featured image of post Blog 文章編輯語言：Markdown --- 語言學習筆記" /&gt;&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;Markdown 語言是我在擁有了自己的 Blog 之後才接觸到的。因爲在寫文章的時候經常會使用 Markdown 語言來進行排版和編輯，整體來說效果很好，而且簡單易學。&lt;/p&gt;
+&lt;p&gt;這篇文章就來簡單的介紹一下 Markdown 語言的語法，也算是一篇文章的一個後續，來幫助更多剛剛接觸 Markdown 語言的人能夠快速上手。學語言的方法基本都類似，在學習了基礎語法後，多用，慢慢就會養成習慣，然後記住了。我也是通過寫文章的時候，一步步的學習，漸漸的熟悉上這門語言。所以並不太需要把全部的語法很強調的全部記錄下來，在過程中多加使用，不記得的時候再看看語法，漸漸的就會記住了。&lt;/p&gt;
+&lt;h2 id=&#34;markdown-編輯器&#34;&gt;Markdown 編輯器&lt;/h2&gt;
+&lt;p&gt;Markdown因爲是開源的語言，所以市面上也會有很多不同的編輯器。在寫文章之前，我們也要先找好一個自己舒服的編輯器才行。&lt;/p&gt;
+&lt;p&gt;下面的是我推薦的幾款：&lt;/p&gt;
+&lt;h3 id=&#34;typora&#34;&gt;Typora&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Typora是我一直在使用的一款編輯器。強大的功能，簡潔乾淨的界面，還有能夠直接使用快捷鍵編輯界面，讓我使用的時候得心應手。你可以自由選擇預覽編輯和源碼編輯兩種編輯模式，我一般會使用預覽編輯，十分方便。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;但缺點在於，除了 Linux 平臺可以無限期免費試用，其他的平臺都已經需要付費了。因爲我長期使用 Arch 作爲我編輯 Blog 和 程式的系統，所以我還可以免費使用。但在其他平臺就沒這麼幸運了。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;目前售價：$ 14.99&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;visual-studio-code&#34;&gt;Visual Studio Code&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;VSCode 也是我最早接觸的代碼編輯器。免費，開源，輕量，加上漂亮的外觀，最重要是有許多功能強大的延伸模組，可以把一個編輯器加入很多其他的功能，更加方便的單一個編輯器編輯不同語言的代碼。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;只要安裝了 &lt;code&gt;Markdown All in One&lt;/code&gt; 和 &lt;code&gt;Markdown Preview Enhanced&lt;/code&gt; 兩個延伸模組後，也可以很舒服的編輯文章。&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;macdown&#34;&gt;MacDown&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;這是在 Mac OS 平臺上的一款開源免費的 Markdown 編輯器。它和 VSCode 的編輯界面差不多，主要編輯區在左側，右側是預覽畫面。你只需在左邊進行寫作，加上 Markdown 語法標籤，就能在右側預覽區看到即時預覽，方便你書寫或編輯文件。在完成之後，除了保存爲 .md 格式外，它也能匯出 PDF 或 HTML檔案。&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;基礎語法&#34;&gt;基礎語法&lt;/h2&gt;
+&lt;h3 id=&#34;標題&#34;&gt;標題&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;標題一般是分爲 6 個層級。分別是 h1 - h6，h1 最大，h6 最小。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;標題的寫法也有兩種，第一種是在標題文字的下一行中添加 &lt;code&gt;===&lt;/code&gt; ，第二種是在標題前加上 &lt;code&gt;#&lt;/code&gt; 。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;h1 標題
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;===
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;# h1 標題       // 注意 # 和標題間需要空格
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;&lt;/span&gt;&lt;span class=&#34;gu&#34;&gt;## h2 標題
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;### h3 標題
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;#### h4 標題
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;##### h5 標題
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;###### h6 標題
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;引言&#34;&gt;引言&lt;/h3&gt;
+&lt;p&gt;Markdown 是通過 &lt;code&gt;&amp;gt;&lt;/code&gt; 添加引言。使用 &lt;code&gt;&amp;gt;&lt;/code&gt; 表示是一級引言，使用  &lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt; 可在一級引言下添加二級引言。在引言內，也支持使用其他的 Markdown 語法。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;歡迎大家來到我的 Blog 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;希望大家喜歡
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;如果它有幫助到你，也可以和身邊的人分享我的 Blog
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;顯示效果如下：&lt;/p&gt;
+&lt;p&gt;歡迎大家來到我的 Blog&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;希望大家喜歡&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果它有幫助到你，也可以和身邊的人分享我的 Blog&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;清單&#34;&gt;清單&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;1. 無序清單&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;*&lt;/code&gt;、&lt;code&gt;+&lt;/code&gt;、&lt;code&gt;-&lt;/code&gt; 都可以輸出無序清單。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;*&lt;/span&gt; Hello,welcome to my blog.  // 符號與清單標題間也同樣需要空格
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;+ Hello,welcome to my blog.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; Hello,welcome to my blog.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;顯示效果如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hello,welcome to my blog.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;Hello,welcome to my blog.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;Hello,welcome to my blog.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2. 有序清單&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在數字後面加上一個 &lt;code&gt;.&lt;/code&gt; ，Markdown 語言就會自動生成有序清單列表。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;1.&lt;/span&gt; Hello,welcome to my blog.    // 數字. 之後依然需要空格
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;2.&lt;/span&gt; Though my essay is not very good,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;3.&lt;/span&gt; I wish you will like it.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;顯示效果如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Hello,welcome to my blog.&lt;/li&gt;
+&lt;li&gt;Though my essay is not very good,&lt;/li&gt;
+&lt;li&gt;I wish you will like it.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;清單有的時候可能會不小心就產生了，例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1984. What a great book.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;只要在句首出現了&lt;strong&gt;數字-句點-空白&lt;/strong&gt;，它就會自動的生成清單列表。所以我們可以在句點前加上 &lt;code&gt;\&lt;/code&gt; ，例如&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1984\. What a great book.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;這樣它就不會被視爲清單了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;程式碼&#34;&gt;程式碼&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;程式碼區塊&lt;/strong&gt;的寫法如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;```C //這裏的在的名稱可以是任何語言的名稱 C就是C語言 Python就是Python語言
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;printf(&amp;#34;Hello! World!\n&amp;#34;);
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;```
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;顯示效果如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-C&#34; data-lang=&#34;C&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Hello! World!&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;一般程式碼&lt;/strong&gt;（不需要區塊）的寫法如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;This is my code:`printf(&amp;#34;Hello! World!\n&amp;#34;);`
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;顯示效果如下：&lt;/p&gt;
+&lt;p&gt;This is my code: &lt;code&gt;printf(&amp;quot;Hello! World!\n&amp;quot;);&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;分割線&#34;&gt;分割線&lt;/h3&gt;
+&lt;p&gt;可以在一行中用三個或以上的&lt;code&gt;*&lt;/code&gt;、&lt;code&gt;-&lt;/code&gt;、&lt;code&gt;_&lt;/code&gt; 來建立一個分隔線，行內不能有其他東西。你也可以在符號中間插入空白。&lt;/p&gt;
+&lt;p&gt;下面有幾種建立分隔線的寫法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;* * *
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;***
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*****
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- - -
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;---------------------------------------
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;強調&#34;&gt;強調&lt;/h3&gt;
+&lt;p&gt;Markdown 語言一般有兩種強調方式：&lt;strong&gt;粗體&lt;/strong&gt;和&lt;em&gt;斜體&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;粗體的寫法是在被強調的文字兩側加上 &lt;code&gt;**&lt;/code&gt; ，斜體的寫法是在被強調的文字兩側加上 &lt;code&gt;*&lt;/code&gt;。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;**我被強調了**
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;ge&#34;&gt;*我被強調了*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;顯示效果如下：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我被強調了&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我被強調了*&lt;/p&gt;
+&lt;h3 id=&#34;插入鏈接&#34;&gt;插入鏈接&lt;/h3&gt;
+&lt;p&gt;Markdown支援兩種形式的行內連結語法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[&lt;span class=&#34;nt&#34;&gt;Markdown&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;https://zh.wikipedia.org/wiki/Markdown&lt;/span&gt;)到底是什麼語言？
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;顯示效果如下：&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/Markdown&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Markdown&lt;/a&gt;到底是什麼語言？&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;這樣我們點擊 Markdown，就可以跳轉到對應的鏈接了&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;插入圖片&#34;&gt;插入圖片&lt;/h3&gt;
+&lt;p&gt;插入圖片的基本格式是 一個 &lt;code&gt;！&lt;/code&gt; ，加上 &lt;code&gt;[]&lt;/code&gt;，在方框內給圖片相當於起個名字，再加上 &lt;code&gt;()&lt;/code&gt;，括號內寫入圖片的鏈接。&lt;/p&gt;
+&lt;p&gt;在寫 Blog 文章的時候，一般圖片需要和 .md 文章主題放入一個文件夾中，所以只需要在 &lt;code&gt;()&lt;/code&gt; 寫入&lt;strong&gt;圖片文件名稱.圖片格式&lt;/strong&gt;就好了。例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;！[舉例](圖片.jpg) 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;這樣就可以顯示出圖片了&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不過 Markdown 語言的圖片是無法調整位置的，他會自動顯示在當前行列中&lt;/p&gt;
+&lt;p&gt;特別注意：在書寫插入鏈接和插入圖片的兩個語法時，裏面所有的符號都是半型符號。也就是如果輸入法是漢語輸入法的時候，要將輸入法切換爲英文，再輸入符號。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;表格&#34;&gt;表格&lt;/h3&gt;
+&lt;p&gt;Markdown 也同樣可以輸出表格。但要注意表格的對齊方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;---&lt;/code&gt;：預設靠左&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:---&lt;/code&gt;：向左靠齊&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;---:&lt;/code&gt;：向右靠齊&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:---:&lt;/code&gt;：居中對齊&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| 列表1 | 列表2 | 列表 3 | 列表4 |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| --- | :--- | ---: | :---: |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| ... | ... | ... | --- |
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;| ... | ... | ... | --- |
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;顯示效果如下：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;列表1&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;列表2&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;列表 3&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;列表4&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&amp;hellip;&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;&amp;hellip;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&amp;mdash;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;hellip;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&amp;hellip;&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;&amp;hellip;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&amp;mdash;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;美觀&#34;&gt;美觀&lt;/h2&gt;
+&lt;p&gt;這一點作爲一個工科生，可能不太適合由我來說。我的 Blog 文章排版，也不算特別好，只能說看起來比較整齊。&lt;/p&gt;
+&lt;p&gt;一般的，我也只會給自己規定整體的格式，那裏是用 &lt;code&gt;*&lt;/code&gt; 列表，那裏是用有序列表。還有統一的排版，在同類的區塊下排版相同等等。&lt;/p&gt;
+&lt;p&gt;下面這篇&lt;a class=&#34;link&#34; href=&#34;https://github.com/sparanoid/chinese-copywriting-guidelines/blob/master/README.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;中文文案排版指北&lt;/a&gt;，是一篇還不錯的中文基本排版標準。學習別人的一些編輯技巧還是可以讓自己的文章看起來更加舒適的，但也不一定要完全遵照別人所定的標準，最主要還是自己首先覺得舒服好看，也就不太有問題。&lt;/p&gt;
+&lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
+&lt;p&gt;上面的基本語法也是我個人的一部分總結，其實還有一些其他的語法，只不過是因爲我的主題無法顯示，我就沒有在這裏細說，你們也可以自行探索。&lt;/p&gt;
+&lt;p&gt;在網路上也還有很多 Markdown 語法的文章，可以多看多學，邊上手邊結合，就可以慢慢的學會了。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Blog 的搭建：使用 Github Page &#43; Hugo 架設一個屬於自己的 Blog</title>
+        <link>https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/</link>
+        <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/</guid>
+        <description>&lt;img src="https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/background.png" alt="Featured image of post Blog 的搭建：使用 Github Page &#43; Hugo 架設一個屬於自己的 Blog" /&gt;&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
+&lt;p&gt;此教程是使用 Github Page + Hugo theme 建立一個個人的 Blog。 文章教程的主要環境是基於 &lt;code&gt;Mac OS&lt;/code&gt;，如果你的電腦系統是 &lt;code&gt;Windows&lt;/code&gt; 或其他的操作系統，那在實際的操作上，可能會和我文章中所寫的有出入，但基本的思路還是一樣的。&lt;/p&gt;
+&lt;p&gt;在這個喜歡速食快餐的時代，或許 Blog 的意義也幾乎化等爲零了，因爲大部分的人並不再會過多的瀏覽長篇文字。但對於喜歡文字記錄的人來說，能將自己的想法與情感記錄下來，也是一種特別的情懷。類似於一份「電子日記」，能將你的現在，帶到若幹年後的未來。&lt;/p&gt;
+&lt;p&gt;也希望能幫助到你，擁有一個屬於你自己的「文筆庫」。&lt;/p&gt;
+&lt;h2 id=&#34;基本教程&#34;&gt;基本教程&lt;/h2&gt;
+&lt;h3 id=&#34;使用-github-建立一個新的專案&#34;&gt;&lt;strong&gt;使用 Github 建立一個新的專案&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;開始，可能很多人要問了， &lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/GitHub&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Github&lt;/a&gt; 到底是個什麼東西？ 就拿 ig 舉例，衆所周知，ig 是一個社交媒體，可以將自己的生活日常和想po的po到上面，給自己的朋友們看到。所以，其實也可以把 Github 當作成一個程序員的社交媒體，只不過po在上面的，都是你自己寫的代碼專案(code)，你可以將自己寫的代碼傳到上面，建立成一個專案，你可以將這個專案設置成公開專案，別人就可以看到你上傳的代碼內容了。如果別人喜歡你的專案，他也可以點贊、追蹤，甚至可以讓別人和你一起修改你的代碼內容。&lt;/p&gt;
+&lt;p&gt;所以，我們可以把 Github 當作是你 Blog 的服務器端，你需要將自己的專案po在上面，這樣所有人都可以看到了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. 注冊一個 Github 帳號&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. 在 Github 上建立一個新的專案 / Create a new repository&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;點擊主界面的 new&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 Repository name 欄中 填寫 「&lt;code&gt;username&lt;/code&gt;.github.io」  這裏的 &lt;code&gt;username&lt;/code&gt; 指的是你自己 Github 帳號名稱&lt;/p&gt;
+&lt;p&gt;因爲我的名稱是&lt;code&gt;7WayneLee&lt;/code&gt;，所以我填的是「&lt;code&gt;7WayneLee&lt;/code&gt;.github.io」&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/1.png&#34;
+	width=&#34;1227&#34;
+	height=&#34;785&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/1_hu2fc7549021be381eb4f5fad46be74c69_80100_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/1_hu2fc7549021be381eb4f5fad46be74c69_80100_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Repository name&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;156&#34;
+		data-flex-basis=&#34;375px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在下方選擇 Public&lt;/li&gt;
+&lt;li&gt;在 Add a README file 前劃勾&lt;/li&gt;
+&lt;li&gt;點擊 Create repository&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3.依照上面的流程，再創建一個新的專案&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 Repository name 欄中 填寫 「&lt;code&gt;username&lt;/code&gt;-Hugo」&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;這兩個 repository 的作用是不同的，在後面我會提到&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;在你的電腦上安裝-git-並配置&#34;&gt;在你的電腦上安裝 git 並配置&lt;/h3&gt;
+&lt;p&gt;因爲使用 Github 所建立的 Blog 是只能通過 git 來傳輸文件的，所以我們需要在我們的個人電腦上安裝 git ，才能管理我們的 Blog。&lt;/p&gt;
+&lt;h4 id=&#34;安裝-git&#34;&gt;&lt;strong&gt;安裝 git&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;點擊進入 &lt;a class=&#34;link&#34; href=&#34;https://brew.sh/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Homebrew&lt;/a&gt; 的網站&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;復制網站中間的那段 &lt;code&gt;code&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/2.png&#34;
+	width=&#34;1065&#34;
+	height=&#34;637&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/2_hu481710782bab63bada90517fef28e989_74214_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/2_hu481710782bab63bada90517fef28e989_74214_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;code&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;167&#34;
+		data-flex-basis=&#34;401px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;敲擊  &lt;code&gt;Command&lt;/code&gt;＋空白鍵 在 搜索欄中查找 &lt;code&gt;terminal&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打開 &lt;code&gt;terminal&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 &lt;code&gt;terminal&lt;/code&gt; 內輸入剛剛復制的 &lt;code&gt;code&lt;/code&gt;  敲擊 &lt;code&gt;Enter&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這裏可能會需要輸入 &lt;code&gt;password&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 &lt;code&gt;terminal&lt;/code&gt; 內輸入 &lt;code&gt;password&lt;/code&gt; 是不會顯示出字符的，但實際上在你敲擊鍵盤時是會讀取到你輸入的內容的。&lt;/li&gt;
+&lt;li&gt;這裏的 &lt;code&gt;password&lt;/code&gt; 一般是你的 電腦密碼 ，需要和你電腦所綁定的 Apple ID 密碼有所區分&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;等待 Homebrew 安裝完成後 再在終端機內輸入 &lt;code&gt;brew install git&lt;/code&gt; 敲擊 &lt;code&gt;Enter&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;等待 git 安裝完成後 我們輸入 &lt;code&gt;git --version&lt;/code&gt; 敲擊 &lt;code&gt;Enter&lt;/code&gt; 查看 git 是否安裝完成&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;如果已經安裝完成，則會返回你當前安裝的 git 的版本號&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;綁定你的帳號並配置-ssh&#34;&gt;&lt;strong&gt;綁定你的帳號並配置 ssh&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;繼續在 &lt;code&gt;terminal&lt;/code&gt; 內進行配置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;設置 git name 和 email&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git config --global user.name &amp;#34;XXX&amp;#34; //將 XXX 替換成你的 Github 用戶名
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git config --global user.email &amp;#34;XXX&amp;#34; //將 XXX 替換成你的 Github 郵箱
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git config --global  --list //可以看到你剛剛配置好的 username 和 email 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;在 輸入 &lt;code&gt;git config --global  --list&lt;/code&gt; 後，會進入 &lt;code&gt;vim&lt;/code&gt; 編輯界面，查看完成後退出這個模式需要用到 &lt;code&gt;vim&lt;/code&gt; 指令&lt;/p&gt;
+&lt;p&gt;不保存退出：先敲擊 &lt;code&gt;Esc&lt;/code&gt; 再輸入 &lt;code&gt;q！&lt;/code&gt; ，最後敲擊 &lt;code&gt;Enter&lt;/code&gt; 即可不保存推出編輯模式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;生成 ssh 密鑰&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ ssh-keygen -t rsa -C &amp;#34;XXX&amp;#34; //將 XXX 替換成你的 Github 郵箱
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;在需要你輸入時，敲擊 &lt;code&gt;Enter&lt;/code&gt;就好了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;之後會在指定的路徑下生成兩個文件，分別是 id_rsa 和 id_rsa.pub&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;注意 當生成了兩個檔案後 是可以看到它們所保存在的路徑&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;將生成的公鑰復制到添加到你的 Github 帳號內&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;1.照着剛剛生成檔案所存放的路徑，找到所生成的 id_rsa.pub 檔案 ，開復制裏面的內容&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2.進入 Github 網站 點擊 右上角頭像-點擊 Settings&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;3.在左側的欄中 點擊 &lt;code&gt;SSH and GPG keys&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;4.點擊 &lt;code&gt;New SSH key&lt;/code&gt;  title 中是輸入你的設備名 可以是 ‘ XXX’s Macbook ‘   將你剛剛復制的公鑰內容粘貼到 &lt;code&gt;key&lt;/code&gt;  中 點擊 &lt;code&gt;Add SSH key&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;測試&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ ssh -T git@github.com 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;在出現信息後 在 「 Are you sure you want to continue connecting (yes/no)?」 後輸入 &lt;code&gt;yes&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;看到  Hi 後面是你的用戶名後 就說明大功告成了&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;本地建立檔案&#34;&gt;&lt;strong&gt;本地建立檔案&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;打開 &lt;code&gt;terminal&lt;/code&gt; 在裏面輸入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ brew install hugo //安裝 Hugo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;等待安裝完成後 接着輸入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ hugo new site username-hugo //建立一個新的網站
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ cd username-hugo //使 terminal 打開路徑到 username-hugo 文件夾下
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;username-hugo&lt;/code&gt; 是可以替換成任意名稱。只要是你方便記憶就好。像我的名稱就取成 &lt;code&gt;7WayneLee-Hugo&lt;/code&gt; ,和 Github 上 的 repository 名稱一樣，這樣就不會混了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新增主題&lt;/p&gt;
+&lt;p&gt;在 Hugo 中，有許多的主題可以供你選擇。你可以在 &lt;a class=&#34;link&#34; href=&#34;https://themes.gohugo.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hugo Themes&lt;/a&gt; 上找到一個自己喜歡的主題，然後安裝。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/4.png&#34;
+	width=&#34;1903&#34;
+	height=&#34;933&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/4_huf46e3c65758201ab19035bc7f53593a5_328258_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/4_huf46e3c65758201ab19035bc7f53593a5_328258_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Hugo theme&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;203&#34;
+		data-flex-basis=&#34;489px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;這裏我會以我目前正在使用的主題 &lt;a class=&#34;link&#34; href=&#34;https://themes.gohugo.io/themes/hugo-theme-stack/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Stack&lt;/a&gt; 爲例。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;1.新增 主題 theme&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git clone https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-theme-stack
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;如果你想使用其他的主題，可以 git clone 其他的主題使用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;2.打開 &lt;code&gt;username-hugo&lt;/code&gt; 文件夾，將路徑下 &lt;code&gt;themes/hugo-theme-stack &lt;/code&gt;的文件 &lt;code&gt;config.yaml&lt;/code&gt; 復制到 &lt;code&gt;username-hugo&lt;/code&gt; 文件夾中。然後刪除原本有的 &lt;code&gt;config.toml&lt;/code&gt; 文件&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;3.將 &lt;code&gt;themes/hugo-theme-stack/exampleSite&lt;/code&gt; 路徑下的 &lt;code&gt;content&lt;/code&gt; 文件夾復制到 &lt;code&gt;username-hugo&lt;/code&gt; 文件夾中&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;4.測試&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;在 &lt;code&gt;terminal&lt;/code&gt; 中輸入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ hugo //編譯文檔
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ hugo server -D //架設到本地進行測試
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;執行指令完成後，可以打開瀏覽器輸入 http://localhost:1313，就可以看到大致網站的樣子了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;部署-blog-到-github&#34;&gt;&lt;strong&gt;部署 Blog 到 Github&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;還記得我們一開始建立的兩個 Repository 嗎？ 接下來就要用到它們了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;更改 &lt;code&gt;config.yaml &lt;/code&gt; 文件&lt;/p&gt;
+&lt;p&gt;打開 &lt;code&gt;config.yaml&lt;/code&gt;  對應進行簡單的修改&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;baseurl: https://example.com -&amp;gt; 更改爲baseurl: https://username.github.io/  //將這裏的username替換爲你的 Github 用戶名
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;languageCode: en-us //可以不做修改
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;theme: hugo-theme-stack //不做修改
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paginate: 5 //不做修改
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;title: Example Site -&amp;gt; 更改爲 title： 你喜歡的 Blog 名稱 例如 Wayne&amp;#39;s blog 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;編譯&lt;/p&gt;
+&lt;p&gt;在 &lt;code&gt;terminal&lt;/code&gt; 中輸入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ hugo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;em&gt;等待編譯完成後，進行下一步&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;將 &lt;code&gt;username-hugo&lt;/code&gt; 文件夾連接到 Github 的 &lt;code&gt;username-Hugo&lt;/code&gt; repository 上&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;1.先登錄 &lt;a class=&#34;link&#34; href=&#34;https://github.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Github&lt;/a&gt; 。登錄完成後，在左側 Repositorys 中 找到 &lt;code&gt;username/username-Hugo&lt;/code&gt; 這個 repository ，點擊進入。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2.點擊綠色 &lt;code&gt;code&lt;/code&gt; 按鈕，選擇到SSH，並復制鏈接&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/5.png&#34;
+	width=&#34;399&#34;
+	height=&#34;276&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/5_huf13a52528c3cacc79bf4b5a28c975388_26422_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/5_huf13a52528c3cacc79bf4b5a28c975388_26422_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Github&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;144&#34;
+		data-flex-basis=&#34;346px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;3.連接&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;terminal&lt;/code&gt; 中輸入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git init
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git remote add origin git@github.com:username/username-Hugo.git //將你剛剛復制的鏈接 替換掉 git@github.com這一長串鏈接
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git add .
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git commit -m &amp;#34;Initial commit&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git push -u origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;將 &lt;code&gt;public&lt;/code&gt; 文件夾連接到 Github 的 &lt;code&gt;username.github.io&lt;/code&gt; repository 上&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;1.再回到  Github 在左側 Repositorys 中 找到 &lt;code&gt;username/username.github.io&lt;/code&gt; 這個 repository ，點擊進入。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2.點擊綠色 &lt;code&gt;code&lt;/code&gt; 按鈕，選擇到SSH，並復制鏈接&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;3.連接&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;terminal&lt;/code&gt; 中輸入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ cd public/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git init
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git remote add origin git@github.com:username/username-Hugo.git //將你剛剛復制的鏈接 替換掉 git@github.com這一長串鏈接
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git add .
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git commit -m &amp;#34;Initial commit&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git push -u origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;等待上傳完成後，在瀏覽器中輸入 &lt;code&gt;username&lt;/code&gt;.github.io 就可以看到你的 Blog 了！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;因爲網路和 Github 的願意，第一次部署完成的更新等待時間會比較長，需要耐心等待一下。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;編輯你的-blog&#34;&gt;&lt;strong&gt;編輯你的 Blog&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;修改你的 &lt;code&gt;config&lt;/code&gt; 文件&lt;/p&gt;
+&lt;p&gt;一般的 Hugo 主題，都會有一個 &lt;code&gt;config&lt;/code&gt; 文件讓你自行修改配置。&lt;/p&gt;
+&lt;p&gt;因爲每個主題作者習慣或者編寫語言的不同，每一個 Hugo 主題的 &lt;code&gt;config&lt;/code&gt; 文件內容也不同。&lt;/p&gt;
+&lt;p&gt;所以一般來說我們需要作者的主題文檔來搭配使用，看看什麼參數是可以自定義的，什麼是不可以的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;關於編輯文字的方法&lt;/p&gt;
+&lt;p&gt;一般來說，都會使用 Markdown 語言來編寫 Blog 文章的內容和格式。&lt;/p&gt;
+&lt;p&gt;可能你沒聽說過 Markdown 語言？ 沒關係 這只單純是一類標記語言。 你只要把它當作和 word 文檔 之類的辦公軟件理解就好了。&lt;/p&gt;
+&lt;p&gt;當然作爲一類語言，它也是有專門的語法的。而大部分語法的作用，都是爲了編輯 blog文章的格式。像是 標題，字體，斜體，都是可以通過專門的語法進行編寫的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;從編譯到上傳的基本流程&lt;/p&gt;
+&lt;p&gt;在我們寫好了一篇文章後，如何讓別人在訪問網站的時候能夠看見呢？&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;1.將寫好的文章 .md文件 放在 &lt;code&gt;content/post&lt;/code&gt; 路徑下&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果你要在文章中添加圖片的話，就需要在 &lt;code&gt;content/post&lt;/code&gt; 路徑下建立一個文件夾，然後將這篇文章和所有的圖片，都放在這個文件夾中。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;2.編譯並上傳&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以我的主題爲例&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在 &lt;code&gt;terminal&lt;/code&gt; 中輸入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ cd username-hugo //打開到 Blog 根目錄路徑下
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ hugo //編譯
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ cd public/ //將路徑更改到 public 中
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git add --all
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git commit -m &amp;#34;XX&amp;#34; //XX可自行修改，這個是你自己用來記錄這次修改的內容是什麼，類似於給這次更新取一個小標題，不要太長就好
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git push -u origin master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ cd ../
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git add --all
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git commit -m &amp;#34;XX&amp;#34; //XX可自行修改，這個是你自己用來記錄這次修改的內容是什麼，類似於給這次更新取一個小標題，不要太長就好
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git push -u origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;解釋一下 兩個 Repository 他們分別的作用。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;username-Hugo&lt;/p&gt;
+&lt;p&gt;這是爲了做 Blog 的&lt;strong&gt;源碼&lt;/strong&gt;備份而建立的。&lt;/p&gt;
+&lt;p&gt;相當於這個庫中的內容是你還未用 hugo 編譯前的內容。防止你的 Blog 源碼部分丟失。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;username.github.io&lt;/p&gt;
+&lt;p&gt;這個庫存放的是目錄中文件夾 public 的內容。&lt;/p&gt;
+&lt;p&gt;而 public 的內容，是通過 hugo 編譯生成的，也就是你的網站的內容。&lt;/p&gt;
+&lt;p&gt;這是用來部署你的網站的庫。&lt;/p&gt;
+&lt;p&gt;通過這兩個庫進行保存，也是一種保護，防止你本地的文件因爲電腦丟失或者損壞而全部丟失。如果提前建庫備份，就不害怕本地的內容丟失了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
+&lt;p&gt;以上就是架設 Blog 的完整操作了。如果你順利看到這裏，並且同時也在一起動手的情況下，相信你也已經將你的 Blog 基本框架架設好了，也對這些框架和 git 有了一個簡單的認知。&lt;/p&gt;
+&lt;p&gt;下一步就是需要編輯我們的 Blog 文章了。在第五點中，我有大概提到將 &lt;code&gt;.md&lt;/code&gt;	檔案通過 Hugo 編譯並上傳到 Github 的基本操作了。但在這之前，我們還要先學習的是如何將你的文字通過 Markdown 語言進行編輯和排版。在下一篇文章中，我會介紹 Markdowm 語言是什麼，以及幫助你瞭解一些基本 Markdown 語言的編寫問題。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2.10 更新：&lt;a class=&#34;link&#34; href=&#34;https://7waynelee.github.io/p/markdown-%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Blog 文章編輯語言：Markdown &amp;mdash; 語言學習筆記&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;希望這篇文章能幫助到你！&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title> 一些「翻牆」軟體的使用方法 </title>
+        <link>https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+        <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+        <description>&lt;img src="https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/background.png" alt="Featured image of post  一些「翻牆」軟體的使用方法 " /&gt;&lt;blockquote&gt;
+&lt;p&gt;此文章最後修改於 2021 / 12 / 20&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;索引&#34;&gt;索引&lt;/h1&gt;
+&lt;p&gt;寫這篇文章，源至於我在寫&lt;a class=&#34;link&#34; href=&#34;https://7waynelee.github.io/p/%E8%87%BA%E7%81%A3%E5%AD%B8%E7%94%9F%E5%9C%A8%E9%95%B7%E6%B2%99%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8C%97/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;《臺灣學生在長沙生活指北》&lt;/a&gt;時的一個想法，也算對讀者的一個承諾。&lt;/p&gt;
+&lt;p&gt;「翻牆」這個話題，在大陸來說，還是一個比較敏感的話題。這個行爲其實觸犯了大陸的法律，相關的內容可以了解查詢&lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E7%BD%91%E7%BB%9C%E5%AE%A1%E6%9F%A5&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;中華人民共和國網路審查&lt;/a&gt;，這其中就包括了對「翻牆」這個行爲的定義。&lt;/p&gt;
+&lt;p&gt;但以我個人生活在大陸這些年，對大陸的了解，其實有六成以上的人會使用簡單的工具進行翻牆。所以如果你有這個習慣或者需求，其實你並不是少數人。&lt;/p&gt;
+&lt;p&gt;如今，我覺得「翻牆」是一種很重要的生存手段。如果你在大陸長期生活，避免不了會有這種需求。當你需要查詢資料，收看新聞時，「牆內」的訊息也很難滿足你的需求。所以這篇文章，可能可以幫助到你。&lt;/p&gt;
+&lt;p&gt;再來說說這篇文章。這篇文章我主要會分爲理論和實踐兩方面來寫。理論方面會在這裏介紹一些歷史，名詞，工具等等一類;而實踐方面，我則會着墨於如何使用一些主流的工具。會想講到理論，其實是希望每個人都能對你用到的東西能有一些了解，就算是淺顯的部分也可以。我覺得這能幫助你如何使用或者在出現問題時，你能夠有基本的動手能力。古人雲：「授人以魚不如授人以漁」，這才是比較重要的部分，而後面的實例，只是給你一個簡單的示範。當你有這方面的知識之後，你也可以寫出自己的教程。&lt;/p&gt;
+&lt;p&gt;如果在閱讀文章的過程中你有任何的問題或者你覺得我的文章有錯誤，都可以來Telegram上找我，
+我會很高興收到你們的建議。&lt;/p&gt;
+&lt;h2 id=&#34;理論內容&#34;&gt;理論內容&lt;/h2&gt;
+&lt;h3 id=&#34;什麼是牆&#34;&gt;什麼是「牆」&lt;/h3&gt;
+&lt;p&gt;牆，其實是中華人民共和國國家防火牆，也稱「&lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;長城防火牆&lt;/a&gt;」，常用簡稱是GFW（取自 &lt;strong&gt;G&lt;/strong&gt;reat &lt;strong&gt;F&lt;/strong&gt;ire &lt;strong&gt;W&lt;/strong&gt;all）。其實對官方來說並沒有GFW這個稱謂，只是後來民間興起和演變，這個綽號也被越來越多人熟知，於是也就變成了一種習慣名稱。&lt;/p&gt;
+&lt;p&gt;爲什麼會有「牆」，其實起因有很多。因爲涉及衆多政治因素，這裏不做過多說明。&lt;/p&gt;
+&lt;p&gt;GFW主要作用於分析和過濾中華人民共和國境內外網路間的相互訪問。這句話其實說明了GFW的工作其實是雙向性的，一是限制大陸網民訪問某些境外站點，二是限制國外的用戶訪問國內的站點。&lt;/p&gt;
+&lt;h3 id=&#34;gfw的主要工作方式&#34;&gt;GFW的主要工作方式&lt;/h3&gt;
+&lt;p&gt;在談到這個之前，我想先簡單的介紹一下一般情況下，在無GFW幹擾下訪問網站的過程。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;一般情況下，在無GFW幹擾下訪問網站的基本過程&lt;/p&gt;
+&lt;p&gt;在瀏覽器輸入你所要訪問的&lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;網站域名&lt;/a&gt;，你的電腦會生成一個數據包，通過你的本地網路接入&lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E4%BA%92%E8%81%94%E7%BD%91%E9%AA%A8%E5%B9%B2%E7%BD%91&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;骨幹網&lt;/a&gt;，再通過&lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;DNS&lt;/a&gt;域名解析，解析出你輸入的域名所要訪問的服務器ip地址，再傳入服務器中，服務器經過處理，會返回一個數據包到你的電腦。&lt;/p&gt;
+&lt;p&gt;可能會有點難理解，但這個過程可以類比成「寫信-寄出-收信-回信」。當你寫信時，信封上需要有收信人的地址，這個地址就類似於上面的網站域名，寄出後，信回先到一個大的中轉站，然後會分發給信差，這步就類是於傳入服務器前的動作。然後收信人收到信後再回信，就類似於服務器接受請求返回數據包。其中發往服務器的過程中需要經過很多的地方，這些名詞你可以自行檢索，了解他們各自的工作。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;再來介紹在有GFW工作下訪問網站的過程&lt;/p&gt;
+&lt;p&gt;在前面的部分幾乎一樣，都是把數據包由本地網路接入骨幹網，再通過DNS解析，再來到GFW。接下來就會由GFW展開工作了。一般來說，GFW有三種基本工作原理：&lt;/p&gt;
+&lt;p&gt;1.ip黑名單&lt;/p&gt;
+&lt;p&gt;在GFW內，可能有一張巨大的ip黑名單，上面都是被屏蔽的ip地址。當域名經過DNS解析後，ip地址可能就會和黑名單中的ip地址進行檢索比較。如果你所訪問的網站的ip地址在這張名單上，就會被屏蔽。&lt;/p&gt;
+&lt;p&gt;不過，這個方法的缺點也很明顯。如果單純採用這個方法進行工作，許多網站並不止有一個ip地址。如果另一個ip地址不在黑名單內，則可以正常訪問。&lt;/p&gt;
+&lt;p&gt;2.關鍵字過濾&lt;/p&gt;
+&lt;p&gt;當你傳輸過來的數據包含一些敏感詞的時候，就會馬上被中斷連接&lt;/p&gt;
+&lt;p&gt;3.DNS劫持&lt;/p&gt;
+&lt;p&gt;因爲一般網路數據包都是明文流量，GFW可以直接看到你所要訪問的地址。當知道你要訪問一些不能訪問的網站時，DNS會自動解析出一個錯誤的ip地址，或者直接不解析地址，讓服務器無法和你的電腦建立連接。&lt;/p&gt;
+&lt;p&gt;上面講到的三種方法，其實是最簡單或者說基礎的方法，如今GFW逐漸完善，也多了其他很多的攔截方法。&lt;/p&gt;
+&lt;h3 id=&#34;突破-gfw-的幾種方法&#34;&gt;突破 GFW 的幾種方法&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;早期 Http 代理&lt;/p&gt;
+&lt;p&gt;後來人們逐漸發現，只要 GFW 無法偵查到我的流量意圖，也就是我發送一個帶有&lt;strong&gt;加密請求&lt;/strong&gt;的數據包到 GFW ，那麼 GFW 就無法進行攔截。於是早期的很多 http 代理都是依賴這些模式進行突破。&lt;/p&gt;
+&lt;p&gt;簡單的講解一下過程。當你發送一個請求時，你的本地計算機會發送一個帶有加密請求的數據包，再接入本地網路，再到骨幹網，再由 DNS 解析，發現是去一臺沒有被「牆」的服務器（我們稱它爲中轉服務器）上，GFW 便會放行，然後到達這臺所謂「中轉」服務器上後便會解密數據包到真實你所要訪問的 ip 地址，再去往真實的服務器地址。之後服務器會返回數據給「中轉」服務器，再傳回你的本地計算機。&lt;/p&gt;
+&lt;p&gt;這套邏輯很簡單，但也有很大的弊端。這個弊端就是帶有明顯的「特徵」。你的每一次請求所發送的數據包，都是帶有加密請求，並且會去往一臺中轉的服務器上。久而久之， GFW 的維護人員就嗅到了這個特徵。所以 GFW 也具有了攔截這些代理的功能。也因爲太多人採用這種方式突破，使得這種特徵實在他太過於明顯。所以現在單純 http 代理的 VPN 幾乎斷絕了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Shadowsocks 的出現及衍生工具&lt;/p&gt;
+&lt;p&gt;可以說 Shadowsocks 的出現是這段歷史中最精彩的一個節點。&lt;a class=&#34;link&#34; href=&#34;https://github.com/shadowsocks/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Shadowsocks&lt;/a&gt; 的作者是 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Clowwindy&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Clowwindy&lt;/a&gt; ，其原理也是通過一個加密的數據包來欺騙 GFW ，但與上面說的不同點再於， Shadowsocks 是基於&lt;strong&gt;本地端&lt;/strong&gt;-&lt;strong&gt;服務器端&lt;/strong&gt;這樣一個架構，在本地端運行時，數據包就已經完成了加密，使得 GFW 並不清楚你的意圖，也不帶有明顯的特徵，到達遠端 Shadowsocks 服務器後，再進行解密，去往你要去的地址。&lt;/p&gt;
+&lt;p&gt;當然革命性的技術的出現，讓 GFW 的維護人員十分頭疼。因爲流量加密（雖然只是簡單的 sock 加密），但也足夠騙過 GFW 去訪問他們不想讓你訪問的網站，並且也不能禁止所有的加密流量通過，因爲加密流量中還會有很多的正常的流量需要通行。所以讓 GFW 很難攔截此類流量。&lt;/p&gt;
+&lt;p&gt;之後 Shadowsocks 就因爲政府介入，原來的 Shadowsocks 專案也被迫刪庫。但因爲有很多人 fork 了此專案，使得副本還有很多的使用者維護。後來 Clowwindy 也恢復了此專案。&lt;/p&gt;
+&lt;p&gt;但因爲有了 Shadowsocks 的這套理論邏輯，也演變出了其他的工具。例如 V2ray ，Clash ，SSR 等一系列的工具軟件。這些軟件在某些細節上可能有不同，但都是基於 Shadowsocks 的基本原理。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這段內容可能會導致一些人誤解 Shadowsocks 只是爲了用來突破GFW，其實這只是其中的一個功能。 Shadowsocks 其實是一個流量安全加密框架，其實是用來進行流量加密，可以更安全的進行傳輸。 Shadowsocks 也不算是一個「單獨的」軟體，它需要有伺服器端和用戶端才能正常使用。伺服器可以是任何的 vps，亦或者是你所購買的節點。而用戶端則是通過你所使用的裝置上的軟體。只有兩端進行連接後，才能正常使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;一些詞語或名詞&#34;&gt;一些詞語或名詞&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;「飛機」和「機場」&lt;/p&gt;
+&lt;p&gt;這個詞的來源挺有意思。早期有節點供應商的時候，爲了「避諱」，就在想一個比較好的詞來表示他們。因爲 Shadowsocks 的圖標是一個灰色的紙飛機，所以就會用「飛機」來代替這些節點。而飛機就需要一個停機坪，一般的飛機都停在機場內，所以就把提供節點的供應商稱作「機場」，機場老板一般叫「機場主」。&lt;/p&gt;
+&lt;p&gt;這個稱呼沿用至今，不管是任何類型（即使不是 Shadowsocks sock5協議的節點）的節點供應商都被稱爲「機場」。&lt;/p&gt;
+&lt;p&gt;這個稱謂也是爲了和&lt;strong&gt;加速器&lt;/strong&gt;進行區分。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;關於「線路」的名詞&lt;/p&gt;
+&lt;p&gt;這裏會簡略的提到一些機場常用的線路，幫助大家在選購「機場」時有一個初步了解。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這裏所介紹的線路，還是比較淺顯的。在自己選購的時候，一定要基於自己的情況來選擇。&lt;/p&gt;
+&lt;p&gt;而且機場水深，還是不要單純看他標榜的線路，自己實測一下還是最好的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;IPCL&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;全稱是 International Private Leased Circuit ，翻譯成中文爲“國際私用出租線路”。&lt;/p&gt;
+&lt;p&gt;這條線路 is awesome ，因爲實際上這是一條專線，傳輸不經過公網，只會經過內網，這就說明這條線路本不過牆，也就是你發送的請求是不會經過 GFW 。&lt;/p&gt;
+&lt;p&gt;要說缺點，可能真的就只有「貴」吧，一般來說帶寬小流量低。當然並不是說好的線路就不會卡。再好的線路多人一起用，都會出現卡噸的情況。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E7%94%B5%E4%BF%A1%E4%B8%8B%E4%B8%80%E4%BB%A3%E6%89%BF%E8%BD%BD%E7%BD%91&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CN2&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;全稱是 ChinaNet Next Carrying Network ，縮寫爲 CNCN ，也就是 CN2 ，翻譯過來就是“中國電信下一代承載網”。&lt;/p&gt;
+&lt;p&gt;特點就是採用了 QoS 技術，這是163骨幹網路所沒有的技術。QoS 簡單理解就是能夠識別你網路中的流量的需求，從而調整帶寬速率。比如你在玩遊戲時可能不需要這麼高的速率但需要低延遲，QoS 就能自動偵測進行調整。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;BGP&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;這個一般稱爲「多線機房」，他會根據你的網路服務商來自動連接到最適合你的連接服務。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;IEPL&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;全稱是 International Ethernet Private Line ，翻譯成中文爲“國際以太網專線”。&lt;/p&gt;
+&lt;p&gt;這條線路算是真正的端到端的&lt;strong&gt;以太網&lt;/strong&gt;線路，一般的大型跨國企業可能會選擇這條路線。因爲是以太網線路，則只需要 MAC地址 就可以直接配置線路，並且更加穩定，也有更快的速率。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;VPS&lt;/p&gt;
+&lt;p&gt;全稱是 Virtual private server ，翻譯成中文就是虛擬專用伺服器。其實就是一臺&lt;strong&gt;實體&lt;/strong&gt;伺服器，再通過一些技術分割成一個個獨立的虛擬伺服器。因爲他們分割之後並沒有各自的實體，本質上還是共用一臺伺服器，所以就叫做&lt;strong&gt;虛擬&lt;/strong&gt;伺服器。&lt;/p&gt;
+&lt;p&gt;每個VPS都可分配獨立公網IP位址、獨立作業系統、實現不同 VPS 間磁碟空間、記憶體、 CPU 資源、行程和系統組態的隔離，為使用者和應用程式類比出「獨占」使用計算資源的體驗。 VPS 可以像獨立伺服器一樣，重新安裝作業系統，安裝程式，單獨重新啟動伺服器。&lt;/p&gt;
+&lt;p&gt;一般的服務中，也不會使用到一整臺伺服器。爲了節省資源，也就會分成一個個 VPS 分別使用。所以一般我們把這個&lt;strong&gt;實體&lt;/strong&gt;伺服器稱謂「母雞」，下面的 VPS 就稱謂「小雞」。一般的節點服務，都是用 VPS 搭建的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;流媒體解鎖&lt;/p&gt;
+&lt;p&gt;爲什麼想談這個問題呢，因爲其實這不僅是在大陸才有需要。如果你想要訂閱流媒體服務並且收看其他國家區域的流媒體，也會有「翻牆」的需求。比如說，我在香港購買了 Netflix 港區的流媒體服務，但我還想看一些只有新加坡區獨家的節目，那麼我就可以選擇「翻」到新加坡，然後觀看新加坡的節目。&lt;/p&gt;
+&lt;p&gt;但這些流媒體供應商是會審查你是否使用了  proxy(代理) 。一般來說，一些大的 VPS 的提供商的 IP 是直接被流媒體商家屏蔽掉的，就是這些 IP 是無法訪問流媒體網站的。 像是 Netflix 和 Hulu ，還會對你的IP注冊地址和所在國家是否一致。如果你的節點的 VPS 所在的國家和節點 IP 的注冊地址不一致的話，也是無法使用這些流媒體服務的。&lt;/p&gt;
+&lt;p&gt;從21年來，流媒體大範圍的開始屏蔽一些網絡服務商的 IP。因爲一些機場使用 cookie 共享流媒體帳號，來讓用戶使用。就導致了一個帳號會有上百個人使用，這就讓商家不願意了，於是開始屏蔽掉一些網路服務商的 IP。不過就目前來說，還是可以正常使用流媒體。&lt;/p&gt;
+&lt;p&gt;如果你需要流媒體服務的話，就要選擇帶有流媒體解鎖的機場。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;應用操作部分&#34;&gt;應用操作部分&lt;/h2&gt;
+&lt;h3 id=&#34;關於機場的選購&#34;&gt;關於「機場」的選購&lt;/h3&gt;
+&lt;p&gt;我並不會給別人推薦什麼「機場」，因爲這其實因人而異。地理位置，網路服務商其實都會對你的實際體驗有影響。所以我還是會建議你先從一些有一定使用人數和年份的「老機場」，再去購買來體驗實測，你覺得好用再長期購買。&lt;/p&gt;
+&lt;h3 id=&#34;使用工具方法&#34;&gt;使用工具方法&lt;/h3&gt;
+&lt;h4 id=&#34;mac-os&#34;&gt;&lt;strong&gt;Mac OS&lt;/strong&gt;&lt;/h4&gt;
+&lt;h5 id=&#34;clashx&#34;&gt;ClashX&lt;/h5&gt;
+&lt;p&gt;先到 ClashX 的 &lt;a class=&#34;link&#34; href=&#34;&#34; &gt;releases&lt;/a&gt; 下載 &lt;strong&gt;ClashX.dmg 檔案&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX1.jpg&#34;
+	width=&#34;1914&#34;
+	height=&#34;873&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX1_hu7afe993a9b02ef5b242a790388e871fd_101151_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX1_hu7afe993a9b02ef5b242a790388e871fd_101151_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;releases&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;219&#34;
+		data-flex-basis=&#34;526px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;下載完成後，雙擊&lt;strong&gt;打開檔案&lt;/strong&gt;，雙擊 &lt;strong&gt;ClashX 圖標&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX2.jpg&#34;
+	width=&#34;1322&#34;
+	height=&#34;824&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX2_hub30ad0e20c2467c54f7f489b7232b233_47209_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX2_hub30ad0e20c2467c54f7f489b7232b233_47209_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;雙擊&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;160&#34;
+		data-flex-basis=&#34;385px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;點擊 &lt;strong&gt;打開&lt;/strong&gt; 按鈕
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX3.jpg&#34;
+	width=&#34;619&#34;
+	height=&#34;770&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX3_hu5b6d4dd96ced69503f6d6ad1192f26fb_44952_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX3_hu5b6d4dd96ced69503f6d6ad1192f26fb_44952_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;確定按鈕&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;80&#34;
+		data-flex-basis=&#34;192px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;安裝完成後，可以到&lt;strong&gt;應用選單&lt;/strong&gt;上找到 ClashX，單擊打開
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX4.jpg&#34;
+	width=&#34;1547&#34;
+	height=&#34;950&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX4_hue8c0a5aaa7d00c64659c9e635b26bc29_49054_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX4_hue8c0a5aaa7d00c64659c9e635b26bc29_49054_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;應用選單&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;162&#34;
+		data-flex-basis=&#34;390px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;打開之後，可以在任務欄上看到 ClashX 的&lt;strong&gt;圖標&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX5.jpg&#34;
+	width=&#34;1349&#34;
+	height=&#34;885&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX5_hubdb70792057dc6888d4c08d95ca3f0e9_94415_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX5_hubdb70792057dc6888d4c08d95ca3f0e9_94415_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;狀態欄圖標&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;152&#34;
+		data-flex-basis=&#34;365px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;右鍵&lt;strong&gt;狀態欄圖標&lt;/strong&gt;，可以看到展開的選項列表
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX6.jpg&#34;
+	width=&#34;927&#34;
+	height=&#34;945&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX6_hub9d4009a9ca54da0faf53b599633630c_68800_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX6_hub9d4009a9ca54da0faf53b599633630c_68800_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;選項列表&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;98&#34;
+		data-flex-basis=&#34;235px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;選擇並單擊 配置-託管配置-管理
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX7.jpg&#34;
+	width=&#34;1033&#34;
+	height=&#34;946&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX7_hu47e8e5cff7c653481635349eaa1348b5_92077_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX7_hu47e8e5cff7c653481635349eaa1348b5_92077_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;管理&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;109&#34;
+		data-flex-basis=&#34;262px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;點擊 &lt;strong&gt;添加&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX8.jpg&#34;
+	width=&#34;804&#34;
+	height=&#34;556&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX8_hu4ba53418dbca4ba3a73a270a260a018e_24703_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX8_hu4ba53418dbca4ba3a73a270a260a018e_24703_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;添加&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;144&#34;
+		data-flex-basis=&#34;347px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;將機場的訂閱地址，復制到 &lt;strong&gt;Url&lt;/strong&gt; 欄內; &lt;strong&gt;Config Name&lt;/strong&gt; 欄可以隨便取一個名字。然後點擊&lt;strong&gt;確定&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX9.jpg&#34;
+	width=&#34;741&#34;
+	height=&#34;500&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX9_hu65bdbac4ca90a725383c68fc85dbf578_29446_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX9_hu65bdbac4ca90a725383c68fc85dbf578_29446_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;訂閱地址&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;148&#34;
+		data-flex-basis=&#34;355px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;然後回到上一個界面，先&lt;strong&gt;單擊選定配置文件&lt;/strong&gt;，再點擊&lt;strong&gt;更新&lt;/strong&gt;，最後點擊&lt;strong&gt;確定&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX10.jpg&#34;
+	width=&#34;810&#34;
+	height=&#34;563&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX10_hue3604895e9334de9b76cddd1132f0f83_28201_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX10_hue3604895e9334de9b76cddd1132f0f83_28201_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;更新配置文件&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;143&#34;
+		data-flex-basis=&#34;345px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;再右鍵&lt;strong&gt;狀態欄圖標&lt;/strong&gt;，點擊&lt;strong&gt;設置爲系統代理&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX13.jpg&#34;
+	width=&#34;927&#34;
+	height=&#34;943&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX13_hub1ec00382278b0b05d5712ce1a8f8a31_71473_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX13_hub1ec00382278b0b05d5712ce1a8f8a31_71473_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;系統代理&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;98&#34;
+		data-flex-basis=&#34;235px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;再回到桌面，右鍵&lt;strong&gt;狀態欄圖標&lt;/strong&gt;，選擇&lt;strong&gt;配置&lt;/strong&gt;，在上面的控制文件中，選擇你的&lt;strong&gt;配置文件&lt;/strong&gt;。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX11.jpg&#34;
+	width=&#34;914&#34;
+	height=&#34;943&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX11_hu20bcf4ce878ef3499e6e8f7c1a766e1b_73825_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX11_hu20bcf4ce878ef3499e6e8f7c1a766e1b_73825_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;選擇配置文件&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;96&#34;
+		data-flex-basis=&#34;232px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;再右鍵&lt;strong&gt;狀態欄圖標&lt;/strong&gt;，選擇&lt;strong&gt;出站模式&lt;/strong&gt;，可以選擇&lt;strong&gt;全局模式&lt;/strong&gt;，也可以選擇&lt;strong&gt;規則模式&lt;/strong&gt;。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX12.jpg&#34;
+	width=&#34;634&#34;
+	height=&#34;673&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX12_hu19d60536ab1c68a9c6796fad375731fc_47676_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/ClashX12_hu19d60536ab1c68a9c6796fad375731fc_47676_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;選擇代理模式&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;94&#34;
+		data-flex-basis=&#34;226px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;關於使用 ClashX 會遇到的問題&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一.無法安裝&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;這可能需要系統通過一個權限，允許通過其他渠道安裝軟體。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;二.某些軟體無法代理&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;可能會需要自己開啓代理。&lt;/p&gt;
+&lt;p&gt;可以在 &lt;strong&gt;設置&amp;ndash;網路&amp;ndash;Wi-Fi&amp;ndash;高級&amp;ndash;代理&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;勾選 網頁代理（HTTP）&lt;/p&gt;
+&lt;p&gt;一般來說 Clash 的 HTTP 代理端口爲 127.0.0.1：7890，自己添加輸入一下就好。&lt;/p&gt;
+&lt;p&gt;如果個別軟體可以自己啓用 proxy ，也可以單獨的使用 HTTP 或 Socks5 proxy。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;ios&#34;&gt;&lt;strong&gt;ios&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Shadowrocket&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一.簡介&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Shadowrocket 相信是很多 ios 用戶所接觸到的第一款「翻牆」工具。性能高，穩定，流暢並且輕巧和易上手等特性，使得很多人使用。&lt;/p&gt;
+&lt;p&gt;在教程中，簡單的添加&lt;strong&gt;節點&lt;/strong&gt;或&lt;strong&gt;訂閱&lt;/strong&gt;部分我會省略。重點着墨於其他的功能配置。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;二.購買方式&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Shadowrocket 在除中國大陸區以外的 App Store 都有上架。目前港區價格是 23 HKD。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;三.進階功能配置&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我們在&lt;strong&gt;首頁&lt;/strong&gt;，可以看到&lt;strong&gt;全域路由&lt;/strong&gt;的選項， Shadowrocket 的路由配置有四種：&lt;/p&gt;
+&lt;p&gt;1.配置&lt;/p&gt;
+&lt;p&gt;選用配置規則的方法來進行鏈接。在底欄的第二個選項&lt;strong&gt;配置&lt;/strong&gt;的中，點擊，在&lt;strong&gt;本地檔案&lt;/strong&gt;欄就可以看到你現在選中的配置。一般 Shadowrocket 會有一個自帶的配置。你也可以添加自己的配置，使網路連接在自己定製的「規則」範圍內進行。例如分流（例如國內IP直連，國外網站自動走代理），去除廣告等功能的實現。&lt;/p&gt;
+&lt;p&gt;2.代理&lt;/p&gt;
+&lt;p&gt;全局代理&lt;/p&gt;
+&lt;p&gt;3.直連&lt;/p&gt;
+&lt;p&gt;不通過代理，直接訪問網路。 簡單來說就不使用節點訪問網路。&lt;/p&gt;
+&lt;p&gt;4.場景&lt;/p&gt;
+&lt;p&gt;Shadowrocket 的場景功能是可以通過你當前所連接的Wi-Fi或移動網路來切換節點或關閉代理。&lt;/p&gt;
+&lt;p&gt;就先來講講&lt;strong&gt;配置&lt;/strong&gt;這個方式，實現一些其他的功能。&lt;/p&gt;
+&lt;p&gt;對於一般使用者來說，要自己寫配置文件有點困難。我們可以使用 Github 上別人開源的一些項目，導入別人寫好的配置。&lt;/p&gt;
+&lt;p&gt;例如我在 Github 上找到了一個項目：https://github.com/0x7E/rules-conf&lt;/p&gt;
+&lt;p&gt;他在 readme 裏寫了詳細的簡介，也寫了使用方法和問題解答，我們就用他白名單過濾+廣告做例子，嘗試使用他的配置文件。這個配置文件的規則是直連國內網站+代理境外網站+廣告過濾。&lt;/p&gt;
+&lt;p&gt;我們先復制他的規則地址。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket1.jpg&#34;
+	width=&#34;898&#34;
+	height=&#34;527&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket1_hu4a0b0e99306718ec6d27ff9a75ce311f_58169_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket1_hu4a0b0e99306718ec6d27ff9a75ce311f_58169_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;規則地址&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;170&#34;
+		data-flex-basis=&#34;408px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;再回到 Shadowrocket ，點擊底欄中的&lt;strong&gt;配置&lt;/strong&gt;，在點擊&lt;strong&gt;右上角+加號&lt;/strong&gt;，將復制下來的地址&lt;strong&gt;粘貼&lt;/strong&gt;進去，點擊&lt;strong&gt;下載&lt;/strong&gt;。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket2.jpg&#34;
+	width=&#34;549&#34;
+	height=&#34;924&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket2_hudd47cd2d54b68bc6b7006f366c1dbead_33079_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket2_hudd47cd2d54b68bc6b7006f366c1dbead_33079_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;添加配置&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;59&#34;
+		data-flex-basis=&#34;142px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;然後就能看到&lt;strong&gt;遠端配置&lt;/strong&gt;中多了一個以鏈接命名的配置文件，點擊它，再點擊&lt;strong&gt;使用配置&lt;/strong&gt;。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket3.jpg&#34;
+	width=&#34;531&#34;
+	height=&#34;340&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket3_hu7b17ad900c6a7f3fdb893344f0f921d6_13667_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket3_hu7b17ad900c6a7f3fdb893344f0f921d6_13667_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;使用配置&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;156&#34;
+		data-flex-basis=&#34;374px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;成功後，就能在&lt;strong&gt;本地檔案&lt;/strong&gt;中看到新的配置文件，並且前面會有&lt;strong&gt;橘色的黃點&lt;/strong&gt;，後面會&lt;strong&gt;打勾&lt;/strong&gt;。你也可以自行預覽配置和更改配置。也可以更新配置。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket4.jpg&#34;
+	width=&#34;535&#34;
+	height=&#34;205&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket4_huf8c0a2a920b7360232d79430fe736681_14470_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket4_huf8c0a2a920b7360232d79430fe736681_14470_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;應用配置&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;260&#34;
+		data-flex-basis=&#34;626px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;開啓HTTP解密&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在主界面，點擊&lt;strong&gt;配置&lt;/strong&gt;，輕觸本地文件欄中正在使用的配置文件，在彈出菜單點擊編輯配置。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket10.jpg&#34;
+	width=&#34;516&#34;
+	height=&#34;918&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket10_hu9ae6d971c6b11708c6b7aa12541e5cc5_32511_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket10_hu9ae6d971c6b11708c6b7aa12541e5cc5_32511_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;編輯配置&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;56&#34;
+		data-flex-basis=&#34;134px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;點擊 &lt;strong&gt;HTTP 解密&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket11.jpg&#34;
+	width=&#34;527&#34;
+	height=&#34;764&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket11_huc3a7e70edec78ab94f8e0bd7ecce3179_26701_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket11_huc3a7e70edec78ab94f8e0bd7ecce3179_26701_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;HTTP解密&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;68&#34;
+		data-flex-basis=&#34;165px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;打開&lt;strong&gt;右上角的開關&lt;/strong&gt;，會彈出證書的安裝，先點擊安裝憑證，會跳轉到 Safari 下載證書文件。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket12.jpg&#34;
+	width=&#34;532&#34;
+	height=&#34;389&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket12_hu8667e82bfa259ca6b285cab26f282e37_22106_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket12_hu8667e82bfa259ca6b285cab26f282e37_22106_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;安裝憑證&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;136&#34;
+		data-flex-basis=&#34;328px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;進入手機系統&lt;strong&gt;設置&lt;/strong&gt;，點擊&lt;strong&gt;一般&lt;/strong&gt;，找到 &lt;strong&gt;VPN 與裝置管理&lt;/strong&gt;，在設定描述欄中，安裝 Shadowrocket 的文件。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket13.jpg&#34;
+	width=&#34;533&#34;
+	height=&#34;662&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket13_hu5eceefda06faf1321b13d76508a07b28_22615_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket13_hu5eceefda06faf1321b13d76508a07b28_22615_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;安裝文件&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;80&#34;
+		data-flex-basis=&#34;193px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;安裝完成後，再在&lt;strong&gt;一般&lt;/strong&gt;中，點擊關於本機，點擊&lt;strong&gt;證書信任列表設定&lt;/strong&gt;，開啓 Quantumult X 證書的完整信任。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket14.jpg&#34;
+	width=&#34;533&#34;
+	height=&#34;532&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket14_huce1fb4dbe895688db8658d20ff8b25a8_21690_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket14_huce1fb4dbe895688db8658d20ff8b25a8_21690_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;完整信任&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;100&#34;
+		data-flex-basis=&#34;240px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;再回到 Shadowrocket ，點擊剛剛界面 &lt;strong&gt;右上角的「勾」&lt;/strong&gt;。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket15.jpg&#34;
+	width=&#34;534&#34;
+	height=&#34;527&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket15_huf9e67ddde429d04f935aaff95ee21437_23486_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket15_huf9e67ddde429d04f935aaff95ee21437_23486_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;打勾&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;101&#34;
+		data-flex-basis=&#34;243px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;這樣 HTTP解密 就開啓完成了。&lt;/p&gt;
+&lt;p&gt;應用了這個配置之後，你的 Shadowrocket 就可以實現簡單的分流了(是否需要使用代理)和去廣告的功能了。&lt;/p&gt;
+&lt;p&gt;再來實現&lt;strong&gt;場景&lt;/strong&gt;的功能。&lt;/p&gt;
+&lt;p&gt;這個功能上面有簡單介紹，根據設置不同的場景，可以自動切換節點或配置。例如你想外出時不使用代理，只在家中Wi-Fi下使用代理，就可以設定在使用移動網路時將路由配置設置爲&lt;strong&gt;直連&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;下面就簡單介紹下使用的方法。&lt;/p&gt;
+&lt;p&gt;點擊&lt;strong&gt;首頁&amp;ndash;全域路由&amp;ndash;設定-場景&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket5.jpg&#34;
+	width=&#34;532&#34;
+	height=&#34;205&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket5_hua7d4623a67618cc0c3f61b62e062c24c_7667_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket5_hua7d4623a67618cc0c3f61b62e062c24c_7667_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;點擊場景&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;259&#34;
+		data-flex-basis=&#34;622px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;點擊&lt;strong&gt;新增場景&lt;/strong&gt;或&lt;strong&gt;右上角+加號&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket6.jpg&#34;
+	width=&#34;528&#34;
+	height=&#34;255&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket6_huabfdc9977353f8cf6a79499d5869cd1e_8753_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket6_huabfdc9977353f8cf6a79499d5869cd1e_8753_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;新增場景&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;207&#34;
+		data-flex-basis=&#34;496px&#34;
+	
+&gt;
+這裏就可以自行設置，介紹一下每一欄對應的功能。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;場景&lt;/strong&gt;：觸發模式的具體場景，可以選擇&lt;strong&gt;無線局域網&lt;/strong&gt;或者&lt;strong&gt;移動網路&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SSID&lt;/strong&gt;：無線局域網的名稱&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;路由&lt;/strong&gt;：使用該場景時候的全局路由方式。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;類型&lt;/strong&gt;：在使用場景時使用的類型，這個類型可以是單個節點，也可以是一個&lt;strong&gt;分組&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;配置&lt;/strong&gt;：改場景下的配置文件。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;備注&lt;/strong&gt;：該場景的一個名稱。&lt;/p&gt;
+&lt;p&gt;完成後點擊儲存就可以了。然後在&lt;strong&gt;全域路由&lt;/strong&gt;內選擇&lt;strong&gt;場景&lt;/strong&gt;模式。&lt;/p&gt;
+&lt;p&gt;最後來說說&lt;strong&gt;分組&lt;/strong&gt;。這是 Shadowrocket 的一個功能，可以用來自動測試分組內節點的延遲，並會選擇延遲最低的來使用。使用分組功能可以替我們省去手動選擇延遲最低節點的時間。&lt;/p&gt;
+&lt;p&gt;添加分組的方法也很簡單。&lt;/p&gt;
+&lt;p&gt;點擊&lt;strong&gt;首頁&amp;ndash;全域路由&amp;ndash;設定&amp;ndash;分組&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket7.jpg&#34;
+	width=&#34;533&#34;
+	height=&#34;197&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket7_hu4108ebb2918521f0c4f83c7316d131f2_7113_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket7_hu4108ebb2918521f0c4f83c7316d131f2_7113_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;分組&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;270&#34;
+		data-flex-basis=&#34;649px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;點擊&lt;strong&gt;新增分組&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket8.jpg&#34;
+	width=&#34;532&#34;
+	height=&#34;400&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket8_hu8ffc084db5165f5eb68b9dc377eb1385_14843_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket8_hu8ffc084db5165f5eb68b9dc377eb1385_14843_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;新增分組&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;319px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;爲分組取一個名字，然後將選擇所要加入分組的節點，點擊完成就可以了。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket9.jpg&#34;
+	width=&#34;545&#34;
+	height=&#34;536&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket9_huf91b079772490e700d8b2bd8e2ca137e_18693_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/Shadowrocket9_huf91b079772490e700d8b2bd8e2ca137e_18693_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;完成分組&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;101&#34;
+		data-flex-basis=&#34;244px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;最後要在&lt;strong&gt;首頁&lt;/strong&gt;選擇&lt;strong&gt;分組中的節點&lt;/strong&gt;，就可以正常使用了。&lt;/p&gt;
+&lt;p&gt;也可以在&lt;strong&gt;URL測試設定&lt;/strong&gt;，對測試延遲的內容進行自定義&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Quantumult X&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一.簡介&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;一般的添加節點教程我就不再展示了，我下面的教程主要用來發揮一些 Shadowrocket 所沒有的功能。&lt;/p&gt;
+&lt;p&gt;Quantumult X 是一款網路工具，似乎用來「翻牆」只是他衆多的功能之一。而且它支持運行 JavaScript 腳本和Mitm重写，所以可以進行應用分流，自動測試延遲和選擇節點，廣告攔截等功能。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;二.購買&lt;/strong&gt;
+Quantumult X 在除中國大陸區以外的 App Store 都有上架。目前港區價格是 58 HKD。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;三.進行基本功能配置&lt;/strong&gt;
+同上的 Shadowrocket 一樣，我也找到了 Github 上的一個關於 Quantumult X 配置的一個項目&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;項目地址：https://github.com/limbopro/Profiles4limbo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;導入預配置文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;打開 Quantumult X ，&lt;strong&gt;輕觸&lt;/strong&gt;界面右下角的&lt;strong&gt;風車圖標&lt;/strong&gt;。
+&lt;img src=&#34;https://7WayneLee.github.io/Quantu![%e7%ac%ac%e5%9b%9b%e6%ad%a5]%28QuantumultX10.jpg%29multX1.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;第一步&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;在&lt;strong&gt;配置文件&lt;/strong&gt;欄中，點擊下載。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX2.jpg&#34;
+	width=&#34;527&#34;
+	height=&#34;713&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX2_hu71f1a2da28bedae3a15fab8a96562ed8_32040_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX2_hu71f1a2da28bedae3a15fab8a96562ed8_32040_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;第二步&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;73&#34;
+		data-flex-basis=&#34;177px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;在&lt;strong&gt;輸入配置鏈接&lt;/strong&gt;中，輸入下面的鏈接，點擊右上角**「存儲」圖標**。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;鏈接url：https://raw.githubusercontent.com/limbopro/Profiles4limbo/main/full.conf 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX3.jpg&#34;
+	width=&#34;528&#34;
+	height=&#34;326&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX3_hu16e407b3495b7e30b4e598e3e8b47709_13410_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX3_hu16e407b3495b7e30b4e598e3e8b47709_13410_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;第三步&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;161&#34;
+		data-flex-basis=&#34;388px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;回到主頁面，輕觸風車圖標，在&lt;strong&gt;節點&lt;/strong&gt;欄中，點擊引用(訂閱)
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX4.jpg&#34;
+	width=&#34;528&#34;
+	height=&#34;399&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX4_hu38d77e7fa09e02f7cdc6af29ee760755_20349_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX4_hu38d77e7fa09e02f7cdc6af29ee760755_20349_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;第四步&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;132&#34;
+		data-flex-basis=&#34;317px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;將機場訂閱鏈接復制到&lt;strong&gt;資源鏈接&lt;/strong&gt;中，並點擊右上角&lt;strong&gt;保存圖標&lt;/strong&gt;。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX5.jpg&#34;
+	width=&#34;532&#34;
+	height=&#34;620&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX5_hufbe7f161dbd1e780ef92e497c16ba0e8_17392_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX5_hufbe7f161dbd1e780ef92e497c16ba0e8_17392_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;第五步&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;85&#34;
+		data-flex-basis=&#34;205px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;回到主頁面，&lt;strong&gt;長按&lt;/strong&gt;右下角風車圖標，先切換爲全局代理(藍色風車圖標)，然後在 proxy 選擇節點，打開右上角&lt;strong&gt;開關&lt;/strong&gt;，輕觸主界面&lt;strong&gt;左上角紅點&lt;/strong&gt;點擊&lt;strong&gt;全部更新&lt;/strong&gt;，等待下載完成。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX6.jpg&#34;
+	width=&#34;529&#34;
+	height=&#34;738&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX6_huc3a7e70edec78ab94f8e0bd7ecce3179_17630_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX6_huc3a7e70edec78ab94f8e0bd7ecce3179_17630_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;第六步&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;71&#34;
+		data-flex-basis=&#34;172px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;更新完成後，再&lt;strong&gt;長按&lt;/strong&gt;右下角風車圖標，切換回規則分流。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;安裝並信任證書&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;輕觸 Quantumult X 界面右下角風車圖標，找到 MitM ，點擊生成證書。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX7.jpg&#34;
+	width=&#34;525&#34;
+	height=&#34;432&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX7_huf345d947e3b44913883e895eacc37cc2_25796_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX7_huf345d947e3b44913883e895eacc37cc2_25796_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;第一步&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;121&#34;
+		data-flex-basis=&#34;291px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;再回到 MitM ，點擊配置證書，再點擊下載證書，這時會跳轉到 Safari ，點擊下載證書。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX8.jpg&#34;
+	width=&#34;524&#34;
+	height=&#34;430&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX8_hu5d0b35a271c92eeaef0da58d544da8aa_25156_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX8_hu5d0b35a271c92eeaef0da58d544da8aa_25156_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;第二步&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;121&#34;
+		data-flex-basis=&#34;292px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;進入手機系統&lt;strong&gt;設置&lt;/strong&gt;，點擊&lt;strong&gt;一般&lt;/strong&gt;，找到 &lt;strong&gt;VPN 與裝置管理&lt;/strong&gt;，安裝 Quantumult X的文件。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX9.jpg&#34;
+	width=&#34;543&#34;
+	height=&#34;578&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX9_hu00b4ef77cf8e1a3468d209196f3afdb2_22070_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX9_hu00b4ef77cf8e1a3468d209196f3afdb2_22070_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;第三步&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;93&#34;
+		data-flex-basis=&#34;225px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;安裝完成後，再在&lt;strong&gt;一般&lt;/strong&gt;中，點擊關於本機，點擊&lt;strong&gt;證書信任列表設定&lt;/strong&gt;，開啓 Quantumult X 證書的完整信任。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX10.jpg&#34;
+	width=&#34;535&#34;
+	height=&#34;500&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX10_hu2ccb8e7b876725e5c9baff2d20f775e9_25611_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX10_hu2ccb8e7b876725e5c9baff2d20f775e9_25611_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;第四步&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;107&#34;
+		data-flex-basis=&#34;256px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;再回到 Quantumult X，輕觸右下角風車，打開&lt;strong&gt;重寫&lt;/strong&gt;和&lt;strong&gt;MitM&lt;/strong&gt;的開關。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX14.jpg&#34;
+	width=&#34;531&#34;
+	height=&#34;833&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX14_hu83957c7f3ff6a368e897a71b4f41a7f8_42464_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX14_hu83957c7f3ff6a368e897a71b4f41a7f8_42464_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;第四步&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;63&#34;
+		data-flex-basis=&#34;152px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;設置 GeoLite&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;GeoLite 主要用來判斷你的網路活動是否爲國內 IP，從而選擇正確的分流方式。
+輕觸風車圖標，下拉到最下方，點擊&lt;strong&gt;其他設置&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX11.jpg&#34;
+	width=&#34;529&#34;
+	height=&#34;278&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX11_hu719b66f75ffd1e28052e18a009f03b7c_23461_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX11_hu719b66f75ffd1e28052e18a009f03b7c_23461_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;第一步&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;190&#34;
+		data-flex-basis=&#34;456px&#34;
+	
+&gt;
+下拉找到 GeoLite2，點擊來源，復制下方鏈接並打開自動更新。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;鏈接url:https://raw.githubusercontent.com/Hackl0us/GeoIP2-CN/release/Country.mmdb
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;基本使用簡介&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;因爲我們引用了別人已經寫好的預配置文件了。這裏來介紹一下選擇節點和應用分流的問題。&lt;/p&gt;
+&lt;p&gt;在主界面 PROXY 欄下，是你自己添加的機場的節點。這裏使用的節點你可以自己選擇。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX15.jpg&#34;
+	width=&#34;527&#34;
+	height=&#34;544&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX15_hu04b9af7a4103ee82c2a0e310cb721b11_12771_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX15_hu04b9af7a4103ee82c2a0e310cb721b11_12771_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;PROXY&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;96&#34;
+		data-flex-basis=&#34;232px&#34;
+	
+&gt;
+在下方的自定義策略裏面，我們滑動仔細看看，其實是一些應用的名字，網站，功能，和國家。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;應用&lt;/strong&gt;:這裏一般是用於應用分流。在這裏你可以自定義應用的代理。例如在使用 Netflix 時，如果你想觀看其他地區的節目，你可以直接爲 Netflix 選擇其他地區的代理，而不用更改全局代理的節點。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX12.jpg&#34;
+	width=&#34;520&#34;
+	height=&#34;594&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX12_hu5e20d4dda2c93d9b93f78f74918548ca_18184_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX12_hu5e20d4dda2c93d9b93f78f74918548ca_18184_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Netflix&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;87&#34;
+		data-flex-basis=&#34;210px&#34;
+	
+&gt;
+&lt;strong&gt;網站&lt;/strong&gt;:基本同上，實現對單獨網站的分流。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;功能&lt;/strong&gt;:可以看到廣告攔截這一欄。DIRECT 則爲直連不開啓，REJECT 則爲全局代理，開啓
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX13.jpg&#34;
+	width=&#34;498&#34;
+	height=&#34;227&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX13_hu752b4ef0ea6af40955fc8fd6e09c025e_8145_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/QuantumultX13_hu752b4ef0ea6af40955fc8fd6e09c025e_8145_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;廣告攔截&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;219&#34;
+		data-flex-basis=&#34;526px&#34;
+	
+&gt;
+&lt;strong&gt;國家&lt;/strong&gt;:一般是根據你的節點連接到的國家，進行了&lt;strong&gt;分組&lt;/strong&gt;。例如，若都是臺灣的節點，則會自動歸類到臺灣這一組的下面。這些分組的節點一般不能手動選擇，一般是根據延遲自動選擇。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;linux&#34;&gt;&lt;strong&gt;Linux&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;因爲我本身是 Arch 的使用者，所以這裏只演示 Arch 的安裝方法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Clash&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S clash-premium-bin // 安裝 Clash
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;然後我們需要添加自己的 Clash 配置文件 config.yml 一般來說機場裏面會有訂閱地址，可以直接下載&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cd ~/.config/clash // 打開到 Clash 的路徑下
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S wget // 安裝 wget
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget -O config.yml &amp;#34;xxxxxxxxxxxxxxx&amp;#34; // 下載 config.yml 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;在把 XXXXXXXXXXXX 更改爲你的訂閱地址&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然後再下載 Country.mmdb 這份文件，點擊[這裏]進行下載&lt;/p&gt;
+&lt;p&gt;接下來就可以執行 Clsah 了&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;clash -f .config/clash/config.yaml // 執行 Clash
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;可以在 &lt;a class=&#34;link&#34; href=&#34;http://clash.razord.top/#/settings&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Clash Dashboard&lt;/a&gt; 進行更換節點和延遲測試&lt;/p&gt;
+&lt;h4 id=&#34;windows&#34;&gt;&lt;strong&gt;Windows&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;V2rayN&lt;/p&gt;
+&lt;p&gt;先到 V2rayN 的 &lt;a class=&#34;link&#34; href=&#34;https://github.com/2dust/v2rayN/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;releases&lt;/a&gt; 下載  &lt;strong&gt;V2rayN-Core.zip&lt;/strong&gt;&lt;br&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN1.jpg&#34;
+	width=&#34;1893&#34;
+	height=&#34;797&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN1_hu69e73561287f9ec04c9a6b051fbe9299_81482_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN1_hu69e73561287f9ec04c9a6b051fbe9299_81482_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;releases&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;237&#34;
+		data-flex-basis=&#34;570px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;下載完成後，解壓縮數據包，再點擊 &lt;strong&gt;V2rayN.exe&lt;/strong&gt;,看到右下角任務欄的&lt;strong&gt;藍色&lt;/strong&gt;圖標
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN6.jpg&#34;
+	width=&#34;287&#34;
+	height=&#34;225&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN6_hu92e07ff38535976fb3cf31f2e9a1beba_4095_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN6_hu92e07ff38535976fb3cf31f2e9a1beba_4095_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;圖標&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;127&#34;
+		data-flex-basis=&#34;306px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;雙擊 圖標，打開圖形界面
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN2.jpg&#34;
+	width=&#34;1266&#34;
+	height=&#34;773&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN2_hu39e07274e92dd0cfa079caac67d0ccca_51408_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN2_hu39e07274e92dd0cfa079caac67d0ccca_51408_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;GUI&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;163&#34;
+		data-flex-basis=&#34;393px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;接下來就要添加節點。一般我們會選擇添加訂閱的方式添加節點。
+點擊 訂閱-訂閱設置
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN3.jpg&#34;
+	width=&#34;1266&#34;
+	height=&#34;769&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN3_huce970d622e8975305bf7b86aea53693b_59883_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN3_huce970d622e8975305bf7b86aea53693b_59883_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;訂閱設置&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;164&#34;
+		data-flex-basis=&#34;395px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;點擊 添加 按鈕，在&lt;strong&gt;地址&lt;/strong&gt;欄輸入你的訂閱地址 勾選 啓用 再點擊 確定
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN4.jpg&#34;
+	width=&#34;818&#34;
+	height=&#34;547&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN4_hub5e7b5e6f52374114046c991b0c30784_29676_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN4_hub5e7b5e6f52374114046c991b0c30784_29676_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;添加訂閱&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;149&#34;
+		data-flex-basis=&#34;358px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;點擊 訂閱-更新訂閱 這樣節點就添加完成了
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN5.jpg&#34;
+	width=&#34;1267&#34;
+	height=&#34;769&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN5_hu9a6659150bdf7d6c653d02877ac3b149_51166_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN5_hu9a6659150bdf7d6c653d02877ac3b149_51166_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;節點添加完成&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;164&#34;
+		data-flex-basis=&#34;395px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;然後 在任務欄中 右鍵-系統代理-自動配置系統代理
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN7.jpg&#34;
+	width=&#34;494&#34;
+	height=&#34;370&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN7_hu053c09658ed5037601db1fabbc0875d2_24524_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN7_hu053c09658ed5037601db1fabbc0875d2_24524_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;配置系統代理&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;320px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;完成後圖標就變 &lt;strong&gt;紅色&lt;/strong&gt; 了，就可以正常使用了。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN8.jpg&#34;
+	width=&#34;298&#34;
+	height=&#34;234&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN8_hubbeb220fad9ea62e8242ac2e44456a87_5513_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN8_hubbeb220fad9ea62e8242ac2e44456a87_5513_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;紅色圖標&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;127&#34;
+		data-flex-basis=&#34;305px&#34;
+	
+&gt;
+在界面中，先選中節點，再回車就可以選中節點了。&lt;/p&gt;
+&lt;p&gt;在 服務器-測試服務器真延遲 就能測試節點延遲了。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN9.jpg&#34;
+	width=&#34;1252&#34;
+	height=&#34;766&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN9_hud1a212cfa9265c7bc4fecae84448dba8_109914_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayN9_hud1a212cfa9265c7bc4fecae84448dba8_109914_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;延遲測試&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;163&#34;
+		data-flex-basis=&#34;392px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Android&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;V2rayNG&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;先到 V2rayNG 的 &lt;a class=&#34;link&#34; href=&#34;https://github.com/2dust/v2rayNG/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;releases&lt;/a&gt; 下載&lt;strong&gt;v2rayNG.apk&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG1.jpg&#34;
+	width=&#34;1897&#34;
+	height=&#34;895&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG1_hu48c1dca2099d70a8563c454896d9c335_90632_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG1_hu48c1dca2099d70a8563c454896d9c335_90632_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;下載&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;211&#34;
+		data-flex-basis=&#34;508px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;打開軟體
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG2.jpg&#34;
+	width=&#34;471&#34;
+	height=&#34;849&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG2_hu489bb3696688a68f36f4fe744e422239_15936_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG2_hu489bb3696688a68f36f4fe744e422239_15936_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;打開&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;55&#34;
+		data-flex-basis=&#34;133px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;點擊&lt;strong&gt;左上角三條橫槓&lt;/strong&gt;，展開側邊欄
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG3.jpg&#34;
+	width=&#34;480&#34;
+	height=&#34;845&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG3_hu34eb1bc1a44fdaf19d9c5f8c39febfb4_17597_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG3_hu34eb1bc1a44fdaf19d9c5f8c39febfb4_17597_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;側邊欄&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;56&#34;
+		data-flex-basis=&#34;136px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;點擊&lt;strong&gt;訂閱設定&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG4.jpg&#34;
+	width=&#34;487&#34;
+	height=&#34;891&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG4_hu38cce71172e0183bf8f4ce5897740712_23066_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG4_hu38cce71172e0183bf8f4ce5897740712_23066_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;點擊訂閱設定&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;54&#34;
+		data-flex-basis=&#34;131px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;點擊&lt;strong&gt;右上角+&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG5.jpg&#34;
+	width=&#34;470&#34;
+	height=&#34;901&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG5_hudf8d36b594c1e8b1150f4578b7ff3744_11920_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG5_hudf8d36b594c1e8b1150f4578b7ff3744_11920_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;右上角加號&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;52&#34;
+		data-flex-basis=&#34;125px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;將機場訂閱鏈接輸入至** url 欄**，備注欄可以隨意填寫，再點擊&lt;strong&gt;右上角的「勾」&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG6.jpg&#34;
+	width=&#34;482&#34;
+	height=&#34;900&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG6_hu63137e1b360db8248c9dc96a6c40cd5a_24612_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG6_hu63137e1b360db8248c9dc96a6c40cd5a_24612_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;添加訂閱&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;53&#34;
+		data-flex-basis=&#34;128px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;回到初始界面，點擊&lt;strong&gt;右上角三點&lt;/strong&gt;，選擇&lt;strong&gt;更新訂閱&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG7.jpg&#34;
+	width=&#34;477&#34;
+	height=&#34;850&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG7_hu0f86a3fe0e6178c3b826438968fa8b75_29700_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG7_hu0f86a3fe0e6178c3b826438968fa8b75_29700_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;更新訂閱&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;56&#34;
+		data-flex-basis=&#34;134px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;這樣就能看到節點了，在列表中選擇節點，再點擊&lt;strong&gt;右下角圓形圖標&lt;/strong&gt;，就已經可以使用了。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG8.jpg&#34;
+	width=&#34;476&#34;
+	height=&#34;915&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG8_hub26914c8c76a612d79e309206f7b85a4_19722_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG8_hub26914c8c76a612d79e309206f7b85a4_19722_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;啓動&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;52&#34;
+		data-flex-basis=&#34;124px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;點擊側邊欄，在&lt;strong&gt;設定&lt;/strong&gt;當中，可以開啓&lt;strong&gt;數綠顯示&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG9.jpg&#34;
+	width=&#34;477&#34;
+	height=&#34;915&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG9_huf29c04bf1c0ad80c6007e50c32dc12d9_35801_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG9_huf29c04bf1c0ad80c6007e50c32dc12d9_35801_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;設定&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;52&#34;
+		data-flex-basis=&#34;125px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;也可以使用 &lt;strong&gt;proxy 個別應用程式&lt;/strong&gt;，這樣就可以只讓需要被 proxy 的應用使用代理。
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG10.jpg&#34;
+	width=&#34;475&#34;
+	height=&#34;915&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG10_hu9bec2a3cf23091a833ee7aa05f01273d_34418_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E4%B8%80%E4%BA%9B%E7%BF%BB%E7%89%86%E8%BB%9F%E9%AB%94%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/V2rayNG10_hu9bec2a3cf23091a833ee7aa05f01273d_34418_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;proxy甄別&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;51&#34;
+		data-flex-basis=&#34;124px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;一些問題&#34;&gt;一些「問題」&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;關於不同「協議」的節點&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;這裏說的是 SS，SSR，V2ray 等等節點的區別。其實他們的原理差不多一樣，只是有些加密協議或代理模式不同。&lt;/p&gt;
+&lt;p&gt;在用戶使用時，節點需要與客戶端對應起來才能正常使用。比如 Shadowsocks 客戶端無法運行 V2ray 的節點。 但也有一些客戶端是可以支持多種協議的節點的。例如 ios 中的 Shadowrocket 和 Quantumult X。還有各種系統上的 Clash 客戶端也是。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;爲什麼我推薦使用應用分流&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;從實用角度來說，有些軟體或網站，不需要代理就可以訪問。有時開啓代理還可能會影響使用效果。從經濟角度上說，也可以爲你節省流量，把鐵用在了鋼刃上。
+當然如果是 ios 用戶，Quantumult X 絕對是一個很好的選擇，不僅僅可以應用單獨切換代理，而且還可以運行 JavaScript 腳本，十分方便。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;關於代理端口的簡單理解&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我用相對口語化的方式陳述。想象你的電腦的流量像是一根有着很多個「接口」的線路，而這一整根線就相當於你的宿主機地址 一般是 127.0.0.1 。在這個地址之下，就會分成很多個接口，也就是「端口」了。一般的 Proxy 在不開啓全局代理時，默認只會代理其中的一個端口，也就是只有這個端口的流量可以正常被代理。像是 Clash 的 HTTP 代理端口通常是 7890。有的時候我們明明開啓的代理，卻無法使用，很有可能就是你的軟體或者瀏覽器的流量端口沒有接上代理端口。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;推展推薦：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://youtube.com/playlist?list=PLkjxal9L9K2YiL8o4P4pCWm-mHSfa2-kI&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AK硬核翻牆系列&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://yattazen.com/tutorial/quantumultx-config-guide.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Quantumult X 綜合教程&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Google Voice 虛擬號的一些使用方法</title>
+        <link>https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+        <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+        <description>&lt;img src="https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/background.jpg" alt="Featured image of post Google Voice 虛擬號的一些使用方法" /&gt;&lt;h2 id=&#34;簡介&#34;&gt;簡介&lt;/h2&gt;
+&lt;h3 id=&#34;google-voice-是什麼&#34;&gt;Google Voice 是什麼？&lt;/h3&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Google_Voice&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Google Voice&lt;/a&gt; 是 &lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Google&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Google&lt;/a&gt; 提供的&lt;strong&gt;虛擬電話&lt;/strong&gt;服務，當你使用此服務時，可以理解爲 Google 給了你一個美國的電話號碼，你可以把它應用在各樣的場景中。&lt;/p&gt;
+&lt;p&gt;目前，Google Voice 的申請僅限於美國和加拿大地區。&lt;/p&gt;
+&lt;p&gt;但如果已經申請了 Google Voice 在世界各地都是可以使用的。（可能會需要使用proxy）&lt;/p&gt;
+&lt;h3 id=&#34;google-voice-的功能&#34;&gt;Google Voice 的功能&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;擁有有一個美國電話號碼&lt;/li&gt;
+&lt;li&gt;美國，加拿大電話簡訊均免費&lt;/li&gt;
+&lt;li&gt;可以收聽留言，並且可以下載下來
+&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;google-voice-的收費方式&#34;&gt;Google Voice 的收費方式&lt;/h3&gt;
+&lt;p&gt;Google Voice 接收各種簡訊是完全免費的;接聽或播出美國，加拿大的電話也是免費的。打電話到其他的地區則是要收費的。&lt;/p&gt;
+&lt;h3 id=&#34;google-voice-的使用年限&#34;&gt;Google Voice 的使用年限&lt;/h3&gt;
+&lt;p&gt;理論上只要保持&lt;strong&gt;主動&lt;/strong&gt;使用，就可以長期的使用。Google 最近更新了最新的時限政策，把定期使用間隔由原來的6個月縮短至3個月，也就是說如果你的 Google Voice 在三個月內沒有&lt;strong&gt;主動&lt;/strong&gt;使用過的話，就有很大幾率被 Google 回收。當然回收前 Google 會發一封郵件提醒你。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意這裏所說的是主動使用，是指你主動撥打電話或發出短信&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;購買&#34;&gt;購買&lt;/h2&gt;
+&lt;p&gt;由於虛擬號的一些特性和 Google Voice的易用性，使得它擁有者不錯的市場。基於 Google Voice 十分容易申請，於是也就衍生了許多的 Google Voice 虛擬號批發商。&lt;/p&gt;
+&lt;p&gt;如果你處在美國和加拿大以外的地區並且沒有美國或加拿大的電話實體卡，可以去網上購買此號碼。&lt;/p&gt;
+&lt;h2 id=&#34;轉移方法&#34;&gt;轉移方法&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此方法可能只適用於你在批發商上購買了 Google Voice 的情況&lt;/p&gt;
+&lt;p&gt;如果是在個人 Gmail 上申請則不需要轉移&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;當你從批發商上購買了號碼後，批發商一般會提供給你這個帳號的&lt;strong&gt;帳號郵箱&lt;/strong&gt;,&lt;strong&gt;帳號密碼&lt;/strong&gt;,&lt;strong&gt;帳號輔助郵箱&lt;/strong&gt;。這些信息可以幫助你登錄上並使用 Google Voice，有些人可能會修改帳號密碼和輔助郵箱來加強對此帳號的管理，但這個方法是不夠完善的。這個方法只能防止商家二次登錄此帳號，卻不能防止 Google 回收此帳號。因爲大部分被批發商用來申請 Google Voice 服務的郵箱，都是所謂的&lt;strong&gt;垃圾郵箱&lt;/strong&gt;，可能是通過各種方法申請到的空殼郵箱。而 Google 每年都會從數據庫中清除大量的垃圾郵箱，所以你所買到的郵箱有很大幾率會在將來的某一天被 Google 所回收。&lt;/p&gt;
+&lt;p&gt;如果你不希望此號碼被 Google 回收，那麼我推薦你將此 Google Voice 號碼轉移到個人 Gmail 下。&lt;/p&gt;
+&lt;h3 id=&#34;第一步&#34;&gt;第一步&lt;/h3&gt;
+&lt;p&gt;如果你不在美國境內，那麼首先你需要準備一個&lt;strong&gt;美國原生&lt;/strong&gt;節點，即一個&lt;strong&gt;美國原生IP的節點&lt;/strong&gt;。如果沒有，那麼轉移過程無法完成。&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://bgp.he.net/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;檢測是否爲原生IP的方法&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;準備好後，連接上節點，進入 Google Voice 網站，登錄上你&lt;strong&gt;接收轉移號碼的帳號&lt;/strong&gt;，即你的&lt;strong&gt;個人帳號&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;如果你的個人帳號是第一次登錄此網站，Google Voice 會要求你通過他的一些協議，只要點通過就好。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這個隱私通過頁面只有在你使用美國原生節點接入時才會彈出，如果是其他節點的話可能會彈出&lt;strong&gt;抱歉，你的國家不支持此服務&lt;/strong&gt;的字樣。但在你轉移完成後，再使用 Google Voice的服務是不限於美國節點的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;第二步&#34;&gt;第二步&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;登錄上你所購買 Google Voice 所得到的帳號，進入到主界面，點擊左上角的 &lt;strong&gt;三條槓&lt;/strong&gt; 按鈕;
+&lt;img src=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/1.jpg&#34;
+	width=&#34;1920&#34;
+	height=&#34;974&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/1_hu3b84fc0009d8342ee8337d6dacc6a82a_59428_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/1_hu3b84fc0009d8342ee8337d6dacc6a82a_59428_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;點擊點擊左上角的 三條槓 按鈕&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;197&#34;
+		data-flex-basis=&#34;473px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;點擊 舊版 Google Voice 按鈕
+&lt;img src=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/2.jpg&#34;
+	width=&#34;1920&#34;
+	height=&#34;974&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/2_hu6e54cbdb00f5914eb2e3dea161d8a755_67431_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/2_hu6e54cbdb00f5914eb2e3dea161d8a755_67431_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;舊版 Google Voice 按鈕&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;197&#34;
+		data-flex-basis=&#34;473px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;點擊 Phone 按鈕
+&lt;img src=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/3.jpg&#34;
+	width=&#34;1920&#34;
+	height=&#34;972&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/3_hu351f2a14072d79db33340ad102523afd_76539_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/3_hu351f2a14072d79db33340ad102523afd_76539_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Phone 按鈕&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;197&#34;
+		data-flex-basis=&#34;474px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;點擊 Transfer 按鈕
+&lt;img src=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/4.jpg&#34;
+	width=&#34;1920&#34;
+	height=&#34;975&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/4_hub065e82d0d30a0cfc67ece51ad1a13a8_57738_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/4_hub065e82d0d30a0cfc67ece51ad1a13a8_57738_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Transfer 按鈕&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;196&#34;
+		data-flex-basis=&#34;472px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 Select a destination account to continue: 下方 找到你的個人 Gmail 並選擇，然後點擊 Transfer
+&lt;img src=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/5.jpg&#34;
+	width=&#34;1920&#34;
+	height=&#34;972&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/5_hue7abb3efcba1a92f7d58b2ab06a31381_86487_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/5_hue7abb3efcba1a92f7d58b2ab06a31381_86487_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;完成 按鈕&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;197&#34;
+		data-flex-basis=&#34;474px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果在第一步中登錄個人帳號時沒有通過 Google Voice 的協議，則在這步郵箱是無法選擇的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;之後只要等待轉移完成就好了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;使用-google-voice-的基本功能&#34;&gt;使用 Google Voice 的基本功能&lt;/h2&gt;
+&lt;p&gt;如果要實現 接打電話，收發簡訊等功能，在網頁端上是可以實現的。&lt;/p&gt;
+&lt;p&gt;但如果要在移動端上使用網頁來完成這些事情，又有些不太方便。我們可以使用 Google Voice App 來解決&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在2021年4月份後， Google 基本停止了其他的軟件撥打電話的功能
+但如果只要收簡訊的話是可以在 Gmail 上收取&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Google Voice App 都只分別在Appstore和play store的美區，加拿大區上上架。&lt;/p&gt;
+&lt;p&gt;如果是 Android 用戶，可以考慮下載apk進行安裝。&lt;/p&gt;
+&lt;p&gt;如果是 ios 用戶，一定需要一個 ios 美區帳號才能下載安裝。&lt;/p&gt;
+&lt;p&gt;安裝完成後登錄 Google 賬戶，如果正常綁定了Google Voice 號碼，就已經可以使用了。&lt;/p&gt;
+&lt;h3 id=&#34;撥打電話&#34;&gt;撥打電話&lt;/h3&gt;
+&lt;p&gt;當你第一次想要試試撥打電話時，界面會彈出要求你的實體卡號碼來進行關聯。如果你不想關聯，可以用一下步驟關閉：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;點擊左上角的  &lt;strong&gt;三條槓&lt;/strong&gt;
+&lt;img src=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/6.jpg&#34;
+	width=&#34;1920&#34;
+	height=&#34;941&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/6_hu45cabf42428d6b730d9768fe4e006403_42092_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/6_hu45cabf42428d6b730d9768fe4e006403_42092_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;三條槓 按鈕&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;204&#34;
+		data-flex-basis=&#34;489px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;點擊 設定
+&lt;img src=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/7.jpg&#34;
+	width=&#34;1920&#34;
+	height=&#34;969&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/7_hubaeaac0bc02c5e5d8507bf0262af5801_44483_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/7_hubaeaac0bc02c5e5d8507bf0262af5801_44483_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;設定 按鈕&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;198&#34;
+		data-flex-basis=&#34;475px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;點擊 撥打和接聽電話
+&lt;img src=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/8.jpg&#34;
+	width=&#34;1919&#34;
+	height=&#34;941&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/8_huc3a7e70edec78ab94f8e0bd7ecce3179_51319_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/8_huc3a7e70edec78ab94f8e0bd7ecce3179_51319_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;撥打和接聽電話 按鈕&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;203&#34;
+		data-flex-basis=&#34;489px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;選擇 偏好使用 Wi-Fi 和 流動數據
+&lt;img src=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/9.jpg&#34;
+	width=&#34;1920&#34;
+	height=&#34;938&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/9_hu5d3613743f17e16272856db937e2d6d3_50975_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/9_hu5d3613743f17e16272856db937e2d6d3_50975_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;偏好使用 Wi-Fi 和 流動數據 按鈕&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;204&#34;
+		data-flex-basis=&#34;491px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這樣就可以不綁定實體卡撥打電話了&lt;/p&gt;
+&lt;h3 id=&#34;接聽電話&#34;&gt;接聽電話&lt;/h3&gt;
+&lt;p&gt;當你接通電話時，會有一段 Google 的語音提示在前面。可能有時候你沒有聽清，只等着他講完你再接通，那麼你可能會發現通話會自動掛斷。&lt;/p&gt;
+&lt;p&gt;其實，前面的語音提示是在詢問你要立即通話還是保存到語音信箱，如果選擇前者，你需要在撥號鍵上按“&lt;strong&gt;1&lt;/strong&gt;”;如果是後者，你就需要在撥號鍵上輸入“&lt;strong&gt;2&lt;/strong&gt;”。&lt;/p&gt;
+&lt;h2 id=&#34;注意事項&#34;&gt;注意事項&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Google Voice 號碼是可以注冊&lt;strong&gt;大部分&lt;/strong&gt;App，包括 Telegram，Signal，Paypal等應用，但也有一些應用是無法直接注冊的，例如 Wechat。Wechat 只能用其他手機號碼注冊成功後，再更換綁定成 Google Voice 的號碼。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;一定不能&lt;/strong&gt;用 Google Voice 號碼再注冊 Google 賬戶，這樣的套娃操作可能會導致 Google 封號並回收此號碼&lt;/li&gt;
+&lt;li&gt;最好頻繁使用 Google Voice ，防止 逾期後，Google 回收號碼。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>配置青龍面板並實現京東JS腳本運行</title>
+        <link>https://7WayneLee.github.io/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/</link>
+        <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://7WayneLee.github.io/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/</guid>
+        <description>&lt;img src="https://7WayneLee.github.io/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/background.jpg" alt="Featured image of post 配置青龍面板並實現京東JS腳本運行" /&gt;&lt;h2 id=&#34;簡介&#34;&gt;簡介&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/whyour/qinglong&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;青龍面板&lt;/a&gt;是運行在docker的一種容器 可以實現定時任務的管理 並且支持多種語言下的腳本 使用起來也十分方便 可以安裝在各種的 Linux 發行版上&lt;/p&gt;
+&lt;p&gt;其實官方的文檔中就已經編寫的安裝說明 但可能對於小白來說並不容易理解&lt;/p&gt;
+&lt;p&gt;所以我就打算寫一個小白版本的安裝過程 讓更多人順利安裝&lt;/p&gt;
+&lt;h2 id=&#34;安裝教程&#34;&gt;安裝教程&lt;/h2&gt;
+&lt;h3 id=&#34;1安裝docker及docker-compose&#34;&gt;1.安裝docker及docker-compose&lt;/h3&gt;
+&lt;p&gt;在 Arch Linux 直接調用 pacman 就可以安裝了&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;先安裝 docker&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S docker //安裝 docker
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;再安裝 docker-compose&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S docker-compose //安裝 docker-compose
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;安裝好了之後 我們就要運行 docker&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl start docker.service //運行 docker
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;當然 我們也可以把 docker 設置成開機自啓動 這樣就不用每次都運行指令了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl enable docker.service //docker 開機自啓
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;到了這步 docker 及 docker-compose 就都已經安裝完成了&lt;/p&gt;
+&lt;h3 id=&#34;2安裝青龍面板&#34;&gt;2.安裝青龍面板&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;新建一個文件夾（這裏文件夾名稱可以隨意）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir qinglong //新建 qinglong 文件夾
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;開至文件夾目錄&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cd qinglong //打開至 qinglong 文件夾目錄
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;本仓库中的 docker-compose.yml 本地&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://raw.githubusercontent.com/whyour/qinglong/develop/docker-compose.yml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意  在下載中可能會出現 ERROR
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/ERROR1.jpg&#34;
+	width=&#34;828&#34;
+	height=&#34;134&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/ERROR1_hu05bf2f59ea9d41c67493362ae36708ce_31146_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/ERROR1_hu05bf2f59ea9d41c67493362ae36708ce_31146_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;錯誤1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;617&#34;
+		data-flex-basis=&#34;1482px&#34;
+	
+&gt;
+出現的443錯誤是因爲端口無法訪問
+有科學上網能力的可以將proxy設爲全局就可以啦&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;export https_proxy=http://127.0.0.1:xxxx http_proxy=http://127.0.0.1:xxxx all_proxy=socks5://127.0.0.1:xxxx //把xxxx替換成自己的端口號就可以了
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果沒有科學上網能力 那就直接在本地創建一個 docker-compose.yml 文件 再到&lt;a class=&#34;link&#34; href=&#34;https://github.com/whyour/qinglong/blob/develop/docker-compose.yml&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;項目&lt;/a&gt;中把內容復制進去也可以&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;啓動&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker-compose up -d //啓動青龍面板
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意 在啓動中可能會出現如下錯誤
+&lt;img src=&#34;https://7WayneLee.github.io/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/ERROR2.jpg&#34;
+	width=&#34;1094&#34;
+	height=&#34;112&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/ERROR2_hu5d8bb581178de2a231f17dfefb096bb0_25338_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/ERROR2_hu5d8bb581178de2a231f17dfefb096bb0_25338_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;錯誤2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;976&#34;
+		data-flex-basis=&#34;2344px&#34;
+	
+&gt;
+我們需要將你的用戶添加到docker組中&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo gpasswd -a $USER docker //添加到組中
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wgrp docker
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl start docker //重啓一次 docker
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker-compose up -d //啓動青龍面板
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;默认情况下qinglong将会在5700端口启动，并将端口映射至容器所在宿主机，启动之后打开浏览器访问宿主机的5700端口&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;查找宿主機ip&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ip addr show docker0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/ip.jpg&#34;
+	width=&#34;782&#34;
+	height=&#34;108&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/ip_hub7f0bd0807d63ea8478a14d74cf2a7c7_17503_480x0_resize_q75_box.jpg 480w, https://7WayneLee.github.io/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/ip_hub7f0bd0807d63ea8478a14d74cf2a7c7_17503_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;ip&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;724&#34;
+		data-flex-basis=&#34;1737px&#34;
+	
+&gt;
+圖中 inet 後面的地址就是宿主機ip 172.17.0.1是我的ip地址&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;打開瀏覽器 輸入ip：5700 就會顯示登錄頁面
+第一次账号密码均输入&lt;code&gt;admin&lt;/code&gt;，会生成&lt;code&gt;auth.json&lt;/code&gt; 頁面也會提示你輸入新的密碼
+運行下面的指令獲取新的密碼&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat data/config/auth.json
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;返回的结果类似如下字段&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{&amp;#34;username&amp;#34;:&amp;#34;admin&amp;#34;,&amp;#34;password&amp;#34;:&amp;#34;Xb-ZYP526wmg4_h6q1WqIO&amp;#34;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;我們將新的密碼復制輸入後，即可成功登錄青龍面板&lt;/p&gt;
+&lt;h2 id=&#34;使用案例一運行京東腳本&#34;&gt;使用案例一：運行京東腳本&lt;/h2&gt;
+&lt;p&gt;在Github上 有許多關於京東JS腳本的項目 我們可以直接調用
+推薦：項目地址  &lt;a class=&#34;link&#34; href=&#34;https://github.com/zero205/JD_tencent_scf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/zero205/JD_tencent_scf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安裝步驟&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我們可以直接在 qinglong 文件夾目錄終端機中輸入&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker exec -it qinglong_web_1 ql repo https://ghproxy.com/https://github.com/zero205/JD_tencent_scf.git &amp;#34;jd_|jx_|getJDCookie&amp;#34; &amp;#34;backUp|icon&amp;#34; &amp;#34;^jd[^_]|USER|sendNotify|sign_graphics_validate|JDJR&amp;#34; &amp;#34;main&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;腳本便會自動添加到面板中
+導入後我們便可以看到面板左邊側邊欄 配置文件 和 腳本管理 中新添了許多文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;再獲取京東 cookie&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;浏览器获取京东cookie教程 &lt;a class=&#34;link&#34; href=&#34;https://github.com/zero205/JD_tencent_scf/blob/main/backUp/GetJdCookie.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/zero205/JD_tencent_scf/blob/main/backUp/GetJdCookie.md&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;插件获取京东cookie教程 &lt;a class=&#34;link&#34; href=&#34;https://github.com/zero205/JD_tencent_scf/blob/main/backUp/GetJdCookie2.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/zero205/JD_tencent_scf/blob/main/backUp/GetJdCookie2.md&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;獲取到的 cookie 我們導入到面板的 環境變量中&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;點擊左側側邊欄的 環境變量
+點擊右上角 添加變量
+名稱 可以設爲 JD_COOKIE 將獲取到的 cookie 復制到 值 當中&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;這裏若是添加多個帳號 每個帳號之間的 cookie 要用 ; 隔開
+每個帳號的 cookies 過了一段時間就會失效 失效了就要再重新獲取了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然後就可以試着運行 定時任務 中的任務了&lt;/p&gt;
+&lt;h2 id=&#34;最後&#34;&gt;最後&lt;/h2&gt;
+&lt;p&gt;青龍面板其實還有很多的使用方法 可以更多的探索&lt;/p&gt;
+&lt;p&gt;感謝開發項目並無私分享的大佬們！&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
