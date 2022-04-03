@@ -738,7 +738,7 @@
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;如果你想使用其他的主題，可以 git clone 其他的主題使用&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;em&gt;2.打開 &lt;code&gt;username-hugo&lt;/code&gt; 文件夾，將路徑下 &lt;code&gt;themes/hugo-theme-stack &lt;/code&gt;的文件 &lt;code&gt;config.yaml&lt;/code&gt; 復制到 &lt;code&gt;username-hugo&lt;/code&gt; 文件夾中。然後刪除原本有的 &lt;code&gt;config.toml&lt;/code&gt; 文件&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2.打開 &lt;code&gt;username-hugo&lt;/code&gt; 文件夾，將路徑下 &lt;code&gt;themes/hugo-theme-stack &lt;/code&gt;的文件 &lt;code&gt;config.yaml&lt;/code&gt; 和 文件夾 &lt;code&gt;layouts&lt;/code&gt; 復制到 &lt;code&gt;username-hugo&lt;/code&gt; 文件夾中。然後刪除原本有的 &lt;code&gt;config.toml&lt;/code&gt; 文件&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;3.將 &lt;code&gt;themes/hugo-theme-stack/exampleSite&lt;/code&gt; 路徑下的 &lt;code&gt;content&lt;/code&gt; 文件夾復制到 &lt;code&gt;username-hugo&lt;/code&gt; 文件夾中&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;4.測試&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;在 &lt;code&gt;terminal&lt;/code&gt; 中輸入&lt;/p&gt;
