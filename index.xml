@@ -2751,7 +2751,7 @@ Quantumult X 在除中國大陸區以外的 App Store 都有上架。目前港�
 &lt;/blockquote&gt;
 &lt;p&gt;當你從批發商上購買了號碼後，批發商一般會提供給你這個帳號的&lt;strong&gt;帳號郵箱&lt;/strong&gt;,&lt;strong&gt;帳號密碼&lt;/strong&gt;,&lt;strong&gt;帳號輔助郵箱&lt;/strong&gt;。這些信息可以幫助你登錄上並使用 Google Voice，有些人可能會修改帳號密碼和輔助郵箱來加強對此帳號的管理，但這個方法是不夠完善的。這個方法只能防止商家二次登錄此帳號，卻不能防止 Google 回收此帳號。因爲大部分被批發商用來申請 Google Voice 服務的郵箱，都是所謂的&lt;strong&gt;垃圾郵箱&lt;/strong&gt;，可能是通過各種方法申請到的空殼郵箱。而 Google 每年都會從數據庫中清除大量的垃圾郵箱，所以你所買到的郵箱有很大幾率會在將來的某一天被 Google 所回收。&lt;/p&gt;
 &lt;p&gt;如果你不希望此號碼被 Google 回收，那麼我推薦你將此 Google Voice 號碼轉移到個人 Gmail 下。&lt;/p&gt;
-&lt;h3 id=&#34;第一步&#34;&gt;第一步&lt;/h3&gt;
+&lt;h3 id=&#34;賬戶驗證&#34;&gt;賬戶驗證&lt;/h3&gt;
 &lt;p&gt;如果你不在美國境內，那麼首先你需要準備一個&lt;strong&gt;美國原生&lt;/strong&gt;節點，即一個&lt;strong&gt;美國原生IP的節點&lt;/strong&gt;。如果沒有，那麼轉移過程無法完成。&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://bgp.he.net/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;檢測是否爲原生IP的方法&lt;/a&gt;&lt;/p&gt;
@@ -2760,7 +2760,7 @@ Quantumult X 在除中國大陸區以外的 App Store 都有上架。目前港�
 &lt;blockquote&gt;
 &lt;p&gt;這個隱私通過頁面只有在你使用美國原生節點接入時才會彈出，如果是其他節點的話可能會彈出&lt;strong&gt;抱歉，你的國家不支持此服務&lt;/strong&gt;的字樣。但在你轉移完成後，再使用 Google Voice的服務是不限於美國節點的。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;第二步&#34;&gt;第二步&lt;/h3&gt;
+&lt;h3 id=&#34;轉移步驟&#34;&gt;轉移步驟&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;登錄上你所購買 Google Voice 所得到的帳號，進入到主界面，點擊左上角的 &lt;strong&gt;三條槓&lt;/strong&gt; 按鈕;
@@ -2861,9 +2861,9 @@ Quantumult X 在除中國大陸區以外的 App Store 都有上架。目前港�
 &lt;p&gt;在2021年4月份後， Google 基本停止了其他的軟件撥打電話的功能
 但如果只要收簡訊的話是可以在 Gmail 上收取&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Google Voice App 都只分別在Appstore和play store的美區，加拿大區上上架。&lt;/p&gt;
-&lt;p&gt;如果是 Android 用戶，可以考慮下載apk進行安裝。&lt;/p&gt;
-&lt;p&gt;如果是 ios 用戶，一定需要一個 ios 美區帳號才能下載安裝。&lt;/p&gt;
+&lt;p&gt;Google Voice App 都只分別在 Appstore 和 play store 的美區，加拿大區上上架。&lt;/p&gt;
+&lt;p&gt;如果是 Android 用戶，可以考慮下載 apk 進行安裝。&lt;/p&gt;
+&lt;p&gt;如果是 iOS 用戶，一定需要一個 ios 美區帳號才能下載安裝。&lt;/p&gt;
 &lt;p&gt;安裝完成後登錄 Google 賬戶，如果正常綁定了Google Voice 號碼，就已經可以使用了。&lt;/p&gt;
 &lt;h3 id=&#34;撥打電話&#34;&gt;撥打電話&lt;/h3&gt;
 &lt;p&gt;當你第一次想要試試撥打電話時，界面會彈出要求你的實體卡號碼來進行關聯。如果你不想關聯，可以用一下步驟關閉：&lt;/p&gt;
@@ -2943,9 +2943,78 @@ Quantumult X 在除中國大陸區以外的 App Store 都有上架。目前港�
 &lt;p&gt;其實，前面的語音提示是在詢問你要立即通話還是保存到語音信箱，如果選擇前者，你需要在撥號鍵上按“&lt;strong&gt;1&lt;/strong&gt;”;如果是後者，你就需要在撥號鍵上輸入“&lt;strong&gt;2&lt;/strong&gt;”。&lt;/p&gt;
 &lt;h2 id=&#34;注意事項&#34;&gt;注意事項&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Google Voice 號碼是可以注冊&lt;strong&gt;大部分&lt;/strong&gt;App，包括 Telegram，Signal，Paypal等應用，但也有一些應用是無法直接注冊的，例如 Wechat。Wechat 只能用其他手機號碼注冊成功後，再更換綁定成 Google Voice 的號碼。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;一定不能&lt;/strong&gt;用 Google Voice 號碼再注冊 Google 賬戶，這樣的套娃操作可能會導致 Google 封號並回收此號碼&lt;/li&gt;
-&lt;li&gt;最好頻繁使用 Google Voice ，防止 逾期後，Google 回收號碼。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Google Voice 號碼是可以注冊&lt;strong&gt;大部分&lt;/strong&gt;App，包括 Telegram，Signal，Paypal等應用，但也有一些應用是無法直接注冊的，例如 Wechat。Wechat 只能用其他手機號碼注冊成功後，再更換綁定成 Google Voice 的號碼。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;近期使用 Google Voice 的 Wechat 賬戶遭到了大規模封禁，所以請謹慎更改。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;一定不能&lt;/strong&gt;用 Google Voice 號碼再注冊 Google 賬戶，這樣的套娃操作可能會導致 Google 封號並回收此號碼&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最好頻繁使用 Google Voice ，防止 逾期後，Google 回收號碼。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;更新新版-google-voice-web-界面操作&#34;&gt;更新：新版 Google Voice Web 界面操作&lt;/h2&gt;
+&lt;p&gt;Google 於今年的 2 月份逐漸停止了對舊版 Google Voice 界面的支持。所以在之後需要通過新版界面進行轉移號碼等的操作。&lt;/p&gt;
+&lt;p&gt;在進行轉移前，一定要記得先通過&lt;strong&gt;賬戶驗證&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;新版界面轉移步驟&#34;&gt;新版界面轉移步驟&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;登陸 Google Voice 網站，點擊右上角的 &lt;code&gt;設置&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/10.png&#34;
+	width=&#34;1919&#34;
+	height=&#34;969&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/10_hu5df307144cdcfef2850b73a23ef355ae_109255_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/10_hu5df307144cdcfef2850b73a23ef355ae_109255_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;點擊 齒輪 按鈕&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;198&#34;
+		data-flex-basis=&#34;475px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下滑界面，點擊 &lt;code&gt;轉移號碼&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/11.png&#34;
+	width=&#34;1119&#34;
+	height=&#34;631&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/11_hu9f356559cc9d9421f5f6e499c88a23fe_70150_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/11_hu9f356559cc9d9421f5f6e499c88a23fe_70150_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;轉移號碼&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;425px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;輸入你要轉移到的 Google Account 的郵箱地址，傳送轉移要求&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/12.png&#34;
+	width=&#34;929&#34;
+	height=&#34;631&#34;
+	srcset=&#34;https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/12_hu9ed05a05e214da09fc5a86bf4f493e09_55863_480x0_resize_box_3.png 480w, https://7WayneLee.github.io/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/12_hu9ed05a05e214da09fc5a86bf4f493e09_55863_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;輸入郵箱地址&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;147&#34;
+		data-flex-basis=&#34;353px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;再在 Google Voice 登陸接收號碼的 Google Account，進入設置，接受號碼轉移。這樣就完成號碼轉移了。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
