@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='此文章最後修改於 2022 / 04 / 5
+ 索引 寫這篇文章，源至於我在寫《臺灣學生在長沙生活指北》時的一個想法，也算對讀者的一個承諾。
+「翻牆」這個話題，在大陸來說，還是一個比較敏感的話題。這個行爲其實觸犯了大陸的法律，相關的內容可以了解查詢中華人民共和國網路審查，這其中就包括了對「翻牆」這個行爲的定義。
+但以我個人生活在大陸這些年，對大陸的了解，其實有六成以上的人會使用簡單的工具進行翻牆。所以如果你有這個習慣或者需求，其實你並不是少數人。
+如今，我覺得「翻牆」是一種很重要的生存手段。如果你在大陸長期生活，避免不了會有這種需求。當你需要查詢資料，收看新聞時，「牆內」的訊息也很難滿足你的需求。所以這篇文章，可能可以幫助到你。
+再來說說這篇文章。這篇文章我主要會分爲理論和實踐兩方面來寫。理論方面會在這裏介紹一些歷史，名詞，工具等等一類;而實踐方面，我則會着墨於如何使用一些主流的工具。會想講到理論，其實是希望每個人都能對你用到的東西能有一些了解，就算是淺顯的部分也可以。我覺得這能幫助你如何使用或者在出現問題時，你能夠有基本的動手能力。古人雲：「授人以魚不如授人以漁」，這才是比較重要的部分，而後面的實例，只是給你一個簡單的示範。當你有這方面的知識之後，你也可以寫出自己的教程。
+如果在閱讀文章的過程中你有任何的問題或者你覺得我的文章有錯誤，都可以來Telegram上找我， 我會很高興收到你們的建議。
+什麼是「牆」 牆，其實是中華人民共和國國家防火牆，也稱「長城防火牆」，常用簡稱是GFW（取自 Great Fire Wall）。其實對官方來說並沒有GFW這個稱謂，只是後來民間興起和演變，這個綽號也被越來越多人熟知，於是也就變成了一種習慣名稱。
+爲什麼會有「牆」，其實起因有很多。因爲涉及衆多政治因素，這裏不做過多說明。
+GFW主要作用於分析和過濾中華人民共和國境內外網路間的相互訪問。這句話其實說明了GFW的工作其實是雙向性的，一是限制大陸網民訪問某些境外站點，二是限制國外的用戶訪問國內的站點。
+GFW的主要工作方式 在談到這個之前，我想先簡單的介紹一下一般情況下，在無GFW幹擾下訪問網站的過程。
+正常工作基本流程 在瀏覽器輸入你所要訪問的網站域名，你的電腦會生成一個數據包，通過你的本地網路接入骨幹網，再通過DNS域名解析，解析出你輸入的域名所要訪問的服務器ip地址，再傳入服務器中，服務器經過處理，會返回一個數據包到你的電腦。
+可能會有點難理解，但這個過程可以類比成「寫信-寄出-收信-回信」。當你寫信時，信封上需要有收信人的地址，這個地址就類似於上面的網站域名，寄出後，信回先到一個大的中轉站，然後會分發給信差，這步就類是於傳入服務器前的動作。然後收信人收到信後再回信，就類似於服務器接受請求返回數據包。其中發往服務器的過程中需要經過很多的地方，這些名詞你可以自行檢索，了解他們各自的工作。
+在有GFW幾種基本工作模式 在前面的部分幾乎一樣，都是把數據包由本地網路接入骨幹網，再通過DNS解析，再來到GFW。接下來就會由GFW展開工作了。一般來說，GFW有三種基本工作原理：
+ip黑名單 在GFW內，可能有一張巨大的ip黑名單，上面都是被屏蔽的ip地址。當域名經過DNS解析後，ip地址可能就會和黑名單中的ip地址進行檢索比較。如果你所訪問的網站的ip地址在這張名單上，就會被屏蔽。
+不過，這個方法的缺點也很明顯。如果單純採用這個方法進行工作，許多網站並不止有一個ip地址。如果另一個ip地址不在黑名單內，則可以正常訪問。
+關鍵字過濾 當你傳輸過來的數據包含一些敏感詞的時候，就會馬上被中斷連接
+DNS劫持 因爲一般網路數據包都是明文流量，GFW可以直接看到你所要訪問的地址。當知道你要訪問一些不能訪問的網站時，DNS會自動解析出一個錯誤的ip地址，或者直接不解析地址，讓服務器無法和你的電腦建立連接。
+上面講到的三種方法，其實是最簡單或者說基礎的方法，如今GFW逐漸完善，也多了其他很多的攔截方法。
+突破 GFW 的幾種方法 早期 Http 代理 後來人們逐漸發現，只要 GFW 無法偵查到我的流量意圖，也就是我發送一個帶有加密請求的數據包到 GFW ，那麼 GFW 就無法進行攔截。於是早期的很多 http 代理都是依賴這些模式進行突破。
+簡單的講解一下過程。當你發送一個請求時，你的本地計算機會發送一個帶有加密請求的數據包，再接入本地網路，再到骨幹網，再由 DNS 解析，發現是去一臺沒有被「牆」的服務器（我們稱它爲中轉服務器）上，GFW 便會放行，然後到達這臺所謂「中轉」服務器上後便會解密數據包到真實你所要訪問的 ip 地址，再去往真實的服務器地址。之後服務器會返回數據給「中轉」服務器，再傳回你的本地計算機。
+這套邏輯很簡單，但也有很大的弊端。這個弊端就是帶有明顯的「特徵」。你的每一次請求所發送的數據包，都是帶有加密請求，並且會去往一臺中轉的服務器上。久而久之， GFW 的維護人員就嗅到了這個特徵。所以 GFW 也具有了攔截這些代理的功能。也因爲太多人採用這種方式突破，使得這種特徵實在他太過於明顯。所以現在單純 http 代理的 VPN 幾乎斷絕了。
+Shadowsocks 的出現及衍生工具 可以說 Shadowsocks 的出現是這段歷史中最精彩的一個節點。Shadowsocks 的作者是 Clowwindy ，其原理也是通過一個加密的數據包來欺騙 GFW ，但與上面說的不同點再於， Shadowsocks 是基於本地端-服務器端這樣一個架構，在本地端運行時，數據包就已經完成了加密，使得 GFW 並不清楚你的意圖，也不帶有明顯的特徵，到達遠端 Shadowsocks 服務器後，再進行解密，去往你要去的地址。'><title> 「翻牆」普及 Part one - 理論部分 </title>
+
+<link rel='canonical' href='https://7WayneLee.github.io/p/%E7%BF%BB%E7%89%86%E6%99%AE%E5%8F%8A-part-one-%E7%90%86%E8%AB%96%E9%83%A8%E5%88%86/'>
+
+<link rel="stylesheet" href="/scss/style.min.450926226e724574a6b936335ea06111f8aeb253d932c86cb2cc807341cd2889.css"><meta property='og:title' content=' 「翻牆」普及 Part one - 理論部分 '>
+<meta property='og:description' content='此文章最後修改於 2022 / 04 / 5
+ 索引 寫這篇文章，源至於我在寫《臺灣學生在長沙生活指北》時的一個想法，也算對讀者的一個承諾。
+「翻牆」這個話題，在大陸來說，還是一個比較敏感的話題。這個行爲其實觸犯了大陸的法律，相關的內容可以了解查詢中華人民共和國網路審查，這其中就包括了對「翻牆」這個行爲的定義。
+但以我個人生活在大陸這些年，對大陸的了解，其實有六成以上的人會使用簡單的工具進行翻牆。所以如果你有這個習慣或者需求，其實你並不是少數人。
+如今，我覺得「翻牆」是一種很重要的生存手段。如果你在大陸長期生活，避免不了會有這種需求。當你需要查詢資料，收看新聞時，「牆內」的訊息也很難滿足你的需求。所以這篇文章，可能可以幫助到你。
+再來說說這篇文章。這篇文章我主要會分爲理論和實踐兩方面來寫。理論方面會在這裏介紹一些歷史，名詞，工具等等一類;而實踐方面，我則會着墨於如何使用一些主流的工具。會想講到理論，其實是希望每個人都能對你用到的東西能有一些了解，就算是淺顯的部分也可以。我覺得這能幫助你如何使用或者在出現問題時，你能夠有基本的動手能力。古人雲：「授人以魚不如授人以漁」，這才是比較重要的部分，而後面的實例，只是給你一個簡單的示範。當你有這方面的知識之後，你也可以寫出自己的教程。
+如果在閱讀文章的過程中你有任何的問題或者你覺得我的文章有錯誤，都可以來Telegram上找我， 我會很高興收到你們的建議。
+什麼是「牆」 牆，其實是中華人民共和國國家防火牆，也稱「長城防火牆」，常用簡稱是GFW（取自 Great Fire Wall）。其實對官方來說並沒有GFW這個稱謂，只是後來民間興起和演變，這個綽號也被越來越多人熟知，於是也就變成了一種習慣名稱。
+爲什麼會有「牆」，其實起因有很多。因爲涉及衆多政治因素，這裏不做過多說明。
+GFW主要作用於分析和過濾中華人民共和國境內外網路間的相互訪問。這句話其實說明了GFW的工作其實是雙向性的，一是限制大陸網民訪問某些境外站點，二是限制國外的用戶訪問國內的站點。
+GFW的主要工作方式 在談到這個之前，我想先簡單的介紹一下一般情況下，在無GFW幹擾下訪問網站的過程。
+正常工作基本流程 在瀏覽器輸入你所要訪問的網站域名，你的電腦會生成一個數據包，通過你的本地網路接入骨幹網，再通過DNS域名解析，解析出你輸入的域名所要訪問的服務器ip地址，再傳入服務器中，服務器經過處理，會返回一個數據包到你的電腦。
+可能會有點難理解，但這個過程可以類比成「寫信-寄出-收信-回信」。當你寫信時，信封上需要有收信人的地址，這個地址就類似於上面的網站域名，寄出後，信回先到一個大的中轉站，然後會分發給信差，這步就類是於傳入服務器前的動作。然後收信人收到信後再回信，就類似於服務器接受請求返回數據包。其中發往服務器的過程中需要經過很多的地方，這些名詞你可以自行檢索，了解他們各自的工作。
+在有GFW幾種基本工作模式 在前面的部分幾乎一樣，都是把數據包由本地網路接入骨幹網，再通過DNS解析，再來到GFW。接下來就會由GFW展開工作了。一般來說，GFW有三種基本工作原理：
+ip黑名單 在GFW內，可能有一張巨大的ip黑名單，上面都是被屏蔽的ip地址。當域名經過DNS解析後，ip地址可能就會和黑名單中的ip地址進行檢索比較。如果你所訪問的網站的ip地址在這張名單上，就會被屏蔽。
+不過，這個方法的缺點也很明顯。如果單純採用這個方法進行工作，許多網站並不止有一個ip地址。如果另一個ip地址不在黑名單內，則可以正常訪問。
+關鍵字過濾 當你傳輸過來的數據包含一些敏感詞的時候，就會馬上被中斷連接
+DNS劫持 因爲一般網路數據包都是明文流量，GFW可以直接看到你所要訪問的地址。當知道你要訪問一些不能訪問的網站時，DNS會自動解析出一個錯誤的ip地址，或者直接不解析地址，讓服務器無法和你的電腦建立連接。
+上面講到的三種方法，其實是最簡單或者說基礎的方法，如今GFW逐漸完善，也多了其他很多的攔截方法。
+突破 GFW 的幾種方法 早期 Http 代理 後來人們逐漸發現，只要 GFW 無法偵查到我的流量意圖，也就是我發送一個帶有加密請求的數據包到 GFW ，那麼 GFW 就無法進行攔截。於是早期的很多 http 代理都是依賴這些模式進行突破。
+簡單的講解一下過程。當你發送一個請求時，你的本地計算機會發送一個帶有加密請求的數據包，再接入本地網路，再到骨幹網，再由 DNS 解析，發現是去一臺沒有被「牆」的服務器（我們稱它爲中轉服務器）上，GFW 便會放行，然後到達這臺所謂「中轉」服務器上後便會解密數據包到真實你所要訪問的 ip 地址，再去往真實的服務器地址。之後服務器會返回數據給「中轉」服務器，再傳回你的本地計算機。
+這套邏輯很簡單，但也有很大的弊端。這個弊端就是帶有明顯的「特徵」。你的每一次請求所發送的數據包，都是帶有加密請求，並且會去往一臺中轉的服務器上。久而久之， GFW 的維護人員就嗅到了這個特徵。所以 GFW 也具有了攔截這些代理的功能。也因爲太多人採用這種方式突破，使得這種特徵實在他太過於明顯。所以現在單純 http 代理的 VPN 幾乎斷絕了。
+Shadowsocks 的出現及衍生工具 可以說 Shadowsocks 的出現是這段歷史中最精彩的一個節點。Shadowsocks 的作者是 Clowwindy ，其原理也是通過一個加密的數據包來欺騙 GFW ，但與上面說的不同點再於， Shadowsocks 是基於本地端-服務器端這樣一個架構，在本地端運行時，數據包就已經完成了加密，使得 GFW 並不清楚你的意圖，也不帶有明顯的特徵，到達遠端 Shadowsocks 服務器後，再進行解密，去往你要去的地址。'>
+<meta property='og:url' content='https://7WayneLee.github.io/p/%E7%BF%BB%E7%89%86%E6%99%AE%E5%8F%8A-part-one-%E7%90%86%E8%AB%96%E9%83%A8%E5%88%86/'>
+<meta property='og:site_name' content='Daniel&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Technology' /><meta property='article:tag' content='GFW' /><meta property='article:published_time' content='2022-04-05T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-04-05T00:00:00&#43;00:00'/><meta property='og:image' content='https://7WayneLee.github.io/p/%E7%BF%BB%E7%89%86%E6%99%AE%E5%8F%8A-part-one-%E7%90%86%E8%AB%96%E9%83%A8%E5%88%86/background.png' />
+<meta name="twitter:title" content=" 「翻牆」普及 Part one - 理論部分 ">
+<meta name="twitter:description" content="此文章最後修改於 2022 / 04 / 5
+ 索引 寫這篇文章，源至於我在寫《臺灣學生在長沙生活指北》時的一個想法，也算對讀者的一個承諾。
+「翻牆」這個話題，在大陸來說，還是一個比較敏感的話題。這個行爲其實觸犯了大陸的法律，相關的內容可以了解查詢中華人民共和國網路審查，這其中就包括了對「翻牆」這個行爲的定義。
+但以我個人生活在大陸這些年，對大陸的了解，其實有六成以上的人會使用簡單的工具進行翻牆。所以如果你有這個習慣或者需求，其實你並不是少數人。
+如今，我覺得「翻牆」是一種很重要的生存手段。如果你在大陸長期生活，避免不了會有這種需求。當你需要查詢資料，收看新聞時，「牆內」的訊息也很難滿足你的需求。所以這篇文章，可能可以幫助到你。
+再來說說這篇文章。這篇文章我主要會分爲理論和實踐兩方面來寫。理論方面會在這裏介紹一些歷史，名詞，工具等等一類;而實踐方面，我則會着墨於如何使用一些主流的工具。會想講到理論，其實是希望每個人都能對你用到的東西能有一些了解，就算是淺顯的部分也可以。我覺得這能幫助你如何使用或者在出現問題時，你能夠有基本的動手能力。古人雲：「授人以魚不如授人以漁」，這才是比較重要的部分，而後面的實例，只是給你一個簡單的示範。當你有這方面的知識之後，你也可以寫出自己的教程。
+如果在閱讀文章的過程中你有任何的問題或者你覺得我的文章有錯誤，都可以來Telegram上找我， 我會很高興收到你們的建議。
+什麼是「牆」 牆，其實是中華人民共和國國家防火牆，也稱「長城防火牆」，常用簡稱是GFW（取自 Great Fire Wall）。其實對官方來說並沒有GFW這個稱謂，只是後來民間興起和演變，這個綽號也被越來越多人熟知，於是也就變成了一種習慣名稱。
+爲什麼會有「牆」，其實起因有很多。因爲涉及衆多政治因素，這裏不做過多說明。
+GFW主要作用於分析和過濾中華人民共和國境內外網路間的相互訪問。這句話其實說明了GFW的工作其實是雙向性的，一是限制大陸網民訪問某些境外站點，二是限制國外的用戶訪問國內的站點。
+GFW的主要工作方式 在談到這個之前，我想先簡單的介紹一下一般情況下，在無GFW幹擾下訪問網站的過程。
+正常工作基本流程 在瀏覽器輸入你所要訪問的網站域名，你的電腦會生成一個數據包，通過你的本地網路接入骨幹網，再通過DNS域名解析，解析出你輸入的域名所要訪問的服務器ip地址，再傳入服務器中，服務器經過處理，會返回一個數據包到你的電腦。
+可能會有點難理解，但這個過程可以類比成「寫信-寄出-收信-回信」。當你寫信時，信封上需要有收信人的地址，這個地址就類似於上面的網站域名，寄出後，信回先到一個大的中轉站，然後會分發給信差，這步就類是於傳入服務器前的動作。然後收信人收到信後再回信，就類似於服務器接受請求返回數據包。其中發往服務器的過程中需要經過很多的地方，這些名詞你可以自行檢索，了解他們各自的工作。
+在有GFW幾種基本工作模式 在前面的部分幾乎一樣，都是把數據包由本地網路接入骨幹網，再通過DNS解析，再來到GFW。接下來就會由GFW展開工作了。一般來說，GFW有三種基本工作原理：
+ip黑名單 在GFW內，可能有一張巨大的ip黑名單，上面都是被屏蔽的ip地址。當域名經過DNS解析後，ip地址可能就會和黑名單中的ip地址進行檢索比較。如果你所訪問的網站的ip地址在這張名單上，就會被屏蔽。
+不過，這個方法的缺點也很明顯。如果單純採用這個方法進行工作，許多網站並不止有一個ip地址。如果另一個ip地址不在黑名單內，則可以正常訪問。
+關鍵字過濾 當你傳輸過來的數據包含一些敏感詞的時候，就會馬上被中斷連接
+DNS劫持 因爲一般網路數據包都是明文流量，GFW可以直接看到你所要訪問的地址。當知道你要訪問一些不能訪問的網站時，DNS會自動解析出一個錯誤的ip地址，或者直接不解析地址，讓服務器無法和你的電腦建立連接。
+上面講到的三種方法，其實是最簡單或者說基礎的方法，如今GFW逐漸完善，也多了其他很多的攔截方法。
+突破 GFW 的幾種方法 早期 Http 代理 後來人們逐漸發現，只要 GFW 無法偵查到我的流量意圖，也就是我發送一個帶有加密請求的數據包到 GFW ，那麼 GFW 就無法進行攔截。於是早期的很多 http 代理都是依賴這些模式進行突破。
+簡單的講解一下過程。當你發送一個請求時，你的本地計算機會發送一個帶有加密請求的數據包，再接入本地網路，再到骨幹網，再由 DNS 解析，發現是去一臺沒有被「牆」的服務器（我們稱它爲中轉服務器）上，GFW 便會放行，然後到達這臺所謂「中轉」服務器上後便會解密數據包到真實你所要訪問的 ip 地址，再去往真實的服務器地址。之後服務器會返回數據給「中轉」服務器，再傳回你的本地計算機。
+這套邏輯很簡單，但也有很大的弊端。這個弊端就是帶有明顯的「特徵」。你的每一次請求所發送的數據包，都是帶有加密請求，並且會去往一臺中轉的服務器上。久而久之， GFW 的維護人員就嗅到了這個特徵。所以 GFW 也具有了攔截這些代理的功能。也因爲太多人採用這種方式突破，使得這種特徵實在他太過於明顯。所以現在單純 http 代理的 VPN 幾乎斷絕了。
+Shadowsocks 的出現及衍生工具 可以說 Shadowsocks 的出現是這段歷史中最精彩的一個節點。Shadowsocks 的作者是 Clowwindy ，其原理也是通過一個加密的數據包來欺騙 GFW ，但與上面說的不同點再於， Shadowsocks 是基於本地端-服務器端這樣一個架構，在本地端運行時，數據包就已經完成了加密，使得 GFW 並不清楚你的意圖，也不帶有明顯的特徵，到達遠端 Shadowsocks 服務器後，再進行解密，去往你要去的地址。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://7WayneLee.github.io/p/%E7%BF%BB%E7%89%86%E6%99%AE%E5%8F%8A-part-one-%E7%90%86%E8%AB%96%E9%83%A8%E5%88%86/background.png' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3TN4TQ72KV"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-3TN4TQ72KV', { 'anonymize_ip': false });
+}
+</script>
+
+        
+        
+          
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3TN4TQ72KV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3TN4TQ72KV');
+</script>
+        
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu55f83c27f61680b32e1c5125d9b42375_69007_300x0_resize_q75_box.jpg" width="300"
+                            height="225" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Daniel&#39;s Blog</a></h1>
+            <h2 class="site-description">Remember something in a good time.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://instagram.com/lee_wyane?r=nametag'
+                        target="_blank"
+                        title="Instagram"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <rect x="4" y="4" width="16" height="16" rx="4" />
+  <circle cx="12" cy="12" r="3" />
+  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://t.me/Daniel_474'
+                        target="_blank"
+                        title="Telegram"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E7%BF%BB%E7%89%86%E6%99%AE%E5%8F%8A-part-one-%E7%90%86%E8%AB%96%E9%83%A8%E5%88%86/">
+                <img src="/p/%E7%BF%BB%E7%89%86%E6%99%AE%E5%8F%8A-part-one-%E7%90%86%E8%AB%96%E9%83%A8%E5%88%86/background_hu00ae979a9c6767be83547fc781536d75_6030_800x0_resize_box_3.png"
+                        srcset="/p/%E7%BF%BB%E7%89%86%E6%99%AE%E5%8F%8A-part-one-%E7%90%86%E8%AB%96%E9%83%A8%E5%88%86/background_hu00ae979a9c6767be83547fc781536d75_6030_800x0_resize_box_3.png 800w, /p/%E7%BF%BB%E7%89%86%E6%99%AE%E5%8F%8A-part-one-%E7%90%86%E8%AB%96%E9%83%A8%E5%88%86/background_hu00ae979a9c6767be83547fc781536d75_6030_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="337" 
+                        loading="lazy"
+                        alt="Featured image of post  「翻牆」普及 Part one - 理論部分 " />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/technology/" style="background-color: #2a9d8f; color: #fff;">
+                Technology
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E7%BF%BB%E7%89%86%E6%99%AE%E5%8F%8A-part-one-%E7%90%86%E8%AB%96%E9%83%A8%E5%88%86/"> 「翻牆」普及 Part one - 理論部分 </a>
+        </h2>
+    
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 05, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <blockquote>
+<p>此文章最後修改於 2022 / 04 / 5</p>
+</blockquote>
+<h2 id="索引">索引</h2>
+<p>寫這篇文章，源至於我在寫<a class="link" href="https://7waynelee.github.io/p/%E8%87%BA%E7%81%A3%E5%AD%B8%E7%94%9F%E5%9C%A8%E9%95%B7%E6%B2%99%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8C%97/"  target="_blank" rel="noopener"
+    >《臺灣學生在長沙生活指北》</a>時的一個想法，也算對讀者的一個承諾。</p>
+<p>「翻牆」這個話題，在大陸來說，還是一個比較敏感的話題。這個行爲其實觸犯了大陸的法律，相關的內容可以了解查詢<a class="link" href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E7%BD%91%E7%BB%9C%E5%AE%A1%E6%9F%A5"  target="_blank" rel="noopener"
+    >中華人民共和國網路審查</a>，這其中就包括了對「翻牆」這個行爲的定義。</p>
+<p>但以我個人生活在大陸這些年，對大陸的了解，其實有六成以上的人會使用簡單的工具進行翻牆。所以如果你有這個習慣或者需求，其實你並不是少數人。</p>
+<p>如今，我覺得「翻牆」是一種很重要的生存手段。如果你在大陸長期生活，避免不了會有這種需求。當你需要查詢資料，收看新聞時，「牆內」的訊息也很難滿足你的需求。所以這篇文章，可能可以幫助到你。</p>
+<p>再來說說這篇文章。這篇文章我主要會分爲理論和實踐兩方面來寫。理論方面會在這裏介紹一些歷史，名詞，工具等等一類;而實踐方面，我則會着墨於如何使用一些主流的工具。會想講到理論，其實是希望每個人都能對你用到的東西能有一些了解，就算是淺顯的部分也可以。我覺得這能幫助你如何使用或者在出現問題時，你能夠有基本的動手能力。古人雲：「授人以魚不如授人以漁」，這才是比較重要的部分，而後面的實例，只是給你一個簡單的示範。當你有這方面的知識之後，你也可以寫出自己的教程。</p>
+<p>如果在閱讀文章的過程中你有任何的問題或者你覺得我的文章有錯誤，都可以來Telegram上找我，
+我會很高興收到你們的建議。</p>
+<h2 id="什麼是牆">什麼是「牆」</h2>
+<p>牆，其實是中華人民共和國國家防火牆，也稱「<a class="link" href="https://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E"  target="_blank" rel="noopener"
+    >長城防火牆</a>」，常用簡稱是GFW（取自 <strong>G</strong>reat <strong>F</strong>ire <strong>W</strong>all）。其實對官方來說並沒有GFW這個稱謂，只是後來民間興起和演變，這個綽號也被越來越多人熟知，於是也就變成了一種習慣名稱。</p>
+<p>爲什麼會有「牆」，其實起因有很多。因爲涉及衆多政治因素，這裏不做過多說明。</p>
+<p>GFW主要作用於分析和過濾中華人民共和國境內外網路間的相互訪問。這句話其實說明了GFW的工作其實是雙向性的，一是限制大陸網民訪問某些境外站點，二是限制國外的用戶訪問國內的站點。</p>
+<h2 id="gfw的主要工作方式">GFW的主要工作方式</h2>
+<p>在談到這個之前，我想先簡單的介紹一下一般情況下，在無GFW幹擾下訪問網站的過程。</p>
+<h3 id="正常工作基本流程">正常工作基本流程</h3>
+<p>在瀏覽器輸入你所要訪問的<a class="link" href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D"  target="_blank" rel="noopener"
+    >網站域名</a>，你的電腦會生成一個數據包，通過你的本地網路接入<a class="link" href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E4%BA%92%E8%81%94%E7%BD%91%E9%AA%A8%E5%B9%B2%E7%BD%91"  target="_blank" rel="noopener"
+    >骨幹網</a>，再通過<a class="link" href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F"  target="_blank" rel="noopener"
+    >DNS</a>域名解析，解析出你輸入的域名所要訪問的服務器ip地址，再傳入服務器中，服務器經過處理，會返回一個數據包到你的電腦。</p>
+<p>可能會有點難理解，但這個過程可以類比成「寫信-寄出-收信-回信」。當你寫信時，信封上需要有收信人的地址，這個地址就類似於上面的網站域名，寄出後，信回先到一個大的中轉站，然後會分發給信差，這步就類是於傳入服務器前的動作。然後收信人收到信後再回信，就類似於服務器接受請求返回數據包。其中發往服務器的過程中需要經過很多的地方，這些名詞你可以自行檢索，了解他們各自的工作。</p>
+<h3 id="在有gfw幾種基本工作模式">在有GFW幾種基本工作模式</h3>
+<p>在前面的部分幾乎一樣，都是把數據包由本地網路接入骨幹網，再通過DNS解析，再來到GFW。接下來就會由GFW展開工作了。一般來說，GFW有三種基本工作原理：</p>
+<h4 id="ip黑名單">ip黑名單</h4>
+<p>在GFW內，可能有一張巨大的ip黑名單，上面都是被屏蔽的ip地址。當域名經過DNS解析後，ip地址可能就會和黑名單中的ip地址進行檢索比較。如果你所訪問的網站的ip地址在這張名單上，就會被屏蔽。</p>
+<p>不過，這個方法的缺點也很明顯。如果單純採用這個方法進行工作，許多網站並不止有一個ip地址。如果另一個ip地址不在黑名單內，則可以正常訪問。</p>
+<h4 id="關鍵字過濾">關鍵字過濾</h4>
+<p>當你傳輸過來的數據包含一些敏感詞的時候，就會馬上被中斷連接</p>
+<h4 id="dns劫持">DNS劫持</h4>
+<p>因爲一般網路數據包都是明文流量，GFW可以直接看到你所要訪問的地址。當知道你要訪問一些不能訪問的網站時，DNS會自動解析出一個錯誤的ip地址，或者直接不解析地址，讓服務器無法和你的電腦建立連接。</p>
+<p>上面講到的三種方法，其實是最簡單或者說基礎的方法，如今GFW逐漸完善，也多了其他很多的攔截方法。</p>
+<h2 id="突破-gfw-的幾種方法">突破 GFW 的幾種方法</h2>
+<h3 id="早期-http-代理">早期 Http 代理</h3>
+<p>後來人們逐漸發現，只要 GFW 無法偵查到我的流量意圖，也就是我發送一個帶有<strong>加密請求</strong>的數據包到 GFW ，那麼 GFW 就無法進行攔截。於是早期的很多 http 代理都是依賴這些模式進行突破。</p>
+<p>簡單的講解一下過程。當你發送一個請求時，你的本地計算機會發送一個帶有加密請求的數據包，再接入本地網路，再到骨幹網，再由 DNS 解析，發現是去一臺沒有被「牆」的服務器（我們稱它爲中轉服務器）上，GFW 便會放行，然後到達這臺所謂「中轉」服務器上後便會解密數據包到真實你所要訪問的 ip 地址，再去往真實的服務器地址。之後服務器會返回數據給「中轉」服務器，再傳回你的本地計算機。</p>
+<p>這套邏輯很簡單，但也有很大的弊端。這個弊端就是帶有明顯的「特徵」。你的每一次請求所發送的數據包，都是帶有加密請求，並且會去往一臺中轉的服務器上。久而久之， GFW 的維護人員就嗅到了這個特徵。所以 GFW 也具有了攔截這些代理的功能。也因爲太多人採用這種方式突破，使得這種特徵實在他太過於明顯。所以現在單純 http 代理的 VPN 幾乎斷絕了。</p>
+<h3 id="shadowsocks-的出現及衍生工具">Shadowsocks 的出現及衍生工具</h3>
+<p>可以說 Shadowsocks 的出現是這段歷史中最精彩的一個節點。<a class="link" href="https://github.com/shadowsocks/"  target="_blank" rel="noopener"
+    >Shadowsocks</a> 的作者是 <a class="link" href="https://github.com/Clowwindy"  target="_blank" rel="noopener"
+    >Clowwindy</a> ，其原理也是通過一個加密的數據包來欺騙 GFW ，但與上面說的不同點再於， Shadowsocks 是基於<strong>本地端</strong>-<strong>服務器端</strong>這樣一個架構，在本地端運行時，數據包就已經完成了加密，使得 GFW 並不清楚你的意圖，也不帶有明顯的特徵，到達遠端 Shadowsocks 服務器後，再進行解密，去往你要去的地址。</p>
+<p>當然革命性的技術的出現，讓 GFW 的維護人員十分頭疼。因爲流量加密（雖然只是簡單的 sock 加密），但也足夠騙過 GFW 去訪問他們不想讓你訪問的網站，並且也不能禁止所有的加密流量通過，因爲加密流量中還會有很多的正常的流量需要通行。所以讓 GFW 很難攔截此類流量。</p>
+<p>之後 Shadowsocks 就因爲政府介入，原來的 Shadowsocks 專案也被迫刪庫。但因爲有很多人 fork 了此專案，使得副本還有很多的使用者維護。後來 Clowwindy 也恢復了此專案。</p>
+<p>但因爲有了 Shadowsocks 的這套理論邏輯，也演變出了其他的工具。例如 V2ray ，Clash ，SSR 等一系列的工具軟件。這些軟件在某些細節上可能有不同，但都是基於 Shadowsocks 的基本原理。</p>
+<blockquote>
+<p>這段內容可能會導致一些人誤解 Shadowsocks 只是爲了用來突破GFW，其實這只是其中的一個功能。 Shadowsocks 其實是一個流量安全加密框架，其實是用來進行流量加密，可以更安全的進行傳輸。 Shadowsocks 也不算是一個「單獨的」軟體，它需要有伺服器端和用戶端才能正常使用。伺服器可以是任何的 vps，亦或者是你所購買的節點。而用戶端則是通過你所使用的裝置上的軟體。只有兩端進行連接後，才能正常使用。</p>
+</blockquote>
+<h2 id="一些詞語或名詞">一些詞語或名詞</h2>
+<h3 id="飛機和機場">「飛機」和「機場」</h3>
+<p>這個詞的來源挺有意思。早期有節點供應商的時候，爲了「避諱」，就在想一個比較好的詞來表示他們。因爲 Shadowsocks 的圖標是一個灰色的紙飛機，所以就會用「飛機」來代替這些節點。而飛機就需要一個停機坪，一般的飛機都停在機場內，所以就把提供節點的供應商稱作「機場」，機場老板一般叫「機場主」。</p>
+<p>這個稱呼沿用至今，不管是任何類型（即使不是 Shadowsocks sock5協議的節點）的節點供應商都被稱爲「機場」。</p>
+<p>這個稱謂也是爲了和<strong>加速器</strong>進行區分。</p>
+<h3 id="關於線路的名詞">關於「線路」的名詞</h3>
+<p>這裏會簡略的提到一些機場常用的線路，幫助大家在選購「機場」時有一個初步了解。</p>
+<blockquote>
+<p>這裏所介紹的線路，還是比較淺顯的。在自己選購的時候，一定要基於自己的情況來選擇。</p>
+<p>而且機場水深，還是不要單純看他標榜的線路，自己實測一下還是最好的。</p>
+</blockquote>
+<h4 id="ipcl">IPCL</h4>
+<p>全稱是 International Private Leased Circuit ，翻譯成中文爲“國際私用出租線路”。</p>
+<p>這條線路 is awesome ，因爲實際上這是一條專線，傳輸不經過公網，只會經過內網，這就說明這條線路本不過牆，也就是你發送的請求是不會經過 GFW 。</p>
+<p>要說缺點，可能真的就只有「貴」吧，一般來說帶寬小流量低。當然並不是說好的線路就不會卡。再好的線路多人一起用，都會出現卡噸的情況。</p>
+<h4 id="iepl">IEPL</h4>
+<p>全稱是 International Ethernet Private Line ，翻譯成中文爲“國際以太網專線”。</p>
+<p>這條線路算是真正的端到端的<strong>以太網</strong>線路，一般的大型跨國企業可能會選擇這條路線。因爲是以太網線路，則只需要 MAC地址 就可以直接配置線路，並且更加穩定，也有更快的速率。</p>
+<blockquote>
+<p>對於 IPCL 和 IEPL 兩條專線來說，在特定的網路時期（例如說開會）也是十分穩定的，當然這就是加價的好處吧。所以要檢測一間機場是不是專線，最簡單的方法就是看他在特定時期還能不能正常使用就好了。</p>
+</blockquote>
+<h4 id="cn2">CN2</h4>
+<p>全稱是 ChinaNet Next Carrying Network ，縮寫爲 CNCN ，也就是 CN2 ，翻譯過來就是“中國電信下一代承載網”。</p>
+<p>特點就是採用了 QoS 技術，這是163骨幹網路所沒有的技術。QoS 簡單理解就是能夠識別你網路中的流量的需求，從而調整帶寬速率。比如你在玩遊戲時可能不需要這麼高的速率但需要低延遲，QoS 就能自動偵測進行調整。</p>
+<h4 id="bgp">BGP</h4>
+<p>這個一般稱爲「多線機房」，他會根據你的網路服務商來自動連接到最適合你的連接服務。</p>
+<h3 id="vps">VPS</h3>
+<p>全稱是 Virtual private server ，翻譯成中文就是虛擬專用伺服器。其實就是一臺<strong>實體</strong>伺服器，再通過一些技術分割成一個個獨立的虛擬伺服器。因爲他們分割之後並沒有各自的實體，本質上還是共用一臺伺服器，所以就叫做<strong>虛擬</strong>伺服器。</p>
+<p>每個VPS都可分配獨立公網IP位址、獨立作業系統、實現不同 VPS 間磁碟空間、記憶體、 CPU 資源、行程和系統組態的隔離，為使用者和應用程式類比出「獨占」使用計算資源的體驗。 VPS 可以像獨立伺服器一樣，重新安裝作業系統，安裝程式，單獨重新啟動伺服器。</p>
+<p>一般的服務中，也不會使用到一整臺伺服器。爲了節省資源，也就會分成一個個 VPS 分別使用。所以一般我們把這個<strong>實體</strong>伺服器稱謂「母雞」，下面的 VPS 就稱謂「小雞」。一般的節點服務，都是用 VPS 搭建的。</p>
+<h3 id="關於-流媒體解鎖">關於 流媒體解鎖</h3>
+<p>爲什麼想談這個問題呢，因爲其實這不僅是在大陸才有需要。如果你想要訂閱流媒體服務並且收看其他國家區域的流媒體，也會有「翻牆」的需求。比如說，我在香港購買了 Netflix 港區的流媒體服務，但我還想看一些只有新加坡區獨家的節目，那麼我就可以選擇「翻」到新加坡，然後觀看新加坡的節目。</p>
+<p>但這些流媒體供應商是會審查你是否使用了  proxy(代理) 。一般來說，一些大的 VPS 的提供商的 IP 是直接被流媒體商家屏蔽掉的，就是這些 IP 是無法訪問流媒體網站的。 像是 Netflix 和 Hulu ，還會對你的IP注冊地址和所在國家是否一致。如果你的節點的 VPS 所在的國家和節點 IP 的注冊地址不一致的話，也是無法使用這些流媒體服務的。</p>
+<blockquote>
+<p>檢測原生 Ip 也只是衆多限制中的一個。實際上流媒體運營商對 Ip 限制規則多有變化，而且對一些商用 Ip 段一般是完全屏蔽。解鎖流媒體也是機場需要實現的基本技術，因爲現在大部分的用戶都有對流媒體的需求。但到用戶層面來說，對於解鎖機如何實現例如「換 Ip」和「動態切換」等等的技術，並不需要過多的知識。因爲，只要能讓我們安心用不就好了嘛。</p>
+</blockquote>
+<p>從21年來，流媒體大範圍的開始屏蔽一些網絡服務商的 IP。因爲一些機場使用 cookie 共享流媒體帳號，來讓用戶使用。就導致了一個帳號會有上百個人使用，這就讓商家不願意了，於是開始屏蔽掉一些網路服務商的 IP。不過就目前來說，還是可以正常使用流媒體。</p>
+<p>如果你需要流媒體服務的話，就要選擇帶有流媒體解鎖的機場。</p>
+<h2 id="結語">結語</h2>
+<p>其實對於一些基本的理論知識，在對我們實際使用上可能不會有太大幫助（除非你自己架設，不過要是會架設的話也大概率不會看我的這篇文章了）。但是能在你進行選購機場、協議等等方面，給你一點大致的輪廓。淺顯的說，就是有助於你不會被人騙吧。特別對於一些圈內的暱稱、術語，要是你聽不懂或者沒什麼概念的話，就很容易陷到陷阱裏面。推薦大家認真瞭解一下，有了大致輪廓，肯定是能幫助到你的。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/technology/">Technology</a>
+        
+            <a href="/tags/gfw/">GFW</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Written by Daniel</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-contents--wrapper">
+    <h2 class="section-title">Related contents</h2>
+    <div class="related-contents">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/">
+        
+        
+            <div class="article-image">
+                <img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/background.33c1435ccccffacc91c81c69aef40d50_hued1092ee99fa311a297d02e827a150c5_15810_250x150_fill_q75_box_smart1.jpeg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Blog 後臺管理工具：Google Analytics"
+                        
+                        data-hash="md5-M8FDXMzP&#43;syRyBxprvQNUA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Blog 後臺管理工具：Google Analytics</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">
+        
+        
+            <div class="article-image">
+                <img src="/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/background.55fd424c910df6a3e7431119ec06eea6_hu2630ebeac12478d27b8e33661d01cb38_43931_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Blog 文章編輯語言：Markdown --- 語言學習筆記"
+                        
+                        data-hash="md5-Vf1CTJEN9qPnQxEZ7Abupg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Blog 文章編輯語言：Markdown --- 語言學習筆記</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/">
+        
+        
+            <div class="article-image">
+                <img src="/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/background.437233540105c93a0f22058e7250b027_hu8129c1d6205b89ce5b286bc145ffeacf_27810_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Blog 的搭建：使用 Github Page &#43; Hugo 架設一個屬於自己的 Blog"
+                        
+                        data-hash="md5-Q3IzVAEFyToPIgWOclCwJw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Blog 的搭建：使用 Github Page &#43; Hugo 架設一個屬於自己的 Blog</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">
+        
+        
+            <div class="article-image">
+                <img src="/p/google-voice-%E8%99%9B%E6%93%AC%E8%99%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/background.4b387263f92dff200000820c5579f442_hu840b472379512eff7a98cead1b9d6f8c_31067_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Google Voice 虛擬號的一些使用方法"
+                        
+                        data-hash="md5-SzhyY/kt/yAAAIIMVXn0Qg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Google Voice 虛擬號的一些使用方法</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E9%85%8D%E7%BD%AE%E9%9D%92%E9%BE%8D%E9%9D%A2%E6%9D%BF%E4%B8%A6%E5%AF%A6%E7%8F%BE%E4%BA%AC%E6%9D%B1js%E8%85%B3%E6%9C%AC%E9%81%8B%E8%A1%8C/background.c13764e4fccf777307c1b1cbf5b3468f_hu29a719be0e2276f22570238cd344c661_31094_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 配置青龍面板並實現京東JS腳本運行"
+                        
+                        data-hash="md5-wTdk5PzPd3MHwbHL9bNGjw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">配置青龍面板並實現京東JS腳本運行</h2>
+        </div>
+    </a>
+</article>
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "7WayneLee" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2021 - 
+        
+        2022 Daniel&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.11.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#索引">索引</a></li>
+    <li><a href="#什麼是牆">什麼是「牆」</a></li>
+    <li><a href="#gfw的主要工作方式">GFW的主要工作方式</a>
+      <ol>
+        <li><a href="#正常工作基本流程">正常工作基本流程</a></li>
+        <li><a href="#在有gfw幾種基本工作模式">在有GFW幾種基本工作模式</a>
+          <ol>
+            <li><a href="#ip黑名單">ip黑名單</a></li>
+            <li><a href="#關鍵字過濾">關鍵字過濾</a></li>
+            <li><a href="#dns劫持">DNS劫持</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#突破-gfw-的幾種方法">突破 GFW 的幾種方法</a>
+      <ol>
+        <li><a href="#早期-http-代理">早期 Http 代理</a></li>
+        <li><a href="#shadowsocks-的出現及衍生工具">Shadowsocks 的出現及衍生工具</a></li>
+      </ol>
+    </li>
+    <li><a href="#一些詞語或名詞">一些詞語或名詞</a>
+      <ol>
+        <li><a href="#飛機和機場">「飛機」和「機場」</a></li>
+        <li><a href="#關於線路的名詞">關於「線路」的名詞</a>
+          <ol>
+            <li><a href="#ipcl">IPCL</a></li>
+            <li><a href="#iepl">IEPL</a></li>
+            <li><a href="#cn2">CN2</a></li>
+            <li><a href="#bgp">BGP</a></li>
+          </ol>
+        </li>
+        <li><a href="#vps">VPS</a></li>
+        <li><a href="#關於-流媒體解鎖">關於 流媒體解鎖</a></li>
+      </ol>
+    </li>
+    <li><a href="#結語">結語</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
