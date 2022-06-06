@@ -7,6 +7,129 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <lastBuildDate>Tue, 05 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://7WayneLee.github.io/categories/technology/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title> 「翻牆」普及 Part Four - 應用部分 for iOS </title>
+        <link>https://7WayneLee.github.io/p/%E7%BF%BB%E7%89%86%E6%99%AE%E5%8F%8A-part-four-%E6%87%89%E7%94%A8%E9%83%A8%E5%88%86-for-ios/</link>
+        <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://7WayneLee.github.io/p/%E7%BF%BB%E7%89%86%E6%99%AE%E5%8F%8A-part-four-%E6%87%89%E7%94%A8%E9%83%A8%E5%88%86-for-ios/</guid>
+        <description>&lt;img src="https://7WayneLee.github.io/p/%E7%BF%BB%E7%89%86%E6%99%AE%E5%8F%8A-part-four-%E6%87%89%E7%94%A8%E9%83%A8%E5%88%86-for-ios/background.png" alt="Featured image of post  「翻牆」普及 Part Four - 應用部分 for iOS " /&gt;&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;對於移動端操作系統來說， iOS 上的工具可以說在&lt;strong&gt;美觀&lt;/strong&gt;和&lt;strong&gt;功能&lt;/strong&gt;上都完勝 Android 上的工具軟體。這也是我習慣使用 iOS 進行「翻牆」操作的原因之一。下面也是會介紹幾款&lt;strong&gt;我使用過&lt;/strong&gt;的，也是比較主流的應用軟體。&lt;/p&gt;
+&lt;h2 id=&#34;軟體工具&#34;&gt;軟體工具&lt;/h2&gt;
+&lt;h3 id=&#34;shadowrocket&#34;&gt;Shadowrocket&lt;/h3&gt;
+&lt;p&gt;Shadowrocket 是一款兼容多種協議的網路工具，簡單易上手，包括穩定，許多的機場推薦工具中都會出現它的名字。並且由於存在多年，相信許多人對它也有着一定的感情，隨着幾年的更新，功能也越來越完善。&lt;/p&gt;
+&lt;h4 id=&#34;購買方式&#34;&gt;購買方式&lt;/h4&gt;
+&lt;p&gt;Shadowrocket 現在在除中國大陸區以外的 App Store 的主流區都有上架。目前美區價格是 $2.99。&lt;/p&gt;
+&lt;h4 id=&#34;基本使用方法&#34;&gt;基本使用方法&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;添加訂閱 / Add Subscribe&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;點擊 右上角 &lt;code&gt;+&lt;/code&gt; ，再點擊 &lt;code&gt;Type&lt;/code&gt; ，在選項中點擊選擇 &lt;code&gt;Subscribe&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;複製你的 機場訂閱鏈接&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;將其粘貼到 &lt;code&gt;URL&lt;/code&gt; 欄中，點擊右上角的 &lt;code&gt;Done&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;可以在 &lt;code&gt;Remarks&lt;/code&gt; 欄中，備註自己的訂閱。相當於給自己的訂閱取名字，在你有多個訂閱鏈接時就容易區分了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;等其下載完成後，就在主界面就可以看到剛剛添加的訂閱了。在訂閱中選擇一個節點， 打開 &lt;code&gt;Not Connect&lt;/code&gt; 旁的開關，就可以使用了。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;添加節點&lt;/p&gt;
+&lt;p&gt;Shadowrocket 添加單個節點的方式有很多，但因爲現在大部分機場都直接提供了訂閱鏈接，所以具體就不做過多介紹了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;進階功能配置&#34;&gt;進階功能配置&lt;/h4&gt;
+&lt;p&gt;首先我們需要瞭解 Shadowrocket 的&lt;strong&gt;四種&lt;/strong&gt;路由配置(Global Routing)&lt;/p&gt;
+&lt;p&gt;在 &lt;code&gt;Home&lt;/code&gt; 界面中，點擊 &lt;code&gt;Global Routing&lt;/code&gt; ，就可以看到他提供的幾種方法。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;配置 / Config&lt;/p&gt;
+&lt;p&gt;選用配置規則的方法來進行鏈接。點擊&lt;strong&gt;底欄中的第二個選項&lt;/strong&gt;  &lt;code&gt;Config&lt;/code&gt; ，在 &lt;code&gt;Local Files&lt;/code&gt; 就可以看到你現在選中的配置文件。Shadowrocket 會有一個自帶的配置(default.conf)。你也可以添加自己的配置，使網路連接在自己定製的「規則」範圍內進行。例如分流（例如國內IP直連，國外網站自動走代理），通過 HTTPS解密 實現去除廣告等的功能。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;代理 / Proxy&lt;/p&gt;
+&lt;p&gt;默認全局代理。簡單來說你手機上的所有流量被代理。可能有一些不需要代理的軟體也會被代理。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;直連 / Direct&lt;/p&gt;
+&lt;p&gt;不通過代理，直接訪問網路。 簡單來說就是你的所有流量都不會被代理。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;場景 / Scene&lt;/p&gt;
+&lt;p&gt;Shadowrocket 的場景功能是可以通過你當前所連接的Wi-Fi或移動網路來切換節點或關閉代理。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以上四種路由配置，我們最基本的也就是使用&lt;strong&gt;配置 / Config&lt;/strong&gt;這種方式，所以就先來講講如何更改配置並實現 HTTPS解密。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;配置 / Config&lt;/p&gt;
+&lt;p&gt;對於一般使用者來說，要自己寫配置文件有點困難。所以我們可以使用 Github 上別人開源的一些項目，導入別人寫好的配置。&lt;/p&gt;
+&lt;p&gt;項目地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/h2y/Shadowrocket-ADBlock-Rules&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Shadowrocket-ADBlock-Rules&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先在項目中，找到一個適合你的分流規則，並複製他的規則地址&lt;/li&gt;
+&lt;li&gt;打開 Shadowrocket，點擊底欄中的 &lt;code&gt;Config&lt;/code&gt; ，點擊 右上角 &lt;code&gt;+&lt;/code&gt; ，把剛剛複製的規則地址粘貼到裏面，點擊 &lt;code&gt;Download&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;完成後，就可以看到下方 &lt;code&gt;Remote Files&lt;/code&gt; 有了一個配置文件，點擊它，再選擇 &lt;code&gt;Use Config&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;成功後，&lt;code&gt;Local Files&lt;/code&gt; 看到新的配置文件，再點擊新加入的配置文件，選擇 &lt;code&gt;Use Config&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;點擊配置文件右邊的 &lt;code&gt;！&lt;/code&gt; ，點擊 &lt;code&gt;HTTPS Decryption&lt;/code&gt; ，點擊右上角的開關，會彈出證書的安裝&lt;/li&gt;
+&lt;li&gt;點擊 &lt;code&gt;install CA Certificate to System&lt;/code&gt; ，會跳轉到 Safari 下載證書文件&lt;/li&gt;
+&lt;li&gt;等待下載完成後，到手機 &lt;code&gt;Settings&lt;/code&gt; - &lt;code&gt;General&lt;/code&gt; - &lt;code&gt;VPN &amp;amp; Device Management&lt;/code&gt; ，安裝關於 Shadowrocket 的文件&lt;/li&gt;
+&lt;li&gt;再返回到 &lt;code&gt;General&lt;/code&gt; ，點擊 &lt;code&gt;About&lt;/code&gt; - &lt;code&gt;Certificate Trust Settings&lt;/code&gt; ，開啓對於 Shadowrocket 證書的完整信任&lt;/li&gt;
+&lt;li&gt;打開開關後，回到 Shadowrockt ，繼續在剛剛的 &lt;code&gt;Certificate&lt;/code&gt; ，點擊右上角的開關&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;完成以上步驟後，就已經完成配置功能了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;quantumult-x&#34;&gt;Quantumult X&lt;/h3&gt;
+&lt;p&gt;功能上比 Shadowrocket 更加多元的網路工具，並且具有極高的自定義性，相比於 Surge，性價比也高出不少，並且界面也做的很好看。&lt;/p&gt;
+&lt;h4 id=&#34;購買方式-1&#34;&gt;購買方式&lt;/h4&gt;
+&lt;p&gt;Quantumult X 現在在除中國大陸區以外的 App Store 的主流區都有上架。目前美區價格是 $7.99。&lt;/p&gt;
+&lt;h4 id=&#34;基本使用方法-1&#34;&gt;基本使用方法&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;添加訂閱&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;點擊右下角 &lt;code&gt;風車&lt;/code&gt; 按鈕，在 &lt;code&gt;External Proxy&lt;/code&gt; 中，點擊 &lt;code&gt;Link&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;複製你的 機場訂閱鏈接&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;將其粘貼到 &lt;code&gt;Resource URL&lt;/code&gt; 中，&lt;code&gt;Tag&lt;/code&gt; 欄是用來填寫名字的，你可以根據自己的喜好填寫&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;點擊左上角 &lt;code&gt;保存&lt;/code&gt; 按鈕&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;若出現 &lt;code&gt;Error&lt;/code&gt; 的情況，可能是你的訂閱 Quantumult X 無法解析，需要先添加 &lt;code&gt;Recourse Parser&lt;/code&gt; ，可先往下看，跳過添加訂閱這一步。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;若添加成功，可以在主界面 &lt;code&gt;PROXY&lt;/code&gt; 欄中看到你的訂閱節點，選擇節點後，點擊右上角的 &lt;code&gt;開關&lt;/code&gt;，就可以正常使用了。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;添加 Recourse Parser&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/KOP-XIAO/QuantumultX&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Github 項目地址&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先點擊上方的項目地址，複製裏面的 &lt;code&gt;Quantumult X 资源解析器&lt;/code&gt; 鏈接&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title> 「翻牆」普及 Part one - 理論部分 </title>
         <link>https://7WayneLee.github.io/p/%E7%BF%BB%E7%89%86%E6%99%AE%E5%8F%8A-part-one-%E7%90%86%E8%AB%96%E9%83%A8%E5%88%86/</link>
         <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
@@ -16,8 +139,6 @@
 &lt;p&gt;此文章最後修改於 2022 / 04 / 5&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;索引&#34;&gt;索引&lt;/h2&gt;
-&lt;p&gt;寫這篇文章，源至於我在寫&lt;a class=&#34;link&#34; href=&#34;https://7waynelee.github.io/p/%E8%87%BA%E7%81%A3%E5%AD%B8%E7%94%9F%E5%9C%A8%E9%95%B7%E6%B2%99%E7%94%9F%E6%B4%BB%E6%8C%87%E5%8C%97/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;《臺灣學生在長沙生活指北》&lt;/a&gt;時的一個想法，也算對讀者的一個承諾。&lt;/p&gt;
 &lt;p&gt;「翻牆」這個話題，在大陸來說，還是一個比較敏感的話題。這個行爲其實觸犯了大陸的法律，相關的內容可以了解查詢&lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E7%BD%91%E7%BB%9C%E5%AE%A1%E6%9F%A5&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;中華人民共和國網路審查&lt;/a&gt;，這其中就包括了對「翻牆」這個行爲的定義。&lt;/p&gt;
 &lt;p&gt;但以我個人生活在大陸這些年，對大陸的了解，其實有六成以上的人會使用簡單的工具進行翻牆。所以如果你有這個習慣或者需求，其實你並不是少數人。&lt;/p&gt;
@@ -631,8 +752,8 @@
 &lt;h2 id=&#34;基本教程&#34;&gt;基本教程&lt;/h2&gt;
 &lt;h3 id=&#34;使用-github-建立一個新的專案&#34;&gt;&lt;strong&gt;使用 Github 建立一個新的專案&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;開始，可能很多人要問了， &lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/GitHub&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Github&lt;/a&gt; 到底是個什麼東西？ 就拿 ig 舉例，衆所周知，ig 是一個社交媒體，可以將自己的生活日常和想po的po到上面，給自己的朋友們看到。所以，其實也可以把 Github 當作成一個程序員的社交媒體，只不過po在上面的，都是你自己寫的代碼專案(code)，你可以將自己寫的代碼傳到上面，建立成一個專案，你可以將這個專案設置成公開專案，別人就可以看到你上傳的代碼內容了。如果別人喜歡你的專案，他也可以點贊、追蹤，甚至可以讓別人和你一起修改你的代碼內容。&lt;/p&gt;
-&lt;p&gt;所以，我們可以把 Github 當作是你 Blog 的服務器端，你需要將自己的專案po在上面，這樣所有人都可以看到了。&lt;/p&gt;
+    &gt;Github&lt;/a&gt; 到底是個什麼東西？ 就拿 IG 舉例，衆所周知，IG 是一個社交媒體，可以將自己的生活日常和想ㄆㄛ的東西ㄆㄛ到上面，給自己的朋友們看到。所以，其實也可以把 Github 當作成一個程序員的社交媒體，只不過你ㄆㄛ在上面的，大部分都是你自己寫的代碼專案(code)，你可以將自己寫的代碼傳到上面，建立成一個專案，你可以將這個專案設置成公開專案，別人就可以看到你上傳的代碼內容了。如果別人喜歡你的專案，他也可以點贊、追蹤，甚至可以讓別人和你一起修改你的代碼內容。&lt;/p&gt;
+&lt;p&gt;所以，得益於 Github Page，我們可以把 Github 當作是你 Blog 的服務器端，你需要將自己的專案ㄆㄛ在上面，這樣所有人都可以看到了。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1. 注冊一個 Github 帳號&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2. 在 Github 上建立一個新的專案 / Create a new repository&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -1004,11 +1125,11 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ hugo //編譯
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ cd public/ //將路徑更改到 public 中
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git add --all
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git commit -m &amp;#34;XX&amp;#34; //XX可自行修改，這個是你自己用來記錄這次修改的內容是什麼，類似於給這次更新取一個小標題，不要太長就好
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git commit -m &amp;#34;XX&amp;#34; //XX可自行修改，這個是你自己用來記錄這次修改的內容是什麼，類似於給這次更新取一個小標題
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git push -u origin master
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ cd ../
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git add --all
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git commit -m &amp;#34;XX&amp;#34; //XX可自行修改，這個是你自己用來記錄這次修改的內容是什麼，類似於給這次更新取一個小標題，不要太長就好
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git commit -m &amp;#34;XX&amp;#34; //XX可自行修改，這個是你自己用來記錄這次修改的內容是什麼，類似於給這次更新取一個小標題
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git push -u origin master
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;

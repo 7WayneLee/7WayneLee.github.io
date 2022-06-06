@@ -532,8 +532,8 @@
 &lt;h2 id=&#34;基本教程&#34;&gt;基本教程&lt;/h2&gt;
 &lt;h3 id=&#34;使用-github-建立一個新的專案&#34;&gt;&lt;strong&gt;使用 Github 建立一個新的專案&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;開始，可能很多人要問了， &lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/GitHub&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Github&lt;/a&gt; 到底是個什麼東西？ 就拿 ig 舉例，衆所周知，ig 是一個社交媒體，可以將自己的生活日常和想po的po到上面，給自己的朋友們看到。所以，其實也可以把 Github 當作成一個程序員的社交媒體，只不過po在上面的，都是你自己寫的代碼專案(code)，你可以將自己寫的代碼傳到上面，建立成一個專案，你可以將這個專案設置成公開專案，別人就可以看到你上傳的代碼內容了。如果別人喜歡你的專案，他也可以點贊、追蹤，甚至可以讓別人和你一起修改你的代碼內容。&lt;/p&gt;
-&lt;p&gt;所以，我們可以把 Github 當作是你 Blog 的服務器端，你需要將自己的專案po在上面，這樣所有人都可以看到了。&lt;/p&gt;
+    &gt;Github&lt;/a&gt; 到底是個什麼東西？ 就拿 IG 舉例，衆所周知，IG 是一個社交媒體，可以將自己的生活日常和想ㄆㄛ的東西ㄆㄛ到上面，給自己的朋友們看到。所以，其實也可以把 Github 當作成一個程序員的社交媒體，只不過你ㄆㄛ在上面的，大部分都是你自己寫的代碼專案(code)，你可以將自己寫的代碼傳到上面，建立成一個專案，你可以將這個專案設置成公開專案，別人就可以看到你上傳的代碼內容了。如果別人喜歡你的專案，他也可以點贊、追蹤，甚至可以讓別人和你一起修改你的代碼內容。&lt;/p&gt;
+&lt;p&gt;所以，得益於 Github Page，我們可以把 Github 當作是你 Blog 的服務器端，你需要將自己的專案ㄆㄛ在上面，這樣所有人都可以看到了。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1. 注冊一個 Github 帳號&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2. 在 Github 上建立一個新的專案 / Create a new repository&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -905,11 +905,11 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ hugo //編譯
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ cd public/ //將路徑更改到 public 中
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git add --all
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git commit -m &amp;#34;XX&amp;#34; //XX可自行修改，這個是你自己用來記錄這次修改的內容是什麼，類似於給這次更新取一個小標題，不要太長就好
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git commit -m &amp;#34;XX&amp;#34; //XX可自行修改，這個是你自己用來記錄這次修改的內容是什麼，類似於給這次更新取一個小標題
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git push -u origin master
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ cd ../
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git add --all
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git commit -m &amp;#34;XX&amp;#34; //XX可自行修改，這個是你自己用來記錄這次修改的內容是什麼，類似於給這次更新取一個小標題，不要太長就好
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git commit -m &amp;#34;XX&amp;#34; //XX可自行修改，這個是你自己用來記錄這次修改的內容是什麼，類似於給這次更新取一個小標題
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  $ git push -u origin master
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
