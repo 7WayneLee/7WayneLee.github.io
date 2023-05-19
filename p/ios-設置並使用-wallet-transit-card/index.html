@@ -1,18 +1,45 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='「Blog」教程系列文章'><title>Blog 後臺管理工具：Google Analytics</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Before 我是一個 Android 和 iOS 設備雙持的用戶。可能回到三年前或五年前，我都有點無法想象現在的我會對 Apple 的產品這麼的有「好感」。當時的我並沒有太多 Apple 產品的使用經驗，或者說「太年輕」？因爲對其「封閉」的刻版印象，更加自由的 Android 環境便成爲了我當時移動設備系統的唯一選擇。(其實我也是從 superSU 和 xpsoed 框架模塊的年代，到 Magisk 年代的見證人之一，不得不說當時的那部小米6打開了我新世界)
+直到前兩年，因爲雙持的兩部 Android 手機中，有一部出於種種原因，不得不退休了。我才第一次萌生了買一部 iOS 設備的想法。因爲我當時十分 diss 劉海屏，便將目光拋向了 SE 系列和 X 系列前的機型。後來便有了我現在的 這部iphone 8 ，也因此，我喜歡上了 iOS。
+當然，喜歡 iOS 的原因可以有很多了，界面美觀，軟體豐富，出色的推送，還有系統維護~~（這點實在是太持久了，甚至有報道說 8 系還能用上 iOS 17）~~，並且即使是在墻墻環繞的中國，iOS 的本地化功能做的十分出色。這是許多Android 機型所做不到的。單從系統消息推送來說，iOS 無疑是在中國，做的最好的。如果你購置的是非面向中國銷售的 Android 手機，是基本上很難在中國進行使用的，這點於 Google 退出中國市場許久有關。
+今天要介紹的是很實用的 Transit Card 功能。
+在我剛到我大學的城市時，我就遇到了一個大問題。我沒辦法乘坐地鐵。正確的講，是沒辦法使用手機支付，乘坐地鐵，而只能購買實體票。這是因爲在使用地鐵 app 前，是需要實名認證的，而我沒辦法通過認證。後來再摸索中，發現可以使用支付寶掃碼乘坐，但偏偏奇怪的是，很多時候在入站前，等這個 QR Code 加載出來，需要等待很久，甚至還會遇到加載失敗的情況。這種情況也困擾了我一段時間，直到我後來發現了這個功能後，前面的種種情況，也就說再見了。
+所以這篇文章，也想向別人介紹一下這個功能的使用方法。
+步驟 設置 Transit Card
+打開 Wallet App
+點擊右上角 &#43;
+在 Add to Wallet 的界面，點擊 Transit Card'><title>iOS 設置並使用 Wallet Transit Card</title>
 
-<link rel='canonical' href='https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/'>
+<link rel='canonical' href='https://7WayneLee.github.io/p/ios-%E8%A8%AD%E7%BD%AE%E4%B8%A6%E4%BD%BF%E7%94%A8-wallet-transit-card/'>
 
-<link rel="stylesheet" href="/scss/style.min.450926226e724574a6b936335ea06111f8aeb253d932c86cb2cc807341cd2889.css"><meta property='og:title' content='Blog 後臺管理工具：Google Analytics'>
-<meta property='og:description' content='「Blog」教程系列文章'>
-<meta property='og:url' content='https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/'>
+<link rel="stylesheet" href="/scss/style.min.450926226e724574a6b936335ea06111f8aeb253d932c86cb2cc807341cd2889.css"><meta property='og:title' content='iOS 設置並使用 Wallet Transit Card'>
+<meta property='og:description' content='Before 我是一個 Android 和 iOS 設備雙持的用戶。可能回到三年前或五年前，我都有點無法想象現在的我會對 Apple 的產品這麼的有「好感」。當時的我並沒有太多 Apple 產品的使用經驗，或者說「太年輕」？因爲對其「封閉」的刻版印象，更加自由的 Android 環境便成爲了我當時移動設備系統的唯一選擇。(其實我也是從 superSU 和 xpsoed 框架模塊的年代，到 Magisk 年代的見證人之一，不得不說當時的那部小米6打開了我新世界)
+直到前兩年，因爲雙持的兩部 Android 手機中，有一部出於種種原因，不得不退休了。我才第一次萌生了買一部 iOS 設備的想法。因爲我當時十分 diss 劉海屏，便將目光拋向了 SE 系列和 X 系列前的機型。後來便有了我現在的 這部iphone 8 ，也因此，我喜歡上了 iOS。
+當然，喜歡 iOS 的原因可以有很多了，界面美觀，軟體豐富，出色的推送，還有系統維護~~（這點實在是太持久了，甚至有報道說 8 系還能用上 iOS 17）~~，並且即使是在墻墻環繞的中國，iOS 的本地化功能做的十分出色。這是許多Android 機型所做不到的。單從系統消息推送來說，iOS 無疑是在中國，做的最好的。如果你購置的是非面向中國銷售的 Android 手機，是基本上很難在中國進行使用的，這點於 Google 退出中國市場許久有關。
+今天要介紹的是很實用的 Transit Card 功能。
+在我剛到我大學的城市時，我就遇到了一個大問題。我沒辦法乘坐地鐵。正確的講，是沒辦法使用手機支付，乘坐地鐵，而只能購買實體票。這是因爲在使用地鐵 app 前，是需要實名認證的，而我沒辦法通過認證。後來再摸索中，發現可以使用支付寶掃碼乘坐，但偏偏奇怪的是，很多時候在入站前，等這個 QR Code 加載出來，需要等待很久，甚至還會遇到加載失敗的情況。這種情況也困擾了我一段時間，直到我後來發現了這個功能後，前面的種種情況，也就說再見了。
+所以這篇文章，也想向別人介紹一下這個功能的使用方法。
+步驟 設置 Transit Card
+打開 Wallet App
+點擊右上角 &#43;
+在 Add to Wallet 的界面，點擊 Transit Card'>
+<meta property='og:url' content='https://7WayneLee.github.io/p/ios-%E8%A8%AD%E7%BD%AE%E4%B8%A6%E4%BD%BF%E7%94%A8-wallet-transit-card/'>
 <meta property='og:site_name' content='Daniel&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Technology' /><meta property='article:tag' content='Blog' /><meta property='article:published_time' content='2022-02-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-04-02T00:00:00&#43;00:00'/><meta property='og:image' content='https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/background.jpeg' />
-<meta name="twitter:title" content="Blog 後臺管理工具：Google Analytics">
-<meta name="twitter:description" content="「Blog」教程系列文章"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://7WayneLee.github.io/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/background.jpeg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Technology' /><meta property='article:published_time' content='2023-05-19T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2023-05-19T00:00:00&#43;00:00'/><meta property='og:image' content='https://7WayneLee.github.io/p/ios-%E8%A8%AD%E7%BD%AE%E4%B8%A6%E4%BD%BF%E7%94%A8-wallet-transit-card/background.jpg' />
+<meta name="twitter:title" content="iOS 設置並使用 Wallet Transit Card">
+<meta name="twitter:description" content="Before 我是一個 Android 和 iOS 設備雙持的用戶。可能回到三年前或五年前，我都有點無法想象現在的我會對 Apple 的產品這麼的有「好感」。當時的我並沒有太多 Apple 產品的使用經驗，或者說「太年輕」？因爲對其「封閉」的刻版印象，更加自由的 Android 環境便成爲了我當時移動設備系統的唯一選擇。(其實我也是從 superSU 和 xpsoed 框架模塊的年代，到 Magisk 年代的見證人之一，不得不說當時的那部小米6打開了我新世界)
+直到前兩年，因爲雙持的兩部 Android 手機中，有一部出於種種原因，不得不退休了。我才第一次萌生了買一部 iOS 設備的想法。因爲我當時十分 diss 劉海屏，便將目光拋向了 SE 系列和 X 系列前的機型。後來便有了我現在的 這部iphone 8 ，也因此，我喜歡上了 iOS。
+當然，喜歡 iOS 的原因可以有很多了，界面美觀，軟體豐富，出色的推送，還有系統維護~~（這點實在是太持久了，甚至有報道說 8 系還能用上 iOS 17）~~，並且即使是在墻墻環繞的中國，iOS 的本地化功能做的十分出色。這是許多Android 機型所做不到的。單從系統消息推送來說，iOS 無疑是在中國，做的最好的。如果你購置的是非面向中國銷售的 Android 手機，是基本上很難在中國進行使用的，這點於 Google 退出中國市場許久有關。
+今天要介紹的是很實用的 Transit Card 功能。
+在我剛到我大學的城市時，我就遇到了一個大問題。我沒辦法乘坐地鐵。正確的講，是沒辦法使用手機支付，乘坐地鐵，而只能購買實體票。這是因爲在使用地鐵 app 前，是需要實名認證的，而我沒辦法通過認證。後來再摸索中，發現可以使用支付寶掃碼乘坐，但偏偏奇怪的是，很多時候在入站前，等這個 QR Code 加載出來，需要等待很久，甚至還會遇到加載失敗的情況。這種情況也困擾了我一段時間，直到我後來發現了這個功能後，前面的種種情況，也就說再見了。
+所以這篇文章，也想向別人介紹一下這個功能的使用方法。
+步驟 設置 Transit Card
+打開 Wallet App
+點擊右上角 &#43;
+在 Add to Wallet 的界面，點擊 Transit Card"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://7WayneLee.github.io/p/ios-%E8%A8%AD%E7%BD%AE%E4%B8%A6%E4%BD%BF%E7%94%A8-wallet-transit-card/background.jpg' />
     <link rel="shortcut icon" href="/img/favicon.ico" />
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3TN4TQ72KV"></script>
@@ -248,13 +275,13 @@ if (!doNotTrack) {
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/">
-                <img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/background_hued1092ee99fa311a297d02e827a150c5_15810_800x0_resize_q75_box.jpeg"
-                        srcset="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/background_hued1092ee99fa311a297d02e827a150c5_15810_800x0_resize_q75_box.jpeg 800w, /p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/background_hued1092ee99fa311a297d02e827a150c5_15810_1600x0_resize_q75_box.jpeg 1600w"
+            <a href="/p/ios-%E8%A8%AD%E7%BD%AE%E4%B8%A6%E4%BD%BF%E7%94%A8-wallet-transit-card/">
+                <img src="/p/ios-%E8%A8%AD%E7%BD%AE%E4%B8%A6%E4%BD%BF%E7%94%A8-wallet-transit-card/background_hu0cab748589bd5dbdbe359c947bef7a41_67159_800x0_resize_q75_box.jpg"
+                        srcset="/p/ios-%E8%A8%AD%E7%BD%AE%E4%B8%A6%E4%BD%BF%E7%94%A8-wallet-transit-card/background_hu0cab748589bd5dbdbe359c947bef7a41_67159_800x0_resize_q75_box.jpg 800w, /p/ios-%E8%A8%AD%E7%BD%AE%E4%B8%A6%E4%BD%BF%E7%94%A8-wallet-transit-card/background_hu0cab748589bd5dbdbe359c947bef7a41_67159_1600x0_resize_q75_box.jpg 1600w"
                         width="800" 
-                        height="451" 
+                        height="453" 
                         loading="lazy"
-                        alt="Featured image of post Blog 後臺管理工具：Google Analytics" />
+                        alt="Featured image of post iOS 設置並使用 Wallet Transit Card" />
                 
             </a>
         </div>
@@ -273,13 +300,9 @@ if (!doNotTrack) {
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/">Blog 後臺管理工具：Google Analytics</a>
+            <a href="/p/ios-%E8%A8%AD%E7%BD%AE%E4%B8%A6%E4%BD%BF%E7%94%A8-wallet-transit-card/">iOS 設置並使用 Wallet Transit Card</a>
         </h2>
     
-        
-        <h3 class="article-subtitle">
-            「Blog」教程系列文章
-        </h3>
         
     </div>
 
@@ -296,7 +319,7 @@ if (!doNotTrack) {
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Feb 12, 2022</time>
+                <time class="article-time--published">May 19, 2023</time>
             </div>
         
 
@@ -325,209 +348,71 @@ if (!doNotTrack) {
     <section class="article-content">
     
     
-    <h2 id="引言">引言</h2>
-<p>在架設了網站後，可能我們希望能夠看到自己的網站有沒有人瀏覽，每天有多少人瀏覽，這些人都來自那裏這樣一系列的數據。這時我們就需要用到 Google 旗下的一個網站管理工具 &mdash; Google Analytics。Google Analytics 已經經過了很多年的升級，現在的使用可以說是十分的方便，也比較簡單，並且它可以將數據幫你按照你的需求進行整理，還能夠可視化的展示出你所要的數據。</p>
-<p>接下來就看看通過 Github Page + Hugo 所架設的 Blog 網站，該如何使用這個工具。</p>
-<h2 id="基本步驟">基本步驟</h2>
-<h3 id="設置-google-analytics--賬戶">設置 Google Analytics  賬戶</h3>
+    <h2 id="before">Before</h2>
+<p>我是一個 Android 和 iOS 設備雙持的用戶。可能回到三年前或五年前，我都有點無法想象現在的我會對 Apple 的產品這麼的有「好感」。當時的我並沒有太多 Apple 產品的使用經驗，或者說「太年輕」？因爲對其「封閉」的刻版印象，更加自由的 Android 環境便成爲了我當時移動設備系統的唯一選擇。<del>(其實我也是從 superSU 和 xpsoed 框架模塊的年代，到 Magisk 年代的見證人之一，不得不說當時的那部小米6打開了我新世界)</del></p>
+<p>直到前兩年，因爲雙持的兩部 Android 手機中，有一部出於種種原因，不得不退休了。我才第一次萌生了買一部 iOS 設備的想法。因爲我當時十分 diss 劉海屏，便將目光拋向了 SE 系列和 X 系列前的機型。後來便有了我現在的 這部iphone 8 ，也因此，我喜歡上了 iOS。</p>
+<p>當然，喜歡 iOS 的原因可以有很多了，界面美觀，軟體豐富，出色的推送，還有系統維護~~（這點實在是太持久了，甚至有報道說 8 系還能用上 iOS 17）~~，並且即使是在<strong>墻墻環繞</strong>的中國，iOS 的本地化功能做的十分出色。這是許多Android 機型所做不到的。單從系統消息推送來說，iOS 無疑是在中國，做的最好的。如果你購置的是非面向中國銷售的 Android 手機，是基本上很難在中國進行使用的，這點於 Google 退出中國市場許久有關。</p>
+<p>今天要介紹的是很實用的 Transit Card 功能。</p>
+<p>在我剛到我大學的城市時，我就遇到了一個大問題。我沒辦法乘坐地鐵。正確的講，是沒辦法使用手機支付，乘坐地鐵，而只能購買實體票。這是因爲在使用地鐵 app 前，是需要實名認證的，而我沒辦法通過認證。後來再摸索中，發現可以使用支付寶掃碼乘坐，但偏偏奇怪的是，很多時候在入站前，等這個 QR Code 加載出來，需要等待很久，甚至還會遇到加載失敗的情況。這種情況也困擾了我一段時間，直到我後來發現了這個功能後，前面的種種情況，也就說再見了。</p>
+<p>所以這篇文章，也想向別人介紹一下這個功能的使用方法。</p>
+<h2 id="步驟">步驟</h2>
+<ul>
+<li>
+<p>設置 Transit Card</p>
 <ol>
 <li>
-<p>打開 瀏覽器 進入 <a class="link" href="https://analytics.google.com/"  target="_blank" rel="noopener"
-    >https://analytics.google.com/</a> ，登陸 Google 賬戶</p>
+<p>打開 Wallet App</p>
 </li>
 <li>
-<p>點擊 <code>開始測量</code></p>
+<p>點擊右上角 <code>+</code></p>
 </li>
 <li>
-<p>先給自己的賬戶取一個新的 <code>帳戶名稱</code>，帳戶資料共用設定我是勾選了前三項，你也可以根據自己的需求勾選，然後點 <code>下一步</code></p>
-</li>
-</ol>
-<p><img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/1.png"
-	width="1866"
-	height="732"
-	srcset="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/1_hud17ba7d0c474473909cf6496cc47a8ed_189094_480x0_resize_box_3.png 480w, /p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/1_hud17ba7d0c474473909cf6496cc47a8ed_189094_1024x0_resize_box_3.png 1024w"
-	loading="lazy"
-	
-		alt="賬戶設定"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="254"
-		data-flex-basis="611px"
-	
-></p>
-<ol start="4">
-<li>
-<p>給自己獲取的數據資源取一個新的 <code>資源名稱</code>，因爲是針對於自己的 Blog 網站資源，所以我就填了我自己的「Blog名稱」，然後再點擊 <code>下一步</code></p>
+<p>在 Add to Wallet 的界面，點擊 <code>Transit Card</code></p>
 </li>
 <li>
-<p>在商家資訊中，這裏就根據自己的情況填寫就好。在填寫完成後，點擊 <code>建立</code></p>
-</li>
-<li>
-<p>然後只要 <code>接受</code> Google Analytics 服務條款合約就完成了</p>
-</li>
-</ol>
-<h3 id="設置-google-analytics-資源">設置 Google Analytics 資源</h3>
-<ol>
-<li>
-<p>進入主界面後，點擊左下角的 <code>齒輪圖標</code></p>
-</li>
-<li>
-<p>先在右側欄中點擊 <code>資料串流</code> ，再選擇 <code>網站</code></p>
-<p><img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/2.png"
-	width="1306"
-	height="608"
-	srcset="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/2_hu7bd7ccaf18ef82842c7c5ee8f4ea999c_46540_480x0_resize_box_3.png 480w, /p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/2_hu7bd7ccaf18ef82842c7c5ee8f4ea999c_46540_1024x0_resize_box_3.png 1024w"
-	loading="lazy"
-	
-		alt="資料串流"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="214"
-		data-flex-basis="515px"
-	
-></p>
-</li>
-<li>
-<p>在網站網址中，輸入你的 Blog 域名，例如我輸入的是 <code>7waynelee.github.io</code> ，串流名稱可以填入你自己給你的 Blog 所取的名稱，都輸入完成後，點擊 <code>建立串流</code></p>
-<p><img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/3.png"
-	width="1430"
-	height="536"
-	srcset="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/3_hu2f7cd7ec25043e2b76d962aa99e3133d_63556_480x0_resize_box_3.png 480w, /p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/3_hu2f7cd7ec25043e2b76d962aa99e3133d_63556_1024x0_resize_box_3.png 1024w"
-	loading="lazy"
-	
-		alt="設定網站網址"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="266"
-		data-flex-basis="640px"
-	
-></p>
-</li>
-<li>
-<p>接着就會跳出 <code>網頁串流詳情</code> ，在這當中可以獲得自己的 <code>評估ID</code> 和一串 <code>全域網站代碼</code> ，這在接下來會使用到</p>
-<p><img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/4.png"
-	width="1318"
-	height="799"
-	srcset="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/4_hu034c4ded489d94403a7fb7bd73196996_151145_480x0_resize_box_3.png 480w, /p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/4_hu034c4ded489d94403a7fb7bd73196996_151145_1024x0_resize_box_3.png 1024w"
-	loading="lazy"
-	
-		alt="詳細訊息"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="164"
-		data-flex-basis="395px"
-	
-></p>
-</li>
-</ol>
-<h3 id="hugo-設置-configtoml">Hugo 設置 config.toml</h3>
-<p>接下來就需要將你的本地 Blog 文件進行一些修改</p>
-<ol>
-<li>
-<p>先到你的電腦中找到你的本地 Blog 目錄文件夾，也就是之前所創立的 <code>username-Hugo</code> 這個文件夾</p>
-</li>
-<li>
-<p>進入 <code>username-Hugo</code>文件夾中</p>
-</li>
-<li>
-<p>打開 config.toml / config.yml 進行編輯</p>
-</li>
-<li>
-<p>在 google Analytics 後面，貼上 <code>評估 ID</code>，格式爲 <code>&quot;G-XXXXX...&quot;</code>                                                                                                                                                   如果你的 config 檔案中沒有這個變量，就需要自己創建一個新的變臉，格式爲 <code>googleAnalytics=&quot;G-XXXXX...&quot;</code></p>
-<p><img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/5.png"
-	width="581"
-	height="160"
-	srcset="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/5_hucf8a0da7b224a8b0c6f65183882b23b6_20887_480x0_resize_box_3.png 480w, /p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/5_hucf8a0da7b224a8b0c6f65183882b23b6_20887_1024x0_resize_box_3.png 1024w"
-	loading="lazy"
-	
-		alt="評估ID"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="363"
-		data-flex-basis="871px"
-	
-></p>
-</li>
-</ol>
-<h3 id="hugo-設置-google-analytics-html-調用模板">Hugo 設置 google analytics html 調用模板</h3>
-<ol>
-<li>
-<p>進入 username-Hugo/themes/hugo-theme-stack/layouts 目錄下</p>
-</li>
-<li>
-<p>創建一個名爲 <code>_internal</code> 的文件夾</p>
-</li>
-<li>
-<p>打開 <code>_internal</code> 文件夾，創建一個名爲 <code>google_analytics_async.html</code> 的檔案</p>
-</li>
-<li>
-<p>使用 <em>文字編輯器</em> 打開 <code>google_analytics_async.html</code> 檔案</p>
+<p>如果你生活在中國，便可以在 China mainland 的地區下，找到你生活城市的 Card</p>
 <blockquote>
-<p>這裏直接 <code>左鍵</code> 雙擊打開，容易通過瀏覽器直接開啓。可能需要 <code>右鍵</code> ，選擇記事本類的軟體打開，才能編輯。</p>
+<p>如果你所在城市沒有特定的卡，可以選擇 上海聯合交通卡 (Shanghai T-Union Transit Card)</p>
+<p>照官方的說法，這張卡可以在全國近 300 個地區使用。當我在廣州和佛山乘坐地鐵時，也發現這張卡是可以正常使用的，十分方便，甚至在偏遠的西北地區，也可以支付成功。</p>
+<p>約等於，一張卡，去到哪個城市都可以使用，無需更多設置。</p>
 </blockquote>
 </li>
 <li>
-<p>在 Google Analytics 網站上，將剛剛在網站中得到的全域網站代碼複製，再粘貼到 <code>google_analytics_async.html </code> 這個檔案中</p>
-<p><img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/6.png"
-	width="1292"
-	height="433"
-	srcset="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/6_hu3a018ca8a3f06db42bb806b49278fb6a_88260_480x0_resize_box_3.png 480w, /p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/6_hu3a018ca8a3f06db42bb806b49278fb6a_88260_1024x0_resize_box_3.png 1024w"
-	loading="lazy"
-	
-		alt="全域網站代碼"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="298"
-		data-flex-basis="716px"
-	
-></p>
+<p>之後就點擊 <code>Continue</code> ，<code>Select Amount</code> 後，便添加成功了</p>
 </li>
 <li>
-<p>再打開 <code>username-Hugo/themes/hugo-theme-stack/layouts\_default\</code> 到這個目錄下</p>
+<p>來到手機的 <code>setting</code> 內，找到 <code>Wallet &amp; Apple Pay</code>，下滑，點擊 <code>Express Transit Card</code></p>
 </li>
 <li>
-<p>找到裏面的一個名爲 <code>baseof.html</code> 的檔案，使用<em>文字編輯器</em> 打開 <code>baseof.html</code>，在 ＜head＞…＜/head＞之間粘貼上以下代碼：</p>
+<p>進到頁面後，確認你剛剛添加的 Card 旁邊的開關是否有打開；如果沒有，就選擇開啓</p>
 </li>
 </ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{{ if not .Site.IsServer }}
-</span></span><span class="line"><span class="cl">  {{ template &#34;_internal/google_analytics_async.html&#34; . }}
-</span></span><span class="line"><span class="cl">{{ end }}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/7.png"
-	width="659"
-	height="197"
-	srcset="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/7_hu362301742b5a2b05f930c854525fd5bf_32332_480x0_resize_box_3.png 480w, /p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/7_hu362301742b5a2b05f930c854525fd5bf_32332_1024x0_resize_box_3.png 1024w"
-	loading="lazy"
-	
-		alt="code"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="334"
-		data-flex-basis="802px"
-	
-></p>
+<p>done!</p>
+</li>
+<li>
+<p>使用方法</p>
 <ul>
-<li>回到 Blog 文件夾根目錄，重新通過 <code>hugo</code> 編譯並上傳到 Github</li>
+<li>
+<p>乘坐地鐵或公共汽車</p>
+<p>無需提前打開任何軟體，甚至在熄屏狀態下，可以直接將手機，放置在地鐵或公共汽車刷卡💳的感應地區，你的 Wallet 便會自動使用你設置的 Transit Card 彈出感應。如果是搭乘公共汽車就只用刷一次就可以了；如果是乘坐地鐵，則在進站的時候刷一次，出站的時候也是直接將手機放置在閘機的感應地區，便可自動扣款，無阻出站。</p>
+</li>
+<li>
+<p>增值方法</p>
+<ol>
+<li>打開 Wallet App</li>
+<li>點擊你的公交卡的卡面</li>
+<li>點擊 <code>Add money</code> ，跟隨指示，便可以完成增值</li>
+</ol>
+</li>
 </ul>
-<h2 id="結語">結語</h2>
-<p>這樣以後，在 Google Analytics 中，就可以看到每天網站的訪問量，訪問地址，停留時間等等的數據。Google Analytics 大部分的數據都是以模塊的方式呈現，也是十分的方便，可以讓你自由的選擇需要看到的數據，可視化做的也不錯。</p>
-<p>在你剛剛設置好的時候，Google Analytics 是還沒有數據的。在經過一段時間的收集後，慢慢的就會展示出來了。當然剛架設的網站訪問量不高也很正常，只要後續的網站更新頻繁或者瀏覽的人數越來越多，Google 對你的網站的評級也就會慢慢升高，慢慢的訪問量就會上升了。</p>
-<p>關於 Blog 的系列文章，到這裏也就基本完成了，也差不該告一段落了。希望可以幫助到你們，擁有一個比較舒適的環境，存放自己的文字，擁有一個屬於自己的 Blog 網站。如果過程中需要幫助話，可以通過 <code>About</code> 界面下的 <em>Telegram</em> 鏈接和我取得聯繫，我也會儘量的幫助你。</p>
+</li>
+<li>
+<p>other</p>
+<p>其實還有很多其他國家地區的 Transit Card，例如 United States、Hong Kong 的八達通(Octopus)</p>
+<p>或許在下次旅遊出行時，也可以直接通過手機，便可以直接乘坐當地的交通工具了</p>
+<p><del>希望什麼時候能把悠遊卡也帶上</del></p>
+</li>
+</ul>
 
 </section>
 
@@ -537,8 +422,6 @@ if (!doNotTrack) {
     <section class="article-tags">
         
             <a href="/tags/technology/">Technology</a>
-        
-            <a href="/tags/blog/">Blog</a>
         
     </section>
 
@@ -555,19 +438,7 @@ if (!doNotTrack) {
 
         <span>Written by Daniel</span>
     </section>
-    <section class="article-lastmod">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-        <span>
-            Last updated on Apr 02, 2022
-        </span>
-    </section></footer>
+    </footer>
 
 
     
@@ -581,75 +452,6 @@ if (!doNotTrack) {
     <h2 class="section-title">Related contents</h2>
     <div class="related-contents">
         <div class="flex article-list--tile">
-            
-                
-<article class="has-image">
-    <a href="/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">
-        
-        
-            <div class="article-image">
-                <img src="/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/background.55fd424c910df6a3e7431119ec06eea6_hu2630ebeac12478d27b8e33661d01cb38_43931_250x150_fill_q75_box_smart1.jpg" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Blog 文章編輯語言：Markdown --- 語言學習筆記"
-                        
-                        data-hash="md5-Vf1CTJEN9qPnQxEZ7Abupg==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Blog 文章編輯語言：Markdown --- 語言學習筆記</h2>
-        </div>
-    </a>
-</article>
-            
-                
-<article class="has-image">
-    <a href="/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/">
-        
-        
-            <div class="article-image">
-                <img src="/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/background.437233540105c93a0f22058e7250b027_hu8129c1d6205b89ce5b286bc145ffeacf_27810_250x150_fill_box_smart1_3.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Blog 的搭建：使用 Github Page &#43; Hugo 架設一個屬於自己的 Blog"
-                        
-                        data-hash="md5-Q3IzVAEFyToPIgWOclCwJw==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Blog 的搭建：使用 Github Page &#43; Hugo 架設一個屬於自己的 Blog</h2>
-        </div>
-    </a>
-</article>
-            
-                
-<article class="has-image">
-    <a href="/p/ios-%E8%A8%AD%E7%BD%AE%E4%B8%A6%E4%BD%BF%E7%94%A8-wallet-transit-card/">
-        
-        
-            <div class="article-image">
-                <img src="/p/ios-%E8%A8%AD%E7%BD%AE%E4%B8%A6%E4%BD%BF%E7%94%A8-wallet-transit-card/background.4d2e22559c28a7c3f33aad24adf430a2_hu0cab748589bd5dbdbe359c947bef7a41_67159_250x150_fill_q75_box_smart1.jpg" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post iOS 設置並使用 Wallet Transit Card"
-                        
-                        data-hash="md5-TS4iVZwop8PzOq0krfQwog==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">iOS 設置並使用 Wallet Transit Card</h2>
-        </div>
-    </a>
-</article>
             
                 
 <article class="has-image">
@@ -693,6 +495,75 @@ if (!doNotTrack) {
 
         <div class="article-details">
             <h2 class="article-title"> 「翻牆」普及 Part one - 理論部分 </h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/">
+        
+        
+            <div class="article-image">
+                <img src="/p/blog-%E5%BE%8C%E8%87%BA%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7google-analytics/background.33c1435ccccffacc91c81c69aef40d50_hued1092ee99fa311a297d02e827a150c5_15810_250x150_fill_q75_box_smart1.jpeg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Blog 後臺管理工具：Google Analytics"
+                        
+                        data-hash="md5-M8FDXMzP&#43;syRyBxprvQNUA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Blog 後臺管理工具：Google Analytics</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">
+        
+        
+            <div class="article-image">
+                <img src="/p/blog-%E6%96%87%E7%AB%A0%E7%B7%A8%E8%BC%AF%E8%AA%9E%E8%A8%80markdown---%E8%AA%9E%E8%A8%80%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/background.55fd424c910df6a3e7431119ec06eea6_hu2630ebeac12478d27b8e33661d01cb38_43931_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Blog 文章編輯語言：Markdown --- 語言學習筆記"
+                        
+                        data-hash="md5-Vf1CTJEN9qPnQxEZ7Abupg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Blog 文章編輯語言：Markdown --- 語言學習筆記</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="has-image">
+    <a href="/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/">
+        
+        
+            <div class="article-image">
+                <img src="/p/blog-%E7%9A%84%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8-github-page--hugo-%E6%9E%B6%E8%A8%AD%E4%B8%80%E5%80%8B%E5%B1%AC%E6%96%BC%E8%87%AA%E5%B7%B1%E7%9A%84-blog/background.437233540105c93a0f22058e7250b027_hu8129c1d6205b89ce5b286bc145ffeacf_27810_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Blog 的搭建：使用 Github Page &#43; Hugo 架設一個屬於自己的 Blog"
+                        
+                        data-hash="md5-Q3IzVAEFyToPIgWOclCwJw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Blog 的搭建：使用 Github Page &#43; Hugo 架設一個屬於自己的 Blog</h2>
         </div>
     </a>
 </article>
@@ -865,16 +736,8 @@ if (!doNotTrack) {
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#引言">引言</a></li>
-    <li><a href="#基本步驟">基本步驟</a>
-      <ol>
-        <li><a href="#設置-google-analytics--賬戶">設置 Google Analytics  賬戶</a></li>
-        <li><a href="#設置-google-analytics-資源">設置 Google Analytics 資源</a></li>
-        <li><a href="#hugo-設置-configtoml">Hugo 設置 config.toml</a></li>
-        <li><a href="#hugo-設置-google-analytics-html-調用模板">Hugo 設置 google analytics html 調用模板</a></li>
-      </ol>
-    </li>
-    <li><a href="#結語">結語</a></li>
+    <li><a href="#before">Before</a></li>
+    <li><a href="#步驟">步驟</a></li>
   </ol>
 </nav>
         </div>
