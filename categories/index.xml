@@ -6,7 +6,15 @@
         <description>Recent content in Categories on Daniel&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 19 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://7WayneLee.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 30 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://7WayneLee.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Colorful</title>
+        <link>https://7WayneLee.github.io/categories/colorful/</link>
+        <pubDate>Wed, 30 Aug 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://7WayneLee.github.io/categories/colorful/</guid>
+        <description>&lt;img src="https://7WayneLee.github.io/categories/colorful/Life.png" alt="Featured image of post Colorful" /&gt;</description>
+        </item>
+        <item>
         <title>Technology</title>
         <link>https://7WayneLee.github.io/categories/technology/</link>
         <pubDate>Fri, 19 May 2023 00:00:00 +0000</pubDate>
@@ -21,14 +29,6 @@
         
         <guid>https://7WayneLee.github.io/categories/life-and-faith/</guid>
         <description></description>
-        </item>
-        <item>
-        <title>Colorful</title>
-        <link>https://7WayneLee.github.io/categories/colorful/</link>
-        <pubDate>Thu, 05 Jan 2023 00:00:00 +0000</pubDate>
-        
-        <guid>https://7WayneLee.github.io/categories/colorful/</guid>
-        <description>&lt;img src="https://7WayneLee.github.io/categories/colorful/Life.png" alt="Featured image of post Colorful" /&gt;</description>
         </item>
         <item>
         <title>Music</title>
